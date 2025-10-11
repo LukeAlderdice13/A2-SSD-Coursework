@@ -16,7 +16,17 @@ namespace A2SSDCoursework
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            SetupDataDirectoryPath();
+
             Application.Run(new Form1());
+        }
+
+        private static void SetupDataDirectoryPath()
+        {
+            string debugPath = System.IO.Path.GetDirectoryName(Environment.CurrentDirectory);
+            string dataDirectoryPath = System.IO.Path.GetDirectoryName(debugPath);
+            AppDomain.CurrentDomain.SetData("DataDirectory", dataDirectoryPath);
         }
     }
 }
