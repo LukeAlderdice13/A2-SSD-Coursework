@@ -1,4 +1,5 @@
-﻿using System;
+﻿using A2SSDCoursework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace A2_SSD_Coursework
 {
-    internal class Vehicle
+    public class Vehicle
     {
         public int Id { get; set; }
-        public string Brand { get; set; }
-        public string Make { get; set; }
+        public Brand brand = new Brand();
+        public Make make = new Make();
         public string YearMade { get; set; }
         public string Colour { get; set; }
         public int EngineSize { get; set; }
@@ -23,17 +24,18 @@ namespace A2_SSD_Coursework
         public DateTime DateSold { get; set; }
         public int EmployeeID { get; set; }
         public int CustomerID { get; set; }
+        public List<Service> ServiceHistory = new List<Service>();
 
         public Vehicle()
         {
 
         }
 
-        public Vehicle(int id, string brand, string make, string yearMade, string colour, int engineSize, string registrationPlate, string vIN, string fuelType, decimal price)
+        public Vehicle(int id, Brand brand, Make make, string yearMade, string colour, int engineSize, string registrationPlate, string vIN, string fuelType, decimal price)
         {
             Id = id;
-            Brand = brand;
-            Make = make;
+            this.brand = brand;
+            this.make = make;
             YearMade = yearMade;
             Colour = colour;
             EngineSize = engineSize;

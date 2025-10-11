@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace A2_SSD_Coursework
 {
-    internal class Customer
+    public class Customer
     {
         public int CustomerID { get; set; }
         public string FirstName { get; set; }
@@ -15,12 +15,14 @@ namespace A2_SSD_Coursework
         public string Email { get; set; }
         public string TelephoneNo { get; set; }
 
+        public List<Vehicle> BoughtVehicles { get; set; }
+
         public Customer()
         {
 
         }
 
-        public Customer(int customerID, string firstName, string surname, string address, string email, string telephoneNo)
+        public Customer(int customerID, string firstName, string surname, string address, string email, string telephoneNo, List<Vehicle> boughtVehicles)
         {
             CustomerID = customerID;
             FirstName = firstName;
@@ -28,6 +30,7 @@ namespace A2_SSD_Coursework
             Address = address;
             Email = email;
             TelephoneNo = telephoneNo;
+            BoughtVehicles = boughtVehicles;
         }
     }
 }

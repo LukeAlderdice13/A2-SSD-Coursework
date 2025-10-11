@@ -1,4 +1,5 @@
-﻿using System;
+﻿using A2_SSD_Coursework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,17 +20,16 @@ namespace A2SSDCoursework
         public string Username { get; set; }
         public DateTime DateHired { get; set; }
         public decimal Salary { get; set; }
-        public int StatusID { get; set; }
-        public string Status { get; set; }
-        public List<int> RoleIDs { get; set; }
-        public List<string> Roles { get; set; }
+        public Status status = new Status();
+        public List<Role> Roles = new List<Role>();
+        public List<Vehicle> SoldVehicles = new List<Vehicle>();
 
         public Employee()
         {
 
         }
 
-        public Employee(int employeeID, string firstName, string surname, string gender, string address, DateTime dateOfBirth, string email, string telephoneNo, string username, DateTime dateHired, decimal salary, int statusID, string status, List<int> roleIDs, List<string> roles)
+        public Employee(int employeeID, string firstName, string surname, string gender, string address, DateTime dateOfBirth, string email, string telephoneNo, string username, DateTime dateHired, decimal salary, Status status, List<Role> roles)
         {
             EmployeeID = employeeID;
             FirstName = firstName;
@@ -42,9 +42,7 @@ namespace A2SSDCoursework
             Username = username;
             DateHired = dateHired;
             Salary = salary;
-            StatusID = statusID;
-            Status = status;
-            RoleIDs = roleIDs;
+            this.status = status;
             Roles = roles;
         }
     }
