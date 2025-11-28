@@ -19,6 +19,7 @@ namespace A2SSDCoursework
             ProjectDal.GetEmployees();
             ProjectDal.GetRoles();
             ProjectDal.GetEmploymentStatuses();
+            ProjectDal.GetMakes();
             ProjectDal.GetVehicles();
         }
 

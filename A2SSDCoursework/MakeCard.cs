@@ -43,20 +43,7 @@ namespace A2SSDCoursework
 
         private void ConfirmEdit_btn_Click(object sender, EventArgs e)
         {
-            if (Make.CheckNameAvailability(MakeName_tbx.Text))
-            {
-                ProjectDal.UpdateMakeName(make, MakeName_tbx.Text);
-                make.Name = MakeName_tbx.Text;
-
-                ResetButtons();
-            }
-            else if (make.Name != MakeName_tbx.Text)
-            {
-                MessageBox.Show("The make entered already exists.", "Error Updating Make Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } else
-            {
-                ResetButtons();
-            }
+            EditName();
         }
 
         private void EditName_btn_Click(object sender, EventArgs e)
@@ -72,6 +59,25 @@ namespace A2SSDCoursework
 
             EditName_btn.Visible = false;
             DeleteMake_btn.Visible = false;
+        }
+
+        public void EditName()
+        {
+            if (Make.CheckNameAvailability(MakeName_tbx.Text))
+            {
+                ProjectDal.UpdateMakeName(make, MakeName_tbx.Text);
+                make.Name = MakeName_tbx.Text;
+
+                ResetButtons();
+            }
+            else if (make.Name != MakeName_tbx.Text)
+            {
+                MessageBox.Show("The make entered already exists.", "Error Updating Make Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                ResetButtons();
+            }
         }
 
         public void ResetButtons()
@@ -91,11 +97,25 @@ namespace A2SSDCoursework
         private void DeleteMake_btn_Click(object sender, EventArgs e)
         {
             ViewMakes.Instance.ResetMakeCards();
+
+            if (MessageBox.Show($"Are you sure you want to delete the '{make.Name}' make?", "Confirm Delete", MessageBoxButtons.YesNo)  == DialogResult.Yes)
+            {
+                ProjectDal.DeleteMake(make.MakeID);
+                MainMenu.MenuInstance.ChangeMainDisplay(new ViewMakes());
+            }
         }
 
         private void Reset_btn_Click(object sender, EventArgs e)
         {
             ResetButtons();
+        }
+
+        private void MakeName_tbx_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                EditName();
+            }
         }
     }
 }

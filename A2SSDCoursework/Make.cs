@@ -34,5 +34,42 @@ namespace A2SSDCoursework
             }
             return true;
         }
+
+        public static int NewID()
+        {
+            int ID = 0;
+            foreach (Make make in makes)
+            {
+                ID++;
+            }
+            return ID + 1;
+        }
+
+        public static Make MakeFromID(int ID)
+        {
+            foreach (Make make in makes)
+            {
+                if (make.MakeID == ID)
+                {
+                    make.MakeID = ID;
+                }
+            }
+
+            return null;
+        }
+
+        public static void RemoveMake(int ID)
+        {
+            Make deletedMake = new Make();
+            foreach(Make make in makes)
+            {
+                if (make.MakeID == ID)
+                {
+                    deletedMake = make;
+                }
+            }
+
+            makes.Remove(deletedMake);
+        }
     }
 }

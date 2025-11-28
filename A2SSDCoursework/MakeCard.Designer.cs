@@ -44,10 +44,10 @@
             this.MakeName_lbl.BackColor = System.Drawing.Color.DarkGray;
             this.MakeName_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MakeName_lbl.ForeColor = System.Drawing.Color.Black;
-            this.MakeName_lbl.Location = new System.Drawing.Point(8, 6);
-            this.MakeName_lbl.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.MakeName_lbl.Location = new System.Drawing.Point(6, 5);
+            this.MakeName_lbl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 0);
             this.MakeName_lbl.Name = "MakeName_lbl";
-            this.MakeName_lbl.Size = new System.Drawing.Size(215, 46);
+            this.MakeName_lbl.Size = new System.Drawing.Size(161, 37);
             this.MakeName_lbl.TabIndex = 1;
             this.MakeName_lbl.Text = "Luke Alderdice";
             this.MakeName_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -56,11 +56,13 @@
             // 
             this.MakeName_tbx.BackColor = System.Drawing.Color.DarkGray;
             this.MakeName_tbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MakeName_tbx.Location = new System.Drawing.Point(8, 6);
+            this.MakeName_tbx.Location = new System.Drawing.Point(6, 5);
+            this.MakeName_tbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MakeName_tbx.Name = "MakeName_tbx";
-            this.MakeName_tbx.Size = new System.Drawing.Size(215, 45);
+            this.MakeName_tbx.Size = new System.Drawing.Size(162, 37);
             this.MakeName_tbx.TabIndex = 2;
             this.MakeName_tbx.Visible = false;
+            this.MakeName_tbx.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MakeName_tbx_KeyDown);
             // 
             // DeleteMake_btn
             // 
@@ -69,9 +71,10 @@
             this.DeleteMake_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteMake_btn.Font = new System.Drawing.Font("Adobe Hebrew", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteMake_btn.ForeColor = System.Drawing.Color.White;
-            this.DeleteMake_btn.Location = new System.Drawing.Point(0, 104);
+            this.DeleteMake_btn.Location = new System.Drawing.Point(0, 84);
+            this.DeleteMake_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.DeleteMake_btn.Name = "DeleteMake_btn";
-            this.DeleteMake_btn.Size = new System.Drawing.Size(215, 47);
+            this.DeleteMake_btn.Size = new System.Drawing.Size(161, 38);
             this.DeleteMake_btn.TabIndex = 5;
             this.DeleteMake_btn.Text = "Delete";
             this.DeleteMake_btn.UseVisualStyleBackColor = false;
@@ -84,9 +87,10 @@
             this.Reset_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Reset_btn.Font = new System.Drawing.Font("Adobe Hebrew", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Reset_btn.ForeColor = System.Drawing.Color.White;
-            this.Reset_btn.Location = new System.Drawing.Point(0, 104);
+            this.Reset_btn.Location = new System.Drawing.Point(0, 84);
+            this.Reset_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Reset_btn.Name = "Reset_btn";
-            this.Reset_btn.Size = new System.Drawing.Size(215, 47);
+            this.Reset_btn.Size = new System.Drawing.Size(161, 38);
             this.Reset_btn.TabIndex = 6;
             this.Reset_btn.Text = "Reset";
             this.Reset_btn.UseVisualStyleBackColor = false;
@@ -100,9 +104,10 @@
             this.Info_pnl.Controls.Add(this.ConfirmEdit_btn);
             this.Info_pnl.Controls.Add(this.EditName_btn);
             this.Info_pnl.Controls.Add(this.DeleteMake_btn);
-            this.Info_pnl.Location = new System.Drawing.Point(8, 6);
+            this.Info_pnl.Location = new System.Drawing.Point(6, 5);
+            this.Info_pnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Info_pnl.Name = "Info_pnl";
-            this.Info_pnl.Size = new System.Drawing.Size(215, 151);
+            this.Info_pnl.Size = new System.Drawing.Size(161, 123);
             this.Info_pnl.TabIndex = 7;
             // 
             // ConfirmEdit_btn
@@ -112,9 +117,10 @@
             this.ConfirmEdit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ConfirmEdit_btn.Font = new System.Drawing.Font("Adobe Hebrew", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ConfirmEdit_btn.ForeColor = System.Drawing.Color.White;
-            this.ConfirmEdit_btn.Location = new System.Drawing.Point(0, 51);
+            this.ConfirmEdit_btn.Location = new System.Drawing.Point(0, 41);
+            this.ConfirmEdit_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ConfirmEdit_btn.Name = "ConfirmEdit_btn";
-            this.ConfirmEdit_btn.Size = new System.Drawing.Size(215, 47);
+            this.ConfirmEdit_btn.Size = new System.Drawing.Size(161, 38);
             this.ConfirmEdit_btn.TabIndex = 9;
             this.ConfirmEdit_btn.Text = "Confirm Edit";
             this.ConfirmEdit_btn.UseVisualStyleBackColor = false;
@@ -128,9 +134,10 @@
             this.EditName_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditName_btn.Font = new System.Drawing.Font("Adobe Hebrew", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EditName_btn.ForeColor = System.Drawing.Color.White;
-            this.EditName_btn.Location = new System.Drawing.Point(0, 51);
+            this.EditName_btn.Location = new System.Drawing.Point(0, 41);
+            this.EditName_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.EditName_btn.Name = "EditName_btn";
-            this.EditName_btn.Size = new System.Drawing.Size(215, 47);
+            this.EditName_btn.Size = new System.Drawing.Size(161, 38);
             this.EditName_btn.TabIndex = 8;
             this.EditName_btn.Text = "Edit";
             this.EditName_btn.UseVisualStyleBackColor = false;
@@ -138,13 +145,14 @@
             // 
             // MakeCard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.MakeName_tbx);
             this.Controls.Add(this.MakeName_lbl);
             this.Controls.Add(this.Info_pnl);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MakeCard";
-            this.Size = new System.Drawing.Size(230, 195);
+            this.Size = new System.Drawing.Size(172, 158);
             this.MouseEnter += new System.EventHandler(this.MakeCard_MouseEnter);
             this.MouseLeave += new System.EventHandler(this.MakeCard_MouseLeave);
             this.Info_pnl.ResumeLayout(false);

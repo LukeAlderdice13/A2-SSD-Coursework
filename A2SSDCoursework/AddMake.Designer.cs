@@ -43,9 +43,10 @@
             // AddButton_pb
             // 
             this.AddButton_pb.Image = ((System.Drawing.Image)(resources.GetObject("AddButton_pb.Image")));
-            this.AddButton_pb.Location = new System.Drawing.Point(30, 3);
+            this.AddButton_pb.Location = new System.Drawing.Point(22, 2);
+            this.AddButton_pb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddButton_pb.Name = "AddButton_pb";
-            this.AddButton_pb.Size = new System.Drawing.Size(175, 160);
+            this.AddButton_pb.Size = new System.Drawing.Size(131, 130);
             this.AddButton_pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.AddButton_pb.TabIndex = 0;
             this.AddButton_pb.TabStop = false;
@@ -56,9 +57,10 @@
             // AddButtonHover_pb
             // 
             this.AddButtonHover_pb.Image = ((System.Drawing.Image)(resources.GetObject("AddButtonHover_pb.Image")));
-            this.AddButtonHover_pb.Location = new System.Drawing.Point(30, 3);
+            this.AddButtonHover_pb.Location = new System.Drawing.Point(22, 2);
+            this.AddButtonHover_pb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddButtonHover_pb.Name = "AddButtonHover_pb";
-            this.AddButtonHover_pb.Size = new System.Drawing.Size(175, 160);
+            this.AddButtonHover_pb.Size = new System.Drawing.Size(131, 130);
             this.AddButtonHover_pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.AddButtonHover_pb.TabIndex = 1;
             this.AddButtonHover_pb.TabStop = false;
@@ -71,9 +73,11 @@
             this.MakeName_tbx.BackColor = System.Drawing.Color.DarkGray;
             this.MakeName_tbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MakeName_tbx.Location = new System.Drawing.Point(0, 0);
+            this.MakeName_tbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MakeName_tbx.Name = "MakeName_tbx";
-            this.MakeName_tbx.Size = new System.Drawing.Size(215, 45);
+            this.MakeName_tbx.Size = new System.Drawing.Size(162, 37);
             this.MakeName_tbx.TabIndex = 10;
+            this.MakeName_tbx.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MakeName_tbx_KeyDown);
             // 
             // Info_pnl
             // 
@@ -81,9 +85,10 @@
             this.Info_pnl.Controls.Add(this.MakeName_tbx);
             this.Info_pnl.Controls.Add(this.AddMake_btn);
             this.Info_pnl.Controls.Add(this.Escape_btn);
-            this.Info_pnl.Location = new System.Drawing.Point(8, 6);
+            this.Info_pnl.Location = new System.Drawing.Point(6, 5);
+            this.Info_pnl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Info_pnl.Name = "Info_pnl";
-            this.Info_pnl.Size = new System.Drawing.Size(215, 151);
+            this.Info_pnl.Size = new System.Drawing.Size(161, 123);
             this.Info_pnl.TabIndex = 13;
             this.Info_pnl.Visible = false;
             // 
@@ -94,9 +99,10 @@
             this.AddMake_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddMake_btn.Font = new System.Drawing.Font("Adobe Hebrew", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddMake_btn.ForeColor = System.Drawing.Color.White;
-            this.AddMake_btn.Location = new System.Drawing.Point(0, 51);
+            this.AddMake_btn.Location = new System.Drawing.Point(0, 41);
+            this.AddMake_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.AddMake_btn.Name = "AddMake_btn";
-            this.AddMake_btn.Size = new System.Drawing.Size(215, 47);
+            this.AddMake_btn.Size = new System.Drawing.Size(161, 38);
             this.AddMake_btn.TabIndex = 8;
             this.AddMake_btn.Text = "Add";
             this.AddMake_btn.UseVisualStyleBackColor = false;
@@ -109,9 +115,10 @@
             this.Escape_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Escape_btn.Font = new System.Drawing.Font("Adobe Hebrew", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Escape_btn.ForeColor = System.Drawing.Color.White;
-            this.Escape_btn.Location = new System.Drawing.Point(0, 104);
+            this.Escape_btn.Location = new System.Drawing.Point(0, 84);
+            this.Escape_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Escape_btn.Name = "Escape_btn";
-            this.Escape_btn.Size = new System.Drawing.Size(215, 47);
+            this.Escape_btn.Size = new System.Drawing.Size(161, 38);
             this.Escape_btn.TabIndex = 5;
             this.Escape_btn.Text = "Escape";
             this.Escape_btn.UseVisualStyleBackColor = false;
@@ -119,14 +126,15 @@
             // 
             // AddMake
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.Controls.Add(this.Info_pnl);
             this.Controls.Add(this.AddButtonHover_pb);
             this.Controls.Add(this.AddButton_pb);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddMake";
-            this.Size = new System.Drawing.Size(230, 195);
+            this.Size = new System.Drawing.Size(172, 158);
             ((System.ComponentModel.ISupportInitialize)(this.AddButton_pb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddButtonHover_pb)).EndInit();
             this.Info_pnl.ResumeLayout(false);

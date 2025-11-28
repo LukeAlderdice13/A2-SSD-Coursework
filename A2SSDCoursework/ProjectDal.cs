@@ -259,35 +259,80 @@ namespace A2SSDCoursework
             }
         }
 
+        public static void DeleteMake(int MakeID)
+        {
+            Make.RemoveMake(MakeID);
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand deleteMakeCommand = new SqlCommand();
+                deleteMakeCommand.Connection = connection;
+                deleteMakeCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                deleteMakeCommand.CommandText = "DeleteMake";
+
+                deleteMakeCommand.Parameters.Add(new SqlParameter("@MakeID", MakeID));
+
+                deleteMakeCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        public static void GetMakes()
+        {
+            Make.makes.Clear();
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand getMakesCommand = new SqlCommand();
+                getMakesCommand.Connection = connection;
+                getMakesCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                getMakesCommand.CommandText = "GetMakes";
+
+                SqlDataReader sqlDataReader = getMakesCommand.ExecuteReader();
+
+                while (sqlDataReader.Read())
+                {
+                    Make make = new Make(Convert.ToInt32(sqlDataReader["MakeID"]), Convert.ToString(sqlDataReader["MakeName"]));
+                    Make.makes.Add(make);
+                }
+
+                connection.Close();
+            }
+        }
+
         public static void GetVehicles()
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
+
                 SqlCommand getVehiclesCommand = new SqlCommand();
                 getVehiclesCommand.Connection = connection;
                 getVehiclesCommand.CommandType = System.Data.CommandType.StoredProcedure;
                 getVehiclesCommand.CommandText = "GetVehicles";
 
-                SqlDataReader sqlDataReader = getVehiclesCommand.ExecuteReader();
+                SqlDataReader vehicleDataReader = getVehiclesCommand.ExecuteReader();
 
-                while (sqlDataReader.Read())
+                while (vehicleDataReader.Read())
                 {
-                    int VehicleID = Convert.ToInt32(sqlDataReader["VehicleID"]);
+                    int VehicleID = Convert.ToInt32(vehicleDataReader["VehicleID"]);
 
                     //Sold Vehicles
-                    object DateSold = sqlDataReader["DateSold"];
-                    object SellPrice = sqlDataReader["SellPrice"];
-                    object SellerID = sqlDataReader["EmployeeID"];
-                    object BuyerID = sqlDataReader["CustomerID"];
+                    object DateSold = vehicleDataReader["DateSold"];
+                    object SellPrice = vehicleDataReader["SellPrice"];
+                    object SellerID = vehicleDataReader["EmployeeID"];
+                    object BuyerID = vehicleDataReader["CustomerID"];
                     //
 
                     //Vehicle Servicing
                     Service service = null;
 
-                    object serviceID = sqlDataReader["ServiceID"];
-                    object serviceDate = sqlDataReader["ServiceDate"];
-                    object serviceEmployeeID = sqlDataReader["ServiceEmployeeID"];
+                    object serviceID = vehicleDataReader["ServiceID"];
+                    object serviceDate = vehicleDataReader["ServiceDate"];
+                    object serviceEmployeeID = vehicleDataReader["ServiceEmployeeID"];
 
                     if (serviceID != DBNull.Value)
                     {
@@ -296,15 +341,10 @@ namespace A2SSDCoursework
                     //
 
                     if (Vehicle.CheckIfExists(VehicleID))
-                    {                        
-                        Make make = new Make(Convert.ToInt32(sqlDataReader["MakeID"]), Convert.ToString(sqlDataReader["MakeName"]));
+                    {
+                        Make make = Make.MakeFromID(Convert.ToInt32(vehicleDataReader["MakeID"]));
 
-                        if (!Make.makes.Contains(make))
-                        {
-                            Make.makes.Add(make);
-                        }
-
-                        Vehicle vehicle = new Vehicle(Convert.ToInt32(sqlDataReader["VehicleID"]), Convert.ToString(sqlDataReader["Model"]), make, Convert.ToString(sqlDataReader["YearMade"]), Convert.ToString(sqlDataReader["Colour"]), Convert.ToDecimal(sqlDataReader["EngineSize"]), Convert.ToString(sqlDataReader["RegistrationPlate"]), Convert.ToString(sqlDataReader["VIN"]), Convert.ToString(sqlDataReader["FuelType"]), Convert.ToInt32(sqlDataReader["Price"]));
+                        Vehicle vehicle = new Vehicle(Convert.ToInt32(vehicleDataReader["VehicleID"]), Convert.ToString(vehicleDataReader["Model"]), make, Convert.ToString(vehicleDataReader["YearMade"]), Convert.ToString(vehicleDataReader["Colour"]), Convert.ToDecimal(vehicleDataReader["EngineSize"]), Convert.ToString(vehicleDataReader["RegistrationPlate"]), Convert.ToString(vehicleDataReader["VIN"]), Convert.ToString(vehicleDataReader["FuelType"]), Convert.ToInt32(vehicleDataReader["Price"]));
 
                         if (BuyerID != DBNull.Value)
                         {

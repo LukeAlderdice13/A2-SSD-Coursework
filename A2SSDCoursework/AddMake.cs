@@ -69,9 +69,24 @@ namespace A2SSDCoursework
 
         private void AddMake_btn_Click(object sender, EventArgs e)
         {
+            AddNewMake();
+        }
+
+        private void MakeName_tbx_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                AddNewMake();
+            }
+        }
+
+        public void AddNewMake()
+        {
             if (MakeName_tbx.Text != "" && Make.CheckNameAvailability(MakeName_tbx.Text))
             {
                 ProjectDal.AddMake(MakeName_tbx.Text);
+                Make make = new Make(Make.NewID(), MakeName_tbx.Text);
+                Make.makes.Add(make);
                 MainMenu.MenuInstance.ChangeMainDisplay(new ViewMakes());
             }
         }

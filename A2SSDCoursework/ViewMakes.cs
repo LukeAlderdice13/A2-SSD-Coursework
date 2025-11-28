@@ -100,6 +100,15 @@ namespace A2SSDCoursework
                 }
             }
 
+            if (i == 0)
+            {
+                panel = new Panel();
+                Makes_pnl.Controls.Add(panel);
+
+                panel.Size = new Size(panelWidth, panelHeight);
+                panel.Location = new Point(5, currentY);
+            }
+
             AddMake addMake = new AddMake();
             panel.Controls.Add(addMake);
             addMake.Location = new Point(currentX, 0);
