@@ -18,9 +18,9 @@ namespace A2SSDCoursework
 
         }
 
-        public Service(int serviveID, int vehicleID, DateTime serviceDate, int employeeID)
+        public Service(int serviceID, int vehicleID, DateTime serviceDate, int employeeID)
         {
-            ServiveID = serviveID;
+            ServiveID = serviceID;
             VehicleID = vehicleID;
             ServiceDate = serviceDate;
             EmployeeID = employeeID;

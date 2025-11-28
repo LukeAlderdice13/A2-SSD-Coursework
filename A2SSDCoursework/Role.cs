@@ -8,6 +8,9 @@ namespace A2SSDCoursework
 {
     public class Role
     {
+        public static List<Role> roles = new List<Role>();
+
+        public static int ManagementID = 5;
         public int RoleID { get; set; }
         public string RoleName { get; set; }
 

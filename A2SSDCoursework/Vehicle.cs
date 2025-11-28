@@ -9,12 +9,13 @@ namespace A2_SSD_Coursework
 {
     public class Vehicle
     {
+        public static List<Vehicle> vehicles = new List<Vehicle>();
         public int Id { get; set; }
-        public Brand brand = new Brand();
         public Make make = new Make();
+        public string Model { get; set; }
         public string YearMade { get; set; }
         public string Colour { get; set; }
-        public int EngineSize { get; set; }
+        public decimal EngineSize { get; set; }
         public string RegistrationPlate { get; set; }
         public string VIN { get; set; }
         public string FuelType { get; set; }
@@ -31,30 +32,31 @@ namespace A2_SSD_Coursework
 
         }
 
-        public Vehicle(int id, Brand brand, Make make, string yearMade, string colour, int engineSize, string registrationPlate, string vIN, string fuelType, decimal price)
+        public Vehicle(int id,string Model, Make make, string yearMade, string colour, decimal engineSize, string registrationPlate, string VIN, string fuelType, decimal price)
         {
             Id = id;
-            this.brand = brand;
+            this.Model = Model;
             this.make = make;
             YearMade = yearMade;
             Colour = colour;
             EngineSize = engineSize;
             RegistrationPlate = registrationPlate;
-            VIN = vIN;
+            this.VIN = VIN;
             FuelType = fuelType;
             Price = price;
+            Sold = false;
         }
 
-        public Vehicle(int id, string brand, string make, string yearMade, string colour, int engineSize, string registrationPlate, string vIN, string fuelType, decimal price, bool sold, decimal soldPrice, DateTime dateSold, int employeeID, int customerID)
+        public Vehicle(int id, string Model, Make make, string yearMade, string colour, decimal engineSize, string registrationPlate, string VIN, string fuelType, decimal price, bool sold, decimal soldPrice, DateTime dateSold, int employeeID, int customerID)
         {
             Id = id;
-            Brand = brand;
-            Make = make;
+            this.Model = Model;
+            this.make = make;
             YearMade = yearMade;
             Colour = colour;
             EngineSize = engineSize;
             RegistrationPlate = registrationPlate;
-            VIN = vIN;
+            this.VIN = VIN;
             FuelType = fuelType;
             Price = price;
             Sold = sold;
@@ -62,6 +64,30 @@ namespace A2_SSD_Coursework
             DateSold = dateSold;
             EmployeeID = employeeID;
             CustomerID = customerID;
+        }
+
+        public static bool CheckIfExists(int ID)
+        {
+            foreach(Vehicle vehicle in vehicles)
+            {
+                if (vehicle.Id == ID)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        public static void AddService(int VehicleID, Service service)
+        {
+            foreach(Vehicle vehicle in vehicles)
+            {
+                if (vehicle.Id == VehicleID)
+                {
+                    vehicle.ServiceHistory.Add(service);
+                }
+            }
         }
     }
 }

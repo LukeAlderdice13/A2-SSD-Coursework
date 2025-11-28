@@ -8,6 +8,7 @@ namespace A2SSDCoursework
 {
     public class Make
     {
+        public static List<Make> makes = new List<Make>();
         public int MakeID { get; set; }
         public string Name { get; set; }
 
@@ -20,6 +21,18 @@ namespace A2SSDCoursework
         {
             MakeID = makeID;
             Name = name;
+        }
+
+        public static bool CheckNameAvailability(string name)
+        {
+            foreach(Make make in makes)
+            {
+                if (make.Name == name)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

@@ -8,6 +8,7 @@ namespace A2SSDCoursework
 {
     public class Status
     {
+        public static List<Status> statuses = new List<Status>();
         public int StatusId { get; set; }
         public string StatusName { get; set; }
 

@@ -1,0 +1,120 @@
+﻿CREATE TABLE dbo.Roles(
+	RoleID INT IDENTITY(1, 1) PRIMARY KEY,
+	RoleName NVARCHAR(50) NOT NULL
+);
+
+CREATE TABLE dbo.EmploymentStatus (
+	StatusID INT IDENTITY(1, 1) PRIMARY KEY,
+	StatusDescription NVARCHAR(50) NOT NULL
+);
+
+CREATE TABLE dbo.Employees (
+	EmployeeID INT IDENTITY(1, 1) PRIMARY KEY,
+	FirstName NVARCHAR(50),
+	Surname NVARCHAR(50),
+	Gender NVARCHAR(50),
+	[Address] NVARCHAR(50),
+	DateOfBirth DATE,
+	Email NVARCHAR(50),
+	TelephoneNo NVARCHAR(50),
+	Username NVARCHAR(50),
+	[Password] NVARCHAR(50),
+	DateHired DATE,
+	Salary DECIMAL(10, 2),
+	StatusID INT,
+	FOREIGN KEY (StatusID)
+		REFERENCES dbo.EmploymentStatus(StatusID)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE
+);
+
+CREATE TABLE dbo.EmployeeRoles (
+	EmployeeID INT,
+	RoleID INT,
+	PRIMARY KEY(EmployeeID, RoleID),
+	FOREIGN KEY (EmployeeID)
+		REFERENCES dbo.Employees(EmployeeID)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	FOREIGN KEY (RoleID)
+		REFERENCES dbo.Roles(RoleID)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
+);
+
+CREATE TABLE dbo.Customers (
+	CustomerID INT IDENTITY(1, 1) PRIMARY KEY,
+	FirstName NVARCHAR(50),
+	Surname NVARCHAR(50),
+	[Address] NVARCHAR(50),
+	Email NVARCHAR(50),
+	TelephoneNo NVARCHAR(50)
+);
+
+CREATE TABLE dbo.Brands (
+	BrandID INT IDENTITY(1, 1) PRIMARY KEY,
+	BrandName NVARCHAR(50) NOT NULL
+);
+
+CREATE TABLE dbo.Makes (
+	MakeID INT IDENTITY(1, 1) PRIMARY KEY,
+	MakeName NVARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Vehicles (
+	VehicleID INT IDENTITY(1, 1) PRIMARY KEY,
+	BrandID INT,
+	MakeID INT,
+	YearMake INT,
+	Colour NVARCHAR(50),
+	EngineSize DECIMAL(10, 2),
+	RegistrationPlate NVARCHAR(50),
+	Vin NVARCHAR(50),
+	FuelType NVARCHAR(50),
+	Price DECIMAL(10, 2),
+	FOREIGN KEY (BrandID)
+		REFERENCES dbo.Brands(BrandID)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE,
+	FOREIGN KEY (MakeID)
+		REFERENCES dbo.Makes(MakeID)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE
+);
+
+CREATE TABLE dbo.SoldVehicles (
+	VehicleID INT PRIMARY KEY,
+	DateSold DATE,
+	SellPrice DECIMAL(10, 2),
+	EmployeeID INT,
+	CustomerID INT,
+	FOREIGN KEY (VehicleID)
+		REFERENCES dbo.Vehicles(VehicleID)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	FOREIGN KEY (EmployeeID)
+		REFERENCES dbo.Employees(EmployeeID)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	FOREIGN KEY (CustomerID)
+		REFERENCES dbo.Customers(CustomerID)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
+);
+
+CREATE TABLE dbo.VehicleServicing (
+	ServiceID INT,
+	VehicleID INT,
+	ServiceDate DATE,
+	ServiceEmployeeID INT,
+	PRIMARY KEY (ServiceID, VehicleID),
+	FOREIGN KEY (VehicleID)
+		REFERENCES dbo.Vehicles(VehicleID)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	FOREIGN KEY (ServiceEmployeeID)
+		REFERENCES dbo.Employees(EmployeeID)
+		ON DELETE SET NULL
+		ON UPDATE CASCADE
+);
+
