@@ -14,6 +14,7 @@ namespace A2SSDCoursework
     public partial class ViewVehicle : UserControl
     {
         public Vehicle vehicle = new Vehicle();
+        public int minSellPrice = 0;
         public ViewVehicle()
         {
             InitializeComponent();
@@ -24,6 +25,28 @@ namespace A2SSDCoursework
             InitializeComponent();
 
             this.vehicle = vehicle;
+
+            Make_lbl.Text = $"Make: {vehicle.make.Name}";
+            Model_lbl.Text = $"Model: {vehicle.Model}";
+            YearMade_lbl.Text = $"Year Made: {vehicle.YearMade}";
+            Colour_lbl.Text = $"Colour: {vehicle.Colour}";
+            EngineSize_lbl.Text = $"Engine Size: {vehicle.EngineSize}";
+            Plate_lbl.Text = $"Plate Number: {vehicle.RegistrationPlate}";
+            Vin_lbl.Text = $"Vin: {vehicle.VIN}";
+            FuelType_lbl.Text = $"Fuel Type: {vehicle.FuelType}";
+            Price_lbl.Text = $"Price: £{vehicle.Price}";
+
+            DateTime currentDate = DateTime.Now;
+
+            TimeSpan duration = currentDate - vehicle.DatePurchased;
+
+            decimal years = Math.Floor((decimal)duration.TotalDays / 365);
+            decimal PriceReduction = 1 - (years / 100);
+
+            minSellPrice = Convert.ToInt32(Math.Floor(vehicle.Price * PriceReduction));
+            minSellPrice_lbl.Text = $"Min Sell Price: £{minSellPrice}";
+
+            DatePurchased_lbl.Text = $"Date Purchased: {vehicle.DatePurchased.ToString("dd/ff/yyyy")}";
         }
     }
 }

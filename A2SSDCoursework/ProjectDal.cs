@@ -344,7 +344,7 @@ namespace A2SSDCoursework
                     {
                         Make make = Make.MakeFromID(Convert.ToInt32(vehicleDataReader["MakeID"]));
 
-                        Vehicle vehicle = new Vehicle(Convert.ToInt32(vehicleDataReader["VehicleID"]), Convert.ToString(vehicleDataReader["Model"]), make, Convert.ToString(vehicleDataReader["YearMade"]), Convert.ToString(vehicleDataReader["Colour"]), Convert.ToDecimal(vehicleDataReader["EngineSize"]), Convert.ToString(vehicleDataReader["RegistrationPlate"]), Convert.ToString(vehicleDataReader["VIN"]), Convert.ToString(vehicleDataReader["FuelType"]), Convert.ToInt32(vehicleDataReader["Price"]));
+                        Vehicle vehicle = new Vehicle(Convert.ToInt32(vehicleDataReader["VehicleID"]), Convert.ToString(vehicleDataReader["Model"]), make, Convert.ToString(vehicleDataReader["YearMade"]), Convert.ToString(vehicleDataReader["Colour"]), Convert.ToDecimal(vehicleDataReader["EngineSize"]), Convert.ToString(vehicleDataReader["RegistrationPlate"]), Convert.ToString(vehicleDataReader["VIN"]), Convert.ToString(vehicleDataReader["FuelType"]), Convert.ToInt32(vehicleDataReader["Price"]), Convert.ToDateTime(vehicleDataReader["DatePurchased"]));
 
                         if (BuyerID != DBNull.Value)
                         {

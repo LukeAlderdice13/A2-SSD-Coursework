@@ -98,7 +98,7 @@ namespace A2SSDCoursework
         {
             ViewMakes.Instance.ResetMakeCards();
 
-            if (MessageBox.Show($"Are you sure you want to delete the '{make.Name}' make?", "Confirm Delete", MessageBoxButtons.YesNo)  == DialogResult.Yes)
+            if (MessageBox.Show($"Are you sure you want to delete the '{make.Name}' make?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question)  == DialogResult.Yes)
             {
                 ProjectDal.DeleteMake(make.MakeID);
                 MainMenu.MenuInstance.ChangeMainDisplay(new ViewMakes());

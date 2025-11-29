@@ -51,7 +51,7 @@ namespace A2SSDCoursework
             {
                 if (make.MakeID == ID)
                 {
-                    make.MakeID = ID;
+                    return make;
                 }
             }
 

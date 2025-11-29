@@ -20,6 +20,7 @@ namespace A2_SSD_Coursework
         public string VIN { get; set; }
         public string FuelType { get; set; }
         public decimal Price { get; set; }
+        public DateTime DatePurchased { get; set; }
         public bool Sold { get; set; }
         public decimal SoldPrice { get; set; }
         public DateTime DateSold { get; set; }
@@ -32,7 +33,7 @@ namespace A2_SSD_Coursework
 
         }
 
-        public Vehicle(int id,string Model, Make make, string yearMade, string colour, decimal engineSize, string registrationPlate, string VIN, string fuelType, decimal price)
+        public Vehicle(int id,string Model, Make make, string yearMade, string colour, decimal engineSize, string registrationPlate, string VIN, string fuelType, decimal price, DateTime DatePurchased)
         {
             Id = id;
             this.Model = Model;
@@ -45,6 +46,7 @@ namespace A2_SSD_Coursework
             FuelType = fuelType;
             Price = price;
             Sold = false;
+            this.DatePurchased = DatePurchased;
         }
 
         public Vehicle(int id, string Model, Make make, string yearMade, string colour, decimal engineSize, string registrationPlate, string VIN, string fuelType, decimal price, bool sold, decimal soldPrice, DateTime dateSold, int employeeID, int customerID)
