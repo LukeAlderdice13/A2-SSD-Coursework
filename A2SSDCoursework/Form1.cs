@@ -21,6 +21,7 @@ namespace A2SSDCoursework
             ProjectDal.GetEmploymentStatuses();
             ProjectDal.GetMakes();
             ProjectDal.GetVehicles();
+            ProjectDal.GetCustomers();
         }
 
         private void Form1_Load(object sender, EventArgs e)

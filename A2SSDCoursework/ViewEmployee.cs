@@ -201,5 +201,20 @@ namespace A2SSDCoursework
             ProjectDal.AddNewEmployeeRoles(employee.EmployeeID, AddedRoleIDs, RemovedRoleIDs);
             ProjectDal.GetEmployees();
         }
+
+        private void ReturnArrow_pb_MouseEnter(object sender, EventArgs e)
+        {
+            ReturnArrow_pb.Image = ReturnArrow_il.Images[1];
+        }
+
+        private void ReturnArrow_pb_MouseLeave(object sender, EventArgs e)
+        {
+            ReturnArrow_pb.Image = ReturnArrow_il.Images[0];
+        }
+
+        private void ReturnArrow_pb_Click(object sender, EventArgs e)
+        {
+            MainMenu.MenuInstance.ReturnToPreviousDisplay();
+        }
     }
 }

@@ -48,3 +48,6 @@ C:\Users\User\source\repos\A2SSDCoursework\A2SSDCoursework\obj\Debug\A2SSDCourse
 C:\Users\User\source\repos\A2SSDCoursework\A2SSDCoursework\obj\Debug\A2SSDCoursework.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\A2SSDCoursework\A2SSDCoursework\obj\Debug\A2SSDCoursework.exe
 C:\Users\User\source\repos\A2SSDCoursework\A2SSDCoursework\obj\Debug\A2SSDCoursework.pdb
+C:\Users\LukeI\Documents\A2-SSD-Coursework\A2-SSD-Coursework\A2SSDCoursework\obj\Debug\A2SSDCoursework.ViewCustomers.resources
+C:\Users\LukeI\Documents\A2-SSD-Coursework\A2-SSD-Coursework\A2SSDCoursework\obj\Debug\A2SSDCoursework.CustomerCard.resources
+C:\Users\LukeI\Documents\A2-SSD-Coursework\A2-SSD-Coursework\A2SSDCoursework\obj\Debug\A2SSDCoursework.ViewCustomer.resources

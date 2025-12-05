@@ -33,7 +33,7 @@ namespace A2SSDCoursework
         {
             int i = 0;
             int j = 0;
-            int panelWidth = this.ClientSize.Width - 23;
+            int panelWidth = this.ClientSize.Width - 100;
             int panelHeight = 133;
             int panelSpacing = 5;
             int currentY = 5;
@@ -50,7 +50,7 @@ namespace A2SSDCoursework
                     Makes_pnl.Controls.Add(panel);
 
                     panel.Size = new Size(panelWidth, panelHeight);
-                    panel.Location = new Point(5, currentY);
+                    panel.Location = new Point(44, currentY);
 
                     currentY += panelHeight + panelSpacing;
                 }

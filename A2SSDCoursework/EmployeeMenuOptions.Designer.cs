@@ -281,7 +281,7 @@
             // AddCustomer_lbl
             // 
             this.AddCustomer_lbl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.AddCustomer_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddCustomer_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddCustomer_lbl.Location = new System.Drawing.Point(0, 40);
             this.AddCustomer_lbl.Name = "AddCustomer_lbl";
             this.AddCustomer_lbl.Size = new System.Drawing.Size(250, 40);

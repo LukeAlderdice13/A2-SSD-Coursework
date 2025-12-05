@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,9 +14,13 @@ namespace A2SSDCoursework
     public partial class MainMenu : Form
     {
         public static MainMenu MenuInstance = new MainMenu();
+        public static UserControl CurrentDisplay = new UserControl();
+        public static UserControl PreviousDisplay = new UserControl();
         public MainMenu()
         {
             InitializeComponent();
+
+            CurrentDisplay = null;
 
             MenuInstance = this;
 
@@ -49,8 +54,18 @@ namespace A2SSDCoursework
 
         public void ChangeMainDisplay(UserControl display)
         {
+            if (CurrentDisplay != null)
+            {
+                PreviousDisplay = CurrentDisplay;
+            }
+            CurrentDisplay = display;
             MainDisplay_pnl.Controls.Clear();
             MainDisplay_pnl.Controls.Add(display);
+        }
+
+        public void ReturnToPreviousDisplay()
+        {
+            ChangeMainDisplay(PreviousDisplay);           
         }
     }
 }

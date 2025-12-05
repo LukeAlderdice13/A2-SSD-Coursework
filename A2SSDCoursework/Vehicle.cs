@@ -91,5 +91,71 @@ namespace A2_SSD_Coursework
                 }
             }
         }
+
+        public static int GetSoldPrice(int VehicleID)
+        {
+            foreach(Vehicle vehicle in vehicles)
+            {
+                if (vehicle.Id == VehicleID)
+                {
+                    return (int)vehicle.SoldPrice;
+                }
+            }
+            return 0;
+        }
+
+        public static List<Vehicle> GetVehiclesFromIDs(List<int> IDs)
+        {
+            List<Vehicle> vehicleList = new List<Vehicle>();
+            foreach(int id in IDs)
+            {
+                foreach(Vehicle v in vehicles)
+                {
+                    if(v.Id == id)
+                    {
+                        vehicleList.Add(v);
+                        break;
+                    }
+                }
+            }
+            return vehicleList;
+        }
+
+        public static List<string> GetVehicleColours()
+        {
+            List<string> colours = new List<string>();
+            foreach(Vehicle vehicle in vehicles)
+            {
+                if (!colours.Contains(vehicle.Colour))
+                {
+                    colours.Add(vehicle.Colour);
+                }
+            }
+            return colours;
+        }
+
+        public static List<string> GetFuelTypes()
+        {
+            List<string> FuelTypes = new List<string>();
+            foreach (Vehicle vehicle in vehicles)
+            {
+                if (!FuelTypes.Contains(vehicle.FuelType))
+                {
+                    FuelTypes.Add(vehicle.FuelType);
+                }
+            }
+            return FuelTypes;
+        }
+
+        public static int GetMaxPrice()
+        {
+            decimal maxPrice = 0;
+            foreach(Vehicle v in vehicles)
+            {
+                if (v.Price > maxPrice)
+                    maxPrice = v.Price;
+            }
+            return (int)maxPrice;
+        }
     }
 }

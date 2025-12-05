@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewEmployee));
+            this.EmployeeInfo_lbl = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.FirstName_lbl = new System.Windows.Forms.Label();
             this.Surname_lbl = new System.Windows.Forms.Label();
@@ -63,17 +65,20 @@
             this.RemoveRole_btn = new System.Windows.Forms.Button();
             this.UpdateButton_btn = new System.Windows.Forms.Button();
             this.Status_cb = new System.Windows.Forms.ComboBox();
+            this.ReturnArrow_il = new System.Windows.Forms.ImageList(this.components);
+            this.ReturnArrow_pb = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnArrow_pb)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // EmployeeInfo_lbl
             // 
-            this.label1.Font = new System.Drawing.Font("Adobe Hebrew", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(950, 76);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Employee Info";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.EmployeeInfo_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmployeeInfo_lbl.Location = new System.Drawing.Point(0, 0);
+            this.EmployeeInfo_lbl.Name = "EmployeeInfo_lbl";
+            this.EmployeeInfo_lbl.Size = new System.Drawing.Size(1050, 76);
+            this.EmployeeInfo_lbl.TabIndex = 0;
+            this.EmployeeInfo_lbl.Text = "Employee Info";
+            this.EmployeeInfo_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -81,7 +86,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 76);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(950, 5);
+            this.panel1.Size = new System.Drawing.Size(1050, 5);
             this.panel1.TabIndex = 1;
             // 
             // FirstName_lbl
@@ -90,7 +95,7 @@
             this.FirstName_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstName_lbl.Location = new System.Drawing.Point(-2, 84);
             this.FirstName_lbl.Name = "FirstName_lbl";
-            this.FirstName_lbl.Size = new System.Drawing.Size(183, 43);
+            this.FirstName_lbl.Size = new System.Drawing.Size(176, 41);
             this.FirstName_lbl.TabIndex = 2;
             this.FirstName_lbl.Text = "First Name:";
             this.FirstName_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -101,7 +106,7 @@
             this.Surname_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Surname_lbl.Location = new System.Drawing.Point(-2, 127);
             this.Surname_lbl.Name = "Surname_lbl";
-            this.Surname_lbl.Size = new System.Drawing.Size(154, 43);
+            this.Surname_lbl.Size = new System.Drawing.Size(149, 41);
             this.Surname_lbl.TabIndex = 3;
             this.Surname_lbl.Text = "Surname:";
             this.Surname_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -112,7 +117,7 @@
             this.Gender_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Gender_lbl.Location = new System.Drawing.Point(-2, 170);
             this.Gender_lbl.Name = "Gender_lbl";
-            this.Gender_lbl.Size = new System.Drawing.Size(133, 43);
+            this.Gender_lbl.Size = new System.Drawing.Size(130, 41);
             this.Gender_lbl.TabIndex = 4;
             this.Gender_lbl.Text = "Gender:";
             this.Gender_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -123,7 +128,7 @@
             this.Address_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Address_lbl.Location = new System.Drawing.Point(-2, 213);
             this.Address_lbl.Name = "Address_lbl";
-            this.Address_lbl.Size = new System.Drawing.Size(140, 43);
+            this.Address_lbl.Size = new System.Drawing.Size(136, 41);
             this.Address_lbl.TabIndex = 5;
             this.Address_lbl.Text = "Address:";
             this.Address_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -134,7 +139,7 @@
             this.DateOfBirth_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DateOfBirth_lbl.Location = new System.Drawing.Point(-2, 256);
             this.DateOfBirth_lbl.Name = "DateOfBirth_lbl";
-            this.DateOfBirth_lbl.Size = new System.Drawing.Size(210, 43);
+            this.DateOfBirth_lbl.Size = new System.Drawing.Size(202, 41);
             this.DateOfBirth_lbl.TabIndex = 6;
             this.DateOfBirth_lbl.Text = "Date of Birth:";
             this.DateOfBirth_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -145,7 +150,7 @@
             this.Email_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Email_lbl.Location = new System.Drawing.Point(-2, 299);
             this.Email_lbl.Name = "Email_lbl";
-            this.Email_lbl.Size = new System.Drawing.Size(109, 43);
+            this.Email_lbl.Size = new System.Drawing.Size(106, 41);
             this.Email_lbl.TabIndex = 7;
             this.Email_lbl.Text = "Email:";
             this.Email_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -154,9 +159,9 @@
             // 
             this.TelephoneNo_lbl.AutoSize = true;
             this.TelephoneNo_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelephoneNo_lbl.Location = new System.Drawing.Point(468, 84);
+            this.TelephoneNo_lbl.Location = new System.Drawing.Point(570, 84);
             this.TelephoneNo_lbl.Name = "TelephoneNo_lbl";
-            this.TelephoneNo_lbl.Size = new System.Drawing.Size(225, 43);
+            this.TelephoneNo_lbl.Size = new System.Drawing.Size(216, 41);
             this.TelephoneNo_lbl.TabIndex = 8;
             this.TelephoneNo_lbl.Text = "Telephone No:";
             this.TelephoneNo_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -165,9 +170,9 @@
             // 
             this.Username_lbl.AutoSize = true;
             this.Username_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Username_lbl.Location = new System.Drawing.Point(468, 127);
+            this.Username_lbl.Location = new System.Drawing.Point(570, 127);
             this.Username_lbl.Name = "Username_lbl";
-            this.Username_lbl.Size = new System.Drawing.Size(170, 43);
+            this.Username_lbl.Size = new System.Drawing.Size(164, 41);
             this.Username_lbl.TabIndex = 9;
             this.Username_lbl.Text = "Username:";
             this.Username_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -176,9 +181,9 @@
             // 
             this.Password_lbl.AutoSize = true;
             this.Password_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password_lbl.Location = new System.Drawing.Point(468, 170);
+            this.Password_lbl.Location = new System.Drawing.Point(570, 170);
             this.Password_lbl.Name = "Password_lbl";
-            this.Password_lbl.Size = new System.Drawing.Size(160, 43);
+            this.Password_lbl.Size = new System.Drawing.Size(154, 41);
             this.Password_lbl.TabIndex = 10;
             this.Password_lbl.Text = "Password:";
             this.Password_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -187,9 +192,9 @@
             // 
             this.DateHired_lbl.AutoSize = true;
             this.DateHired_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateHired_lbl.Location = new System.Drawing.Point(468, 213);
+            this.DateHired_lbl.Location = new System.Drawing.Point(570, 213);
             this.DateHired_lbl.Name = "DateHired_lbl";
-            this.DateHired_lbl.Size = new System.Drawing.Size(182, 43);
+            this.DateHired_lbl.Size = new System.Drawing.Size(176, 41);
             this.DateHired_lbl.TabIndex = 11;
             this.DateHired_lbl.Text = "Date Hired:";
             this.DateHired_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -198,9 +203,9 @@
             // 
             this.Salary_lbl.AutoSize = true;
             this.Salary_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Salary_lbl.Location = new System.Drawing.Point(468, 256);
+            this.Salary_lbl.Location = new System.Drawing.Point(570, 256);
             this.Salary_lbl.Name = "Salary_lbl";
-            this.Salary_lbl.Size = new System.Drawing.Size(114, 43);
+            this.Salary_lbl.Size = new System.Drawing.Size(112, 41);
             this.Salary_lbl.TabIndex = 12;
             this.Salary_lbl.Text = "Salary:";
             this.Salary_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -209,9 +214,9 @@
             // 
             this.Status_lbl.AutoSize = true;
             this.Status_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Status_lbl.Location = new System.Drawing.Point(468, 299);
+            this.Status_lbl.Location = new System.Drawing.Point(570, 299);
             this.Status_lbl.Name = "Status_lbl";
-            this.Status_lbl.Size = new System.Drawing.Size(112, 43);
+            this.Status_lbl.Size = new System.Drawing.Size(106, 41);
             this.Status_lbl.TabIndex = 13;
             this.Status_lbl.Text = "Status:";
             this.Status_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -251,7 +256,7 @@
             // TelephoneNo_tbx
             // 
             this.TelephoneNo_tbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelephoneNo_tbx.Location = new System.Drawing.Point(699, 89);
+            this.TelephoneNo_tbx.Location = new System.Drawing.Point(801, 89);
             this.TelephoneNo_tbx.Name = "TelephoneNo_tbx";
             this.TelephoneNo_tbx.Size = new System.Drawing.Size(235, 34);
             this.TelephoneNo_tbx.TabIndex = 20;
@@ -259,7 +264,7 @@
             // Username_tbx
             // 
             this.Username_tbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Username_tbx.Location = new System.Drawing.Point(644, 132);
+            this.Username_tbx.Location = new System.Drawing.Point(746, 132);
             this.Username_tbx.Name = "Username_tbx";
             this.Username_tbx.Size = new System.Drawing.Size(290, 34);
             this.Username_tbx.TabIndex = 21;
@@ -267,7 +272,7 @@
             // Password_tbx
             // 
             this.Password_tbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password_tbx.Location = new System.Drawing.Point(634, 175);
+            this.Password_tbx.Location = new System.Drawing.Point(736, 175);
             this.Password_tbx.Name = "Password_tbx";
             this.Password_tbx.Size = new System.Drawing.Size(300, 34);
             this.Password_tbx.TabIndex = 22;
@@ -275,7 +280,7 @@
             // Salary_tbx
             // 
             this.Salary_tbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Salary_tbx.Location = new System.Drawing.Point(588, 261);
+            this.Salary_tbx.Location = new System.Drawing.Point(690, 261);
             this.Salary_tbx.Name = "Salary_tbx";
             this.Salary_tbx.Size = new System.Drawing.Size(346, 34);
             this.Salary_tbx.TabIndex = 24;
@@ -286,7 +291,7 @@
             this.Roles_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Roles_lbl.Location = new System.Drawing.Point(1, 341);
             this.Roles_lbl.Name = "Roles_lbl";
-            this.Roles_lbl.Size = new System.Drawing.Size(104, 43);
+            this.Roles_lbl.Size = new System.Drawing.Size(99, 41);
             this.Roles_lbl.TabIndex = 26;
             this.Roles_lbl.Text = "Roles:";
             this.Roles_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -310,7 +315,7 @@
             // DateHired_dtp
             // 
             this.DateHired_dtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DateHired_dtp.Location = new System.Drawing.Point(656, 216);
+            this.DateHired_dtp.Location = new System.Drawing.Point(758, 216);
             this.DateHired_dtp.Name = "DateHired_dtp";
             this.DateHired_dtp.Size = new System.Drawing.Size(278, 34);
             this.DateHired_dtp.TabIndex = 28;
@@ -330,7 +335,7 @@
             this.AddRole_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddRole_lbl.Location = new System.Drawing.Point(-2, 382);
             this.AddRole_lbl.Name = "AddRole_lbl";
-            this.AddRole_lbl.Size = new System.Drawing.Size(158, 43);
+            this.AddRole_lbl.Size = new System.Drawing.Size(154, 41);
             this.AddRole_lbl.TabIndex = 30;
             this.AddRole_lbl.Text = "Add Role:";
             this.AddRole_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -359,7 +364,7 @@
             this.RemoveRole_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RemoveRole_lbl.Location = new System.Drawing.Point(-2, 424);
             this.RemoveRole_lbl.Name = "RemoveRole_lbl";
-            this.RemoveRole_lbl.Size = new System.Drawing.Size(213, 43);
+            this.RemoveRole_lbl.Size = new System.Drawing.Size(205, 41);
             this.RemoveRole_lbl.TabIndex = 32;
             this.RemoveRole_lbl.Text = "Remove Role:";
             this.RemoveRole_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -413,16 +418,37 @@
             // 
             this.Status_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status_cb.FormattingEnabled = true;
-            this.Status_cb.Location = new System.Drawing.Point(588, 307);
+            this.Status_cb.Location = new System.Drawing.Point(690, 307);
             this.Status_cb.Name = "Status_cb";
             this.Status_cb.Size = new System.Drawing.Size(346, 33);
             this.Status_cb.TabIndex = 37;
+            // 
+            // ReturnArrow_il
+            // 
+            this.ReturnArrow_il.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ReturnArrow_il.ImageStream")));
+            this.ReturnArrow_il.TransparentColor = System.Drawing.Color.Transparent;
+            this.ReturnArrow_il.Images.SetKeyName(0, "BackArrow.png");
+            this.ReturnArrow_il.Images.SetKeyName(1, "BackArrow_Highlighted.png");
+            // 
+            // ReturnArrow_pb
+            // 
+            this.ReturnArrow_pb.Image = ((System.Drawing.Image)(resources.GetObject("ReturnArrow_pb.Image")));
+            this.ReturnArrow_pb.Location = new System.Drawing.Point(16, 12);
+            this.ReturnArrow_pb.Name = "ReturnArrow_pb";
+            this.ReturnArrow_pb.Size = new System.Drawing.Size(68, 50);
+            this.ReturnArrow_pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ReturnArrow_pb.TabIndex = 38;
+            this.ReturnArrow_pb.TabStop = false;
+            this.ReturnArrow_pb.Click += new System.EventHandler(this.ReturnArrow_pb_Click);
+            this.ReturnArrow_pb.MouseEnter += new System.EventHandler(this.ReturnArrow_pb_MouseEnter);
+            this.ReturnArrow_pb.MouseLeave += new System.EventHandler(this.ReturnArrow_pb_MouseLeave);
             // 
             // ViewEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.ReturnArrow_pb);
             this.Controls.Add(this.Status_cb);
             this.Controls.Add(this.UpdateButton_btn);
             this.Controls.Add(this.RemoveRole_btn);
@@ -457,9 +483,10 @@
             this.Controls.Add(this.Surname_lbl);
             this.Controls.Add(this.FirstName_lbl);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.EmployeeInfo_lbl);
             this.Name = "ViewEmployee";
-            this.Size = new System.Drawing.Size(950, 700);
+            this.Size = new System.Drawing.Size(1050, 700);
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnArrow_pb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -467,7 +494,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label EmployeeInfo_lbl;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label FirstName_lbl;
         private System.Windows.Forms.Label Surname_lbl;
@@ -502,5 +529,7 @@
         private System.Windows.Forms.Button RemoveRole_btn;
         private System.Windows.Forms.Button UpdateButton_btn;
         private System.Windows.Forms.ComboBox Status_cb;
+        private System.Windows.Forms.ImageList ReturnArrow_il;
+        private System.Windows.Forms.PictureBox ReturnArrow_pb;
     }
 }

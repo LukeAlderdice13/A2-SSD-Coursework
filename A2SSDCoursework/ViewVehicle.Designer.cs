@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewVehicle));
             this.panel1 = new System.Windows.Forms.Panel();
             this.VehicleInfo_lbl = new System.Windows.Forms.Label();
             this.Make_lbl = new System.Windows.Forms.Label();
@@ -41,36 +43,38 @@
             this.Price_lbl = new System.Windows.Forms.Label();
             this.DatePurchased_lbl = new System.Windows.Forms.Label();
             this.minSellPrice_lbl = new System.Windows.Forms.Label();
+            this.ReturnArrow_pb = new System.Windows.Forms.PictureBox();
+            this.ReturnArrow_il = new System.Windows.Forms.ImageList(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnArrow_pb)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Location = new System.Drawing.Point(0, 62);
+            this.panel1.Location = new System.Drawing.Point(0, 76);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(712, 4);
+            this.panel1.Size = new System.Drawing.Size(1050, 5);
             this.panel1.TabIndex = 3;
             // 
             // VehicleInfo_lbl
             // 
             this.VehicleInfo_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VehicleInfo_lbl.Location = new System.Drawing.Point(0, 0);
-            this.VehicleInfo_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.VehicleInfo_lbl.Name = "VehicleInfo_lbl";
-            this.VehicleInfo_lbl.Size = new System.Drawing.Size(712, 62);
+            this.VehicleInfo_lbl.Size = new System.Drawing.Size(1050, 76);
             this.VehicleInfo_lbl.TabIndex = 2;
             this.VehicleInfo_lbl.Text = "Vehicle Info";
             this.VehicleInfo_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.VehicleInfo_lbl.Click += new System.EventHandler(this.VehicleInfo_lbl_Click);
             // 
             // Make_lbl
             // 
             this.Make_lbl.AutoSize = true;
             this.Make_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Make_lbl.Location = new System.Drawing.Point(4, 66);
-            this.Make_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Make_lbl.Location = new System.Drawing.Point(5, 81);
             this.Make_lbl.Name = "Make_lbl";
-            this.Make_lbl.Size = new System.Drawing.Size(84, 34);
+            this.Make_lbl.Size = new System.Drawing.Size(101, 41);
             this.Make_lbl.TabIndex = 5;
             this.Make_lbl.Text = "Make:";
             // 
@@ -78,10 +82,9 @@
             // 
             this.YearMade_lbl.AutoSize = true;
             this.YearMade_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.YearMade_lbl.Location = new System.Drawing.Point(4, 134);
-            this.YearMade_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.YearMade_lbl.Location = new System.Drawing.Point(5, 165);
             this.YearMade_lbl.Name = "YearMade_lbl";
-            this.YearMade_lbl.Size = new System.Drawing.Size(140, 34);
+            this.YearMade_lbl.Size = new System.Drawing.Size(170, 41);
             this.YearMade_lbl.TabIndex = 6;
             this.YearMade_lbl.Text = "Year Made:";
             // 
@@ -89,10 +92,9 @@
             // 
             this.Model_lbl.AutoSize = true;
             this.Model_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Model_lbl.Location = new System.Drawing.Point(4, 100);
-            this.Model_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Model_lbl.Location = new System.Drawing.Point(5, 123);
             this.Model_lbl.Name = "Model_lbl";
-            this.Model_lbl.Size = new System.Drawing.Size(93, 34);
+            this.Model_lbl.Size = new System.Drawing.Size(113, 41);
             this.Model_lbl.TabIndex = 4;
             this.Model_lbl.Text = "Model:";
             // 
@@ -100,10 +102,9 @@
             // 
             this.Colour_lbl.AutoSize = true;
             this.Colour_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Colour_lbl.Location = new System.Drawing.Point(4, 168);
-            this.Colour_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Colour_lbl.Location = new System.Drawing.Point(5, 207);
             this.Colour_lbl.Name = "Colour_lbl";
-            this.Colour_lbl.Size = new System.Drawing.Size(101, 34);
+            this.Colour_lbl.Size = new System.Drawing.Size(125, 41);
             this.Colour_lbl.TabIndex = 7;
             this.Colour_lbl.Text = "Colour:";
             // 
@@ -111,10 +112,9 @@
             // 
             this.EngineSize_lbl.AutoSize = true;
             this.EngineSize_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EngineSize_lbl.Location = new System.Drawing.Point(4, 202);
-            this.EngineSize_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.EngineSize_lbl.Location = new System.Drawing.Point(5, 249);
             this.EngineSize_lbl.Name = "EngineSize_lbl";
-            this.EngineSize_lbl.Size = new System.Drawing.Size(149, 34);
+            this.EngineSize_lbl.Size = new System.Drawing.Size(183, 41);
             this.EngineSize_lbl.TabIndex = 8;
             this.EngineSize_lbl.Text = "Engine Size:";
             // 
@@ -122,10 +122,9 @@
             // 
             this.Plate_lbl.AutoSize = true;
             this.Plate_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Plate_lbl.Location = new System.Drawing.Point(321, 66);
-            this.Plate_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Plate_lbl.Location = new System.Drawing.Point(428, 81);
             this.Plate_lbl.Name = "Plate_lbl";
-            this.Plate_lbl.Size = new System.Drawing.Size(177, 34);
+            this.Plate_lbl.Size = new System.Drawing.Size(215, 41);
             this.Plate_lbl.TabIndex = 9;
             this.Plate_lbl.Text = "Plate Number:";
             // 
@@ -133,10 +132,9 @@
             // 
             this.Vin_lbl.AutoSize = true;
             this.Vin_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Vin_lbl.Location = new System.Drawing.Point(321, 100);
-            this.Vin_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Vin_lbl.Location = new System.Drawing.Point(428, 123);
             this.Vin_lbl.Name = "Vin_lbl";
-            this.Vin_lbl.Size = new System.Drawing.Size(61, 34);
+            this.Vin_lbl.Size = new System.Drawing.Size(75, 41);
             this.Vin_lbl.TabIndex = 10;
             this.Vin_lbl.Text = "Vin:";
             // 
@@ -144,10 +142,9 @@
             // 
             this.FuelType_lbl.AutoSize = true;
             this.FuelType_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FuelType_lbl.Location = new System.Drawing.Point(321, 134);
-            this.FuelType_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.FuelType_lbl.Location = new System.Drawing.Point(428, 165);
             this.FuelType_lbl.Name = "FuelType_lbl";
-            this.FuelType_lbl.Size = new System.Drawing.Size(130, 34);
+            this.FuelType_lbl.Size = new System.Drawing.Size(159, 41);
             this.FuelType_lbl.TabIndex = 11;
             this.FuelType_lbl.Text = "Fuel Type:";
             // 
@@ -155,10 +152,9 @@
             // 
             this.Price_lbl.AutoSize = true;
             this.Price_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Price_lbl.Location = new System.Drawing.Point(321, 168);
-            this.Price_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Price_lbl.Location = new System.Drawing.Point(428, 207);
             this.Price_lbl.Name = "Price_lbl";
-            this.Price_lbl.Size = new System.Drawing.Size(78, 34);
+            this.Price_lbl.Size = new System.Drawing.Size(95, 41);
             this.Price_lbl.TabIndex = 12;
             this.Price_lbl.Text = "Price:";
             // 
@@ -166,10 +162,9 @@
             // 
             this.DatePurchased_lbl.AutoSize = true;
             this.DatePurchased_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DatePurchased_lbl.Location = new System.Drawing.Point(321, 236);
-            this.DatePurchased_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.DatePurchased_lbl.Location = new System.Drawing.Point(428, 290);
             this.DatePurchased_lbl.Name = "DatePurchased_lbl";
-            this.DatePurchased_lbl.Size = new System.Drawing.Size(197, 34);
+            this.DatePurchased_lbl.Size = new System.Drawing.Size(238, 41);
             this.DatePurchased_lbl.TabIndex = 13;
             this.DatePurchased_lbl.Text = "Date Purchased:";
             // 
@@ -177,17 +172,37 @@
             // 
             this.minSellPrice_lbl.AutoSize = true;
             this.minSellPrice_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.minSellPrice_lbl.Location = new System.Drawing.Point(321, 202);
-            this.minSellPrice_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.minSellPrice_lbl.Location = new System.Drawing.Point(428, 249);
             this.minSellPrice_lbl.Name = "minSellPrice_lbl";
-            this.minSellPrice_lbl.Size = new System.Drawing.Size(176, 34);
+            this.minSellPrice_lbl.Size = new System.Drawing.Size(217, 41);
             this.minSellPrice_lbl.TabIndex = 14;
             this.minSellPrice_lbl.Text = "Min Sell Price:";
             // 
+            // ReturnArrow_pb
+            // 
+            this.ReturnArrow_pb.Image = ((System.Drawing.Image)(resources.GetObject("ReturnArrow_pb.Image")));
+            this.ReturnArrow_pb.Location = new System.Drawing.Point(24, 12);
+            this.ReturnArrow_pb.Name = "ReturnArrow_pb";
+            this.ReturnArrow_pb.Size = new System.Drawing.Size(68, 50);
+            this.ReturnArrow_pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ReturnArrow_pb.TabIndex = 15;
+            this.ReturnArrow_pb.TabStop = false;
+            this.ReturnArrow_pb.Click += new System.EventHandler(this.ReturnArrow_pb_Click);
+            this.ReturnArrow_pb.MouseEnter += new System.EventHandler(this.ReturnArrow_pb_MouseEnter);
+            this.ReturnArrow_pb.MouseLeave += new System.EventHandler(this.ReturnArrow_pb_MouseLeave);
+            // 
+            // ReturnArrow_il
+            // 
+            this.ReturnArrow_il.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ReturnArrow_il.ImageStream")));
+            this.ReturnArrow_il.TransparentColor = System.Drawing.Color.Transparent;
+            this.ReturnArrow_il.Images.SetKeyName(0, "BackArrow.png");
+            this.ReturnArrow_il.Images.SetKeyName(1, "BackArrow_Highlighted.png");
+            // 
             // ViewVehicle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ReturnArrow_pb);
             this.Controls.Add(this.minSellPrice_lbl);
             this.Controls.Add(this.DatePurchased_lbl);
             this.Controls.Add(this.Price_lbl);
@@ -201,9 +216,10 @@
             this.Controls.Add(this.Model_lbl);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.VehicleInfo_lbl);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ViewVehicle";
-            this.Size = new System.Drawing.Size(712, 569);
+            this.Size = new System.Drawing.Size(1050, 700);
+            ((System.ComponentModel.ISupportInitialize)(this.ReturnArrow_pb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,5 +240,7 @@
         private System.Windows.Forms.Label Price_lbl;
         private System.Windows.Forms.Label DatePurchased_lbl;
         private System.Windows.Forms.Label minSellPrice_lbl;
+        private System.Windows.Forms.PictureBox ReturnArrow_pb;
+        private System.Windows.Forms.ImageList ReturnArrow_il;
     }
 }

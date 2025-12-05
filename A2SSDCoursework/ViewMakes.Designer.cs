@@ -40,7 +40,7 @@
             this.Makes_pnl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Makes_pnl.Location = new System.Drawing.Point(0, 79);
             this.Makes_pnl.Name = "Makes_pnl";
-            this.Makes_pnl.Size = new System.Drawing.Size(950, 621);
+            this.Makes_pnl.Size = new System.Drawing.Size(1050, 621);
             this.Makes_pnl.TabIndex = 7;
             // 
             // panel1
@@ -49,7 +49,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 76);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(950, 5);
+            this.panel1.Size = new System.Drawing.Size(1050, 5);
             this.panel1.TabIndex = 6;
             // 
             // Makes_lbl
@@ -57,7 +57,7 @@
             this.Makes_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Makes_lbl.Location = new System.Drawing.Point(0, 0);
             this.Makes_lbl.Name = "Makes_lbl";
-            this.Makes_lbl.Size = new System.Drawing.Size(950, 76);
+            this.Makes_lbl.Size = new System.Drawing.Size(1050, 76);
             this.Makes_lbl.TabIndex = 5;
             this.Makes_lbl.Text = "Vehicle Makes";
             this.Makes_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -70,7 +70,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Makes_lbl);
             this.Name = "ViewMakes";
-            this.Size = new System.Drawing.Size(950, 700);
+            this.Size = new System.Drawing.Size(1050, 700);
             this.ResumeLayout(false);
 
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using A2_SSD_Coursework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -315,6 +316,7 @@ namespace A2SSDCoursework
         private void ViewCustomers_lbl_Click(object sender, EventArgs e)
         {
             HideSubMenus();
+            MainMenu.MenuInstance.ChangeMainDisplay(new ViewCustomers());
         }
 
         private void AddCustomer_lbl_Click(object sender, EventArgs e)

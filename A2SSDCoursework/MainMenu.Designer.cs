@@ -40,7 +40,7 @@
             this.NavBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.NavBar.Location = new System.Drawing.Point(0, 0);
             this.NavBar.Name = "NavBar";
-            this.NavBar.Size = new System.Drawing.Size(1200, 40);
+            this.NavBar.Size = new System.Drawing.Size(1300, 40);
             this.NavBar.TabIndex = 7;
             this.NavBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NavBar_MouseDown);
             this.NavBar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.NavBar_MouseMove);
@@ -63,14 +63,14 @@
             this.MainDisplay_pnl.Dock = System.Windows.Forms.DockStyle.Right;
             this.MainDisplay_pnl.Location = new System.Drawing.Point(250, 40);
             this.MainDisplay_pnl.Name = "MainDisplay_pnl";
-            this.MainDisplay_pnl.Size = new System.Drawing.Size(950, 700);
+            this.MainDisplay_pnl.Size = new System.Drawing.Size(1050, 700);
             this.MainDisplay_pnl.TabIndex = 9;
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 740);
+            this.ClientSize = new System.Drawing.Size(1300, 740);
             this.Controls.Add(this.MainDisplay_pnl);
             this.Controls.Add(this.MenuOptions_pnl);
             this.Controls.Add(this.NavBar);

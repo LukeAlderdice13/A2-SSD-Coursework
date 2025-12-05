@@ -349,6 +349,7 @@ namespace A2SSDCoursework
                         if (BuyerID != DBNull.Value)
                         {
                             vehicle.Sold = true;
+                            vehicle.SoldPrice = Convert.ToDecimal(SellPrice);
                             vehicle.DateSold = Convert.ToDateTime(DateSold);
                             vehicle.CustomerID = Convert.ToInt32(BuyerID);
                             vehicle.EmployeeID = Convert.ToInt32(SellerID);
@@ -382,7 +383,24 @@ namespace A2SSDCoursework
 
                 while (sqlDataReader.Read())
                 {
-                    
+                    if (Customer.CheckIfExists(Convert.ToInt32(sqlDataReader["CustomerID"])))
+                    {
+                        object vehicleID = sqlDataReader["VehicleID"];
+                        Customer customer;
+                        if (vehicleID != DBNull.Value)
+                        {
+                            customer = new Customer(Convert.ToInt32(sqlDataReader["CustomerID"]), Convert.ToString(sqlDataReader["FirstName"]), Convert.ToString(sqlDataReader["Surname"]), Convert.ToString(sqlDataReader["Address"]), Convert.ToString(sqlDataReader["Email"]), Convert.ToString(sqlDataReader["TelephoneNo"]), Convert.ToInt32(sqlDataReader["VehicleID"]));
+                        } else
+                        {
+                            customer = new Customer(Convert.ToInt32(sqlDataReader["CustomerID"]), Convert.ToString(sqlDataReader["FirstName"]), Convert.ToString(sqlDataReader["Surname"]), Convert.ToString(sqlDataReader["Address"]), Convert.ToString(sqlDataReader["Email"]), Convert.ToString(sqlDataReader["TelephoneNo"]));
+                        }
+
+                        Customer.customers.Add(customer);
+                            
+                    } else
+                    {
+                        Customer.addBoughtVehicle(Convert.ToInt32(sqlDataReader["CustomerID"]), Convert.ToInt32(sqlDataReader["VehicleID"]));
+                    }
                 }
             }
         }

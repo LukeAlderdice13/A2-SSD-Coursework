@@ -23,7 +23,7 @@ namespace A2SSDCoursework
         {
             int i = 0;
             int j = 0;
-            int panelWidth = this.ClientSize.Width - 23;
+            int panelWidth = Employees_pnl.Width - 23;
             int panelHeight = 170;
             int panelSpacing = 5;
             int currentY = 5;
@@ -69,7 +69,7 @@ namespace A2SSDCoursework
                 employeeCard.Dock = DockStyle.Left;
                 panel.Controls.Add(employeeCard);
 
-                if (i == 3)
+                if (i == 2)
                 {
                     i = 0;
                     j++;

@@ -48,5 +48,25 @@ namespace A2SSDCoursework
 
             DatePurchased_lbl.Text = $"Date Purchased: {vehicle.DatePurchased.ToString("dd/ff/yyyy")}";
         }
+
+        private void VehicleInfo_lbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReturnArrow_pb_MouseEnter(object sender, EventArgs e)
+        {
+            ReturnArrow_pb.Image = ReturnArrow_il.Images[1];
+        }
+
+        private void ReturnArrow_pb_MouseLeave(object sender, EventArgs e)
+        {
+            ReturnArrow_pb.Image = ReturnArrow_il.Images[0];
+        }
+
+        private void ReturnArrow_pb_Click(object sender, EventArgs e)
+        {
+            MainMenu.MenuInstance.ReturnToPreviousDisplay();
+        }
     }
 }
