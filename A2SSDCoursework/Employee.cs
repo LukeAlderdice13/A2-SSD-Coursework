@@ -111,5 +111,30 @@ namespace A2SSDCoursework
             }
             return -1;
         }
+        public static decimal MaxSalary()
+        {
+            decimal max = 0;
+            foreach(Employee e in employees)
+            {
+                if (e.Salary > max)
+                {
+                    max = e.Salary;
+                }
+            }
+            return max;
+        }
+
+        public static decimal MinSalary()
+        {
+            decimal min = MaxSalary();
+            foreach(Employee e in employees)
+            {
+                if (e.Salary < min)
+                {
+                    min = e.Salary;
+                }
+            }
+            return min;
+        }
     }
 }
