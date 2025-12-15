@@ -3,28 +3,68 @@
   "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|c:\\users\\user\\source\\repos\\a2ssdcoursework\\a2ssdcoursework\\viewemployees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\viewemployees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\addemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\addemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\soldvehicles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\soldvehicles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\availablevehicles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\availablevehicles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|c:\\users\\user\\source\\repos\\a2ssdcoursework\\a2ssdcoursework\\viewemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\viewemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\viewemployees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\viewemployees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\availablevehicles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\availablevehicles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\viewemployees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\viewemployees.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\viewmakes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\viewmakes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\viewemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\viewemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\addemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\addemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\employeemenuoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\employeemenuoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\employeemenuoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\employeemenuoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\availablevehicles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\availablevehicles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\soldvehicles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\soldvehicles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\makecard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\makecard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\addmake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\addmake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\availablevehicles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\availablevehicles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,20 +79,12 @@
       "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\viewemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\viewemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\viewmakes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\viewmakes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\addmake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\addmake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\addmake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\addmake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\make.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,24 +95,8 @@
       "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\makecard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\makecard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\makecard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\projectdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\projectdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\viewemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\viewemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
@@ -89,14 +105,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\employeeinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\employeeinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\employeemenuoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\employeemenuoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\employeemenuoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|solutionrelative:a2ssdcoursework\\employeemenuoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{627E5D2B-2286-4B33-A1A1-3BA61864B5A9}|A2SSDCoursework\\A2SSDCoursework.csproj|C:\\Users\\User\\source\\repos\\A2SSDCoursework\\a2ssdcoursework\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -137,11 +145,61 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AddEmployee.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\AddEmployee.cs",
+              "RelativeDocumentMoniker": "A2SSDCoursework\\AddEmployee.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\AddEmployee.cs",
+              "RelativeToolTip": "A2SSDCoursework\\AddEmployee.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACIAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T17:51:15.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddEmployee.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\AddEmployee.cs",
+              "RelativeDocumentMoniker": "A2SSDCoursework\\AddEmployee.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\AddEmployee.cs [Design]",
+              "RelativeToolTip": "A2SSDCoursework\\AddEmployee.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-09T17:21:30.135Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ViewEmployee.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\ViewEmployee.cs",
+              "RelativeDocumentMoniker": "A2SSDCoursework\\ViewEmployee.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\ViewEmployee.cs",
+              "RelativeToolTip": "A2SSDCoursework\\ViewEmployee.cs",
+              "ViewState": "AQIAAKwAAAAAAAAAAAAYwL8AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T14:37:40.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ViewEmployee.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\ViewEmployee.cs",
+              "RelativeDocumentMoniker": "A2SSDCoursework\\ViewEmployee.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\ViewEmployee.cs [Design]",
+              "RelativeToolTip": "A2SSDCoursework\\ViewEmployee.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-08T14:36:31.01Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "SoldVehicles.cs [Design]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\SoldVehicles.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\SoldVehicles.cs",
@@ -153,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 20,
               "Title": "AddMake.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\AddMake.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\AddMake.cs",
@@ -166,7 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "AddMake.cs [Design]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\AddMake.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\AddMake.cs",
@@ -178,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 22,
               "Title": "MakeCard.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\MakeCard.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\MakeCard.cs",
@@ -190,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 13,
               "Title": "MakeCard.cs [Design]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\MakeCard.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\MakeCard.cs",
@@ -202,7 +260,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "ViewMakes.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\ViewMakes.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\ViewMakes.cs",
@@ -215,31 +273,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "ViewEmployees.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\ViewEmployees.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\ViewEmployees.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\ViewEmployees.cs",
               "RelativeToolTip": "A2SSDCoursework\\ViewEmployees.cs",
-              "ViewState": "AQIAAIgAAAAAAAAAAAAkwIoAAAAAAAAA",
+              "ViewState": "AQIAAJoAAAAAAAAAAAAiwK4AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-05T09:51:10.099Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "ViewEmployees.cs [Design]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\ViewEmployees.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\ViewEmployees.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\ViewEmployees.cs [Design]",
               "RelativeToolTip": "A2SSDCoursework\\ViewEmployees.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T09:49:50.132Z"
+              "WhenOpened": "2025-11-05T09:49:50.132Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 15,
               "Title": "AvailableVehicles.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\AvailableVehicles.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\AvailableVehicles.cs",
@@ -252,7 +311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "AvailableVehicles.cs [Design]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\AvailableVehicles.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\AvailableVehicles.cs",
@@ -264,7 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 19,
               "Title": "ViewMakes.cs [Design]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\ViewMakes.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\ViewMakes.cs",
@@ -276,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 18,
               "Title": "Employee.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\Employee.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\Employee.cs",
@@ -289,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 16,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\Program.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\Program.cs",
@@ -302,32 +361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ViewEmployee.cs",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\ViewEmployee.cs",
-              "RelativeDocumentMoniker": "A2SSDCoursework\\ViewEmployee.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\ViewEmployee.cs",
-              "RelativeToolTip": "A2SSDCoursework\\ViewEmployee.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-08T14:37:40.362Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ViewEmployee.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\ViewEmployee.cs",
-              "RelativeDocumentMoniker": "A2SSDCoursework\\ViewEmployee.cs",
-              "ToolTip": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\ViewEmployee.cs [Design]",
-              "RelativeToolTip": "A2SSDCoursework\\ViewEmployee.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-08T14:36:31.01Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "App.config",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\App.config",
               "RelativeDocumentMoniker": "A2SSDCoursework\\App.config",
@@ -339,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "EmployeeInfo.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\EmployeeInfo.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\EmployeeInfo.cs",
@@ -351,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "Role.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\Role.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\Role.cs",
@@ -363,7 +397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 17,
               "Title": "EmployeeInfo.cs [Design]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\EmployeeInfo.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\EmployeeInfo.cs",
@@ -375,19 +409,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 10,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\MainMenu.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\MainMenu.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\MainMenu.cs",
               "RelativeToolTip": "A2SSDCoursework\\MainMenu.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-05T09:38:07.625Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 9,
               "Title": "MainMenu.cs [Design]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\MainMenu.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\MainMenu.cs",
@@ -399,19 +434,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 7,
               "Title": "EmployeeMenuOptions.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\EmployeeMenuOptions.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\EmployeeMenuOptions.cs",
               "ToolTip": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\EmployeeMenuOptions.cs",
               "RelativeToolTip": "A2SSDCoursework\\EmployeeMenuOptions.cs",
+              "ViewState": "AQIAAPMAAAAAAAAAAAAswP8AAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-27T15:02:24.865Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 8,
               "Title": "EmployeeMenuOptions.cs [Design]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\EmployeeMenuOptions.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\EmployeeMenuOptions.cs",
@@ -423,7 +459,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "Service.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\Service.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\Service.cs",
@@ -435,7 +471,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "Status.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\Status.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\Status.cs",
@@ -447,7 +483,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "Brand.cs",
               "DocumentMoniker": "C:\\Users\\LukeI\\Documents\\A2-SSD-Coursework\\A2-SSD-Coursework\\A2SSDCoursework\\Brand.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\LukeI\\Documents\\A2-SSD-Coursework\\A2-SSD-Coursework\\A2SSDCoursework\\Brand.cs",
@@ -458,7 +494,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 21,
               "Title": "Make.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\Make.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\Make.cs",
@@ -470,7 +506,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "Customer.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\Customer.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\Customer.cs",
@@ -482,7 +518,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "Vehicle.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\Vehicle.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\Vehicle.cs",
@@ -494,7 +530,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 23,
               "Title": "ProjectDal.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\ProjectDal.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\ProjectDal.cs",
@@ -506,7 +542,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\Form1.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\Form1.cs",
@@ -518,7 +554,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\User\\source\\repos\\A2SSDCoursework\\A2SSDCoursework\\Form1.cs",
               "RelativeDocumentMoniker": "A2SSDCoursework\\Form1.cs",

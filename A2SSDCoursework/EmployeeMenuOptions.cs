@@ -256,6 +256,7 @@ namespace A2SSDCoursework
         private void AddEmployee_lbl_Click(object sender, EventArgs e)
         {
             HideSubMenus();
+            MainMenu.MenuInstance.ChangeMainDisplay(new AddEmployee());
         }
 
         private void HideSubMenus()

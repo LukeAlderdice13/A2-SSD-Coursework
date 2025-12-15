@@ -34,7 +34,7 @@ namespace A2SSDCoursework
             Username_tbx.Text = employee.Username;
             Password_tbx.Text = employee.Password;
             DateHired_dtp.Value = employee.DateHired;
-            Salary_tbx.Text = employee.Salary.ToString();
+            Salary_nud.Value = employee.Salary;
 
             foreach(Role role in employee.Roles)
             {
@@ -184,7 +184,7 @@ namespace A2SSDCoursework
             Employee.employees[index].Username = Username_tbx.Text;
             Employee.employees[index].Password = Password_tbx.Text;
             Employee.employees[index].DateHired = DateHired_dtp.Value.Date;
-            Employee.employees[index].Salary = Convert.ToDecimal(Salary_tbx.Text);
+            Employee.employees[index].Salary = Convert.ToDecimal(Salary_nud.Value);
             
             foreach(Status status in Status.statuses)
             {

@@ -34,8 +34,8 @@
             this.Employees_lbl = new System.Windows.Forms.Label();
             this.Employees_pnl = new System.Windows.Forms.Panel();
             this.Search_pnl = new System.Windows.Forms.Panel();
-            this.Gender_cb = new System.Windows.Forms.ComboBox();
             this.MaxSalary_nud = new System.Windows.Forms.NumericUpDown();
+            this.Gender_cb = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Name_tbx = new System.Windows.Forms.TextBox();
             this.ResetSearch_lbl = new System.Windows.Forms.Label();
@@ -48,6 +48,8 @@
             this.Gender_lbl = new System.Windows.Forms.Label();
             this.Search_lbl = new System.Windows.Forms.Label();
             this.SearchIcon_il = new System.Windows.Forms.ImageList(this.components);
+            this.Status_lbl = new System.Windows.Forms.Label();
+            this.Status_cb = new System.Windows.Forms.ComboBox();
             this.Search_pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MaxSalary_nud)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinSalary_nud)).BeginInit();
@@ -88,6 +90,8 @@
             // 
             this.Search_pnl.AutoScroll = true;
             this.Search_pnl.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Search_pnl.Controls.Add(this.Status_lbl);
+            this.Search_pnl.Controls.Add(this.Status_cb);
             this.Search_pnl.Controls.Add(this.MaxSalary_nud);
             this.Search_pnl.Controls.Add(this.Gender_cb);
             this.Search_pnl.Controls.Add(this.label1);
@@ -108,6 +112,17 @@
             this.Search_pnl.Size = new System.Drawing.Size(253, 505);
             this.Search_pnl.TabIndex = 12;
             // 
+            // MaxSalary_nud
+            // 
+            this.MaxSalary_nud.DecimalPlaces = 2;
+            this.MaxSalary_nud.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaxSalary_nud.Location = new System.Drawing.Point(17, 293);
+            this.MaxSalary_nud.Margin = new System.Windows.Forms.Padding(2);
+            this.MaxSalary_nud.Name = "MaxSalary_nud";
+            this.MaxSalary_nud.Size = new System.Drawing.Size(227, 26);
+            this.MaxSalary_nud.TabIndex = 16;
+            this.MaxSalary_nud.ValueChanged += new System.EventHandler(this.MaxSalary_nud_ValueChanged);
+            // 
             // Gender_cb
             // 
             this.Gender_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -123,21 +138,11 @@
             this.Gender_cb.Size = new System.Drawing.Size(228, 28);
             this.Gender_cb.TabIndex = 18;
             // 
-            // MaxSalary_nud
-            // 
-            this.MaxSalary_nud.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaxSalary_nud.Location = new System.Drawing.Point(17, 234);
-            this.MaxSalary_nud.Margin = new System.Windows.Forms.Padding(2);
-            this.MaxSalary_nud.Name = "MaxSalary_nud";
-            this.MaxSalary_nud.Size = new System.Drawing.Size(227, 26);
-            this.MaxSalary_nud.TabIndex = 16;
-            this.MaxSalary_nud.ValueChanged += new System.EventHandler(this.MaxSalary_nud_ValueChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 211);
+            this.label1.Location = new System.Drawing.Point(16, 270);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 20);
@@ -158,7 +163,7 @@
             this.ResetSearch_lbl.AutoSize = true;
             this.ResetSearch_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ResetSearch_lbl.ForeColor = System.Drawing.Color.Red;
-            this.ResetSearch_lbl.Location = new System.Drawing.Point(41, 429);
+            this.ResetSearch_lbl.Location = new System.Drawing.Point(41, 456);
             this.ResetSearch_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ResetSearch_lbl.Name = "ResetSearch_lbl";
             this.ResetSearch_lbl.Size = new System.Drawing.Size(181, 31);
@@ -170,8 +175,9 @@
             // 
             // MinSalary_nud
             // 
+            this.MinSalary_nud.DecimalPlaces = 2;
             this.MinSalary_nud.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MinSalary_nud.Location = new System.Drawing.Point(17, 292);
+            this.MinSalary_nud.Location = new System.Drawing.Point(17, 351);
             this.MinSalary_nud.Margin = new System.Windows.Forms.Padding(2);
             this.MinSalary_nud.Name = "MinSalary_nud";
             this.MinSalary_nud.Size = new System.Drawing.Size(227, 26);
@@ -181,7 +187,7 @@
             // SearchIcon_pb
             // 
             this.SearchIcon_pb.Image = ((System.Drawing.Image)(resources.GetObject("SearchIcon_pb.Image")));
-            this.SearchIcon_pb.Location = new System.Drawing.Point(93, 350);
+            this.SearchIcon_pb.Location = new System.Drawing.Point(93, 386);
             this.SearchIcon_pb.Margin = new System.Windows.Forms.Padding(2);
             this.SearchIcon_pb.Name = "SearchIcon_pb";
             this.SearchIcon_pb.Size = new System.Drawing.Size(68, 65);
@@ -196,7 +202,7 @@
             // 
             this.MinSalary_lbl.AutoSize = true;
             this.MinSalary_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MinSalary_lbl.Location = new System.Drawing.Point(16, 270);
+            this.MinSalary_lbl.Location = new System.Drawing.Point(16, 329);
             this.MinSalary_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MinSalary_lbl.Name = "MinSalary_lbl";
             this.MinSalary_lbl.Size = new System.Drawing.Size(82, 20);
@@ -265,6 +271,28 @@
             this.SearchIcon_il.Images.SetKeyName(0, "Search_Icon_default.png");
             this.SearchIcon_il.Images.SetKeyName(1, "Search_Icon_highlighted.png");
             // 
+            // Status_lbl
+            // 
+            this.Status_lbl.AutoSize = true;
+            this.Status_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Status_lbl.Location = new System.Drawing.Point(14, 211);
+            this.Status_lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Status_lbl.Name = "Status_lbl";
+            this.Status_lbl.Size = new System.Drawing.Size(56, 20);
+            this.Status_lbl.TabIndex = 20;
+            this.Status_lbl.Text = "Status";
+            // 
+            // Status_cb
+            // 
+            this.Status_cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Status_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Status_cb.FormattingEnabled = true;
+            this.Status_cb.Location = new System.Drawing.Point(16, 234);
+            this.Status_cb.Margin = new System.Windows.Forms.Padding(2);
+            this.Status_cb.Name = "Status_cb";
+            this.Status_cb.Size = new System.Drawing.Size(228, 28);
+            this.Status_cb.TabIndex = 19;
+            // 
             // ViewEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,5 +333,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox Gender_cb;
         private System.Windows.Forms.ImageList SearchIcon_il;
+        private System.Windows.Forms.Label Status_lbl;
+        private System.Windows.Forms.ComboBox Status_cb;
     }
 }

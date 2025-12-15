@@ -126,6 +126,13 @@ namespace A2SSDCoursework
             }
             Role_cb.SelectedIndex = 0;
 
+            Status_cb.Items.Add("Any Status");
+            foreach(Status status in Status.statuses)
+            {
+                Status_cb.Items.Add(status.StatusName);
+            }
+            Status_cb.SelectedIndex = 0;
+
             MinSalary_nud.Minimum = Employee.MinSalary();            
 
             MaxSalary_nud.Maximum = Employee.MaxSalary();        
@@ -169,6 +176,13 @@ namespace A2SSDCoursework
                     }
                 }               
             }          
+            else if (Status_cb.SelectedIndex != 0)
+            {
+                if (employee.status.StatusName != Status_cb.SelectedItem.ToString())
+                {
+                    return false;
+                }
+            }
             if (employee.Salary > MaxSalary_nud.Value || employee.Salary < MinSalary_nud.Value)
                 return false;
             return true;
