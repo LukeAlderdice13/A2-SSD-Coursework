@@ -200,6 +200,8 @@ namespace A2SSDCoursework
             ProjectDal.UpdateEmployeeInfo(employee);
             ProjectDal.AddNewEmployeeRoles(employee.EmployeeID, AddedRoleIDs, RemovedRoleIDs);
             ProjectDal.GetEmployees();
+
+            ViewEmployees.Instance.PopulateEmployees();
         }
 
         private void ReturnArrow_pb_MouseEnter(object sender, EventArgs e)

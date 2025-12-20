@@ -209,12 +209,14 @@ namespace A2SSDCoursework
         private void AvailableVehicles_lbl_Click(object sender, EventArgs e)
         {
             HideSubMenus();
+            MainMenu.MenuInstance.ClearHistory();
             MainMenu.MenuInstance.ChangeMainDisplay(new AvailableVehicles());
         }
 
         private void SoldVehicles_lbl_Click(object sender, EventArgs e)
         {
             HideSubMenus();
+            MainMenu.MenuInstance.ClearHistory();
             MainMenu.MenuInstance.ChangeMainDisplay(new SoldVehicles());
 
         }
@@ -222,6 +224,7 @@ namespace A2SSDCoursework
         private void VehicleMakes_lbl_Click(object sender, EventArgs e)
         {
             HideSubMenus();
+            MainMenu.MenuInstance.ClearHistory();
             MainMenu.MenuInstance.ChangeMainDisplay(new ViewMakes());
 
         }
@@ -249,6 +252,7 @@ namespace A2SSDCoursework
         private void ViewEmployees_lbl_Click(object sender, EventArgs e)
         {
             HideSubMenus();
+            MainMenu.MenuInstance.ClearHistory();
             ViewEmployees viewEmployees = new ViewEmployees();
             MainMenu.MenuInstance.ChangeMainDisplay(viewEmployees);
         }
@@ -256,6 +260,7 @@ namespace A2SSDCoursework
         private void AddEmployee_lbl_Click(object sender, EventArgs e)
         {
             HideSubMenus();
+            MainMenu.MenuInstance.ClearHistory();
             MainMenu.MenuInstance.ChangeMainDisplay(new AddEmployee());
         }
 
@@ -317,6 +322,7 @@ namespace A2SSDCoursework
         private void ViewCustomers_lbl_Click(object sender, EventArgs e)
         {
             HideSubMenus();
+            MainMenu.MenuInstance.ClearHistory();
             MainMenu.MenuInstance.ChangeMainDisplay(new ViewCustomers());
         }
 

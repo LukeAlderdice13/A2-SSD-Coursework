@@ -15,7 +15,7 @@ namespace A2SSDCoursework
     {
         public static MainMenu MenuInstance = new MainMenu();
         public static UserControl CurrentDisplay = new UserControl();
-        public static UserControl PreviousDisplay = new UserControl();
+        public static List<UserControl> History = new List<UserControl>();
         public MainMenu()
         {
             InitializeComponent();
@@ -52,12 +52,18 @@ namespace A2SSDCoursework
             }
         }
 
+        public void ClearHistory()
+        {
+            History.Clear();
+        }
+
         public void ChangeMainDisplay(UserControl display)
         {
-            if (CurrentDisplay != null)
+            if (!History.Contains(display))
             {
-                PreviousDisplay = CurrentDisplay;
+                History.Add(CurrentDisplay);
             }
+                
             CurrentDisplay = display;
             MainDisplay_pnl.Controls.Clear();
             MainDisplay_pnl.Controls.Add(display);
@@ -65,7 +71,8 @@ namespace A2SSDCoursework
 
         public void ReturnToPreviousDisplay()
         {
-            ChangeMainDisplay(PreviousDisplay);           
+            History.Remove(CurrentDisplay);
+            ChangeMainDisplay(History[History.Count - 1]);
         }
     }
 }

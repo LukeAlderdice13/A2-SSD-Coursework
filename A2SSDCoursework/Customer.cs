@@ -19,6 +19,13 @@ namespace A2_SSD_Coursework
 
         public List<int> BoughtVehicles = new List<int>();
 
+        public string FullName
+        {
+            get
+            {
+                return $"{FirstName} {Surname}";
+            }
+        }
         public Customer()
         {
 
@@ -66,6 +73,20 @@ namespace A2_SSD_Coursework
                     customer.BoughtVehicles.Add(VehicleID);
                 }
             }
+        }
+
+        public static int GetCustomerIndex(Customer customer)
+        {
+            int location = 0;
+            foreach(Customer c in customers)
+            {
+                if (c.CustomerID == customer.CustomerID)
+                {
+                    break;
+                }
+                location++;
+            }
+            return location;
         }
     }
 }

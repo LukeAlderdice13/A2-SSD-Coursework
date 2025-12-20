@@ -26,6 +26,11 @@ namespace A2SSDCoursework
 
             this.vehicle = vehicle;
 
+            if (vehicle.Sold)
+            {
+                Actions_pnl.Visible = false;
+            }
+
             Make_lbl.Text = $"Make: {vehicle.make.Name}";
             Model_lbl.Text = $"Model: {vehicle.Model}";
             YearMade_lbl.Text = $"Year Made: {vehicle.YearMade}";
@@ -67,6 +72,16 @@ namespace A2SSDCoursework
         private void ReturnArrow_pb_Click(object sender, EventArgs e)
         {
             MainMenu.MenuInstance.ReturnToPreviousDisplay();
+        }
+
+        private void RecordService_btn_Click(object sender, EventArgs e)
+        {
+            MainMenu.MenuInstance.ChangeMainDisplay(new RecordService());
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

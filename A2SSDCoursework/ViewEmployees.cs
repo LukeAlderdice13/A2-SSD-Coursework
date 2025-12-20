@@ -13,10 +13,13 @@ namespace A2SSDCoursework
 {
     public partial class ViewEmployees : UserControl
     {
+        public static ViewEmployees Instance = new ViewEmployees();
         private int visibleEmployees = 0;
         public ViewEmployees()
         {
             InitializeComponent();
+
+            Instance = this;
 
             SearchIcon_pb.Image = SearchIcon_il.Images[0];
 
@@ -25,7 +28,7 @@ namespace A2SSDCoursework
             PopulateEmployees();
         }
 
-        private void PopulateEmployees()
+        public void PopulateEmployees()
         {
             Employees_pnl.Controls.Clear();
             visibleEmployees = 0;
@@ -176,7 +179,7 @@ namespace A2SSDCoursework
                     }
                 }               
             }          
-            else if (Status_cb.SelectedIndex != 0)
+            if (Status_cb.SelectedIndex != 0)
             {
                 if (employee.status.StatusName != Status_cb.SelectedItem.ToString())
                 {
@@ -214,7 +217,7 @@ namespace A2SSDCoursework
             }
             catch
             {
-                
+
             }
         }
 
@@ -229,7 +232,7 @@ namespace A2SSDCoursework
             }
             catch
             {
-                
+
             }
         }
 

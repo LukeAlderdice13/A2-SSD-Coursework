@@ -441,5 +441,28 @@ namespace A2SSDCoursework
                 connection.Close();
             }
         }
+
+        public static void UpdateCustomerInfo(Customer customer)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+                SqlCommand UpdateCustomerCommand = new SqlCommand();
+                UpdateCustomerCommand.Connection = connection;
+                UpdateCustomerCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                UpdateCustomerCommand.CommandText = "UpdateCustomerInfo";
+
+                UpdateCustomerCommand.Parameters.Add(new SqlParameter("@CustomerID", customer.CustomerID));
+                UpdateCustomerCommand.Parameters.Add(new SqlParameter("@FirstName", customer.FirstName));
+                UpdateCustomerCommand.Parameters.Add(new SqlParameter("@Surname", customer.Surname));
+                UpdateCustomerCommand.Parameters.Add(new SqlParameter("@Address", customer.Address));
+                UpdateCustomerCommand.Parameters.Add(new SqlParameter("@Email", customer.Email));
+                UpdateCustomerCommand.Parameters.Add(new SqlParameter("@TelephoneNo", customer.TelephoneNo));
+
+                int rowsAffected = UpdateCustomerCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
     }
 }
