@@ -333,12 +333,8 @@ namespace A2SSDCoursework
                     object serviceID = vehicleDataReader["ServiceID"];
                     object serviceDate = vehicleDataReader["ServiceDate"];
                     object serviceEmployeeID = vehicleDataReader["ServiceEmployeeID"];
-
-                    if (serviceID != DBNull.Value)
-                    {
-                        service = new Service(Convert.ToInt32(serviceID), VehicleID, Convert.ToDateTime(serviceDate), Convert.ToInt32(serviceEmployeeID));
-                    }
-                    //
+                    object serviceType = vehicleDataReader["Type"];
+                    object serviceCost = vehicleDataReader["Cost"];
 
                     if (Vehicle.CheckIfExists(VehicleID))
                     {
@@ -358,7 +354,12 @@ namespace A2SSDCoursework
 
                         Vehicle.vehicles.Add(vehicle);
                     }
-                    
+
+                    if (serviceID != DBNull.Value)
+                    {
+                        service = new Service(Convert.ToInt32(serviceID), Vehicle.GetVehicleFromID(VehicleID), Convert.ToDateTime(serviceDate), Employee.GetEmployeeFromID(Convert.ToInt32(serviceEmployeeID)), serviceType.ToString().Trim(), Convert.ToDecimal(serviceCost));
+                    }
+
                     if (service != null)
                     {
                         Vehicle.AddService(VehicleID, service);

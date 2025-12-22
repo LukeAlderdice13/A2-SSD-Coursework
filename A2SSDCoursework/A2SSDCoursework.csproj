@@ -144,6 +144,18 @@
       <DependentUpon>SellVehicle.cs</DependentUpon>
     </Compile>
     <Compile Include="Service.cs" />
+    <Compile Include="ServiceCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ServiceCard.Designer.cs">
+      <DependentUpon>ServiceCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ServiceHistory.Designer.cs">
+      <DependentUpon>ServiceHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="SoldVehicles.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -238,6 +250,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SellVehicle.resx">
       <DependentUpon>SellVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceCard.resx">
+      <DependentUpon>ServiceCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceHistory.resx">
+      <DependentUpon>ServiceHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SoldVehicles.resx">
       <DependentUpon>SoldVehicles.cs</DependentUpon>

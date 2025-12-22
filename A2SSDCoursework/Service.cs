@@ -1,4 +1,5 @@
-﻿using System;
+﻿using A2_SSD_Coursework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,22 +9,26 @@ namespace A2SSDCoursework
 {
     public class Service
     {
-        public int ServiveID { get; set; }
-        public int VehicleID { get; set; }
+        public int ServiceID { get; set; }
+        public Vehicle vehicle = new Vehicle();
         public DateTime ServiceDate { get; set; }
-        public int EmployeeID { get; set; }
+        public Employee employee = new Employee();
+        public string ServiceType { get; set; }
+        public decimal Cost { get; set; }
 
         public Service()
         {
 
         }
 
-        public Service(int serviceID, int vehicleID, DateTime serviceDate, int employeeID)
+        public Service(int serviceID, Vehicle vehicle, DateTime serviceDate, Employee employee, string type, decimal cost)
         {
-            ServiveID = serviceID;
-            VehicleID = vehicleID;
+            ServiceID = serviceID;
+            this.vehicle = vehicle;
             ServiceDate = serviceDate;
-            EmployeeID = employeeID;
+            this.employee = employee;
+            ServiceType = type;
+            Cost = cost;
         }
     }
 }

@@ -28,7 +28,8 @@ namespace A2SSDCoursework
 
             if (vehicle.Sold)
             {
-                Actions_pnl.Visible = false;
+                Delete_btn.Visible = false;
+                Sell_btn.Visible = false;
             }
 
             Make_lbl.Text = $"Make: {vehicle.make.Name}";
@@ -82,6 +83,11 @@ namespace A2SSDCoursework
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void ServiceHistory_btn_Click(object sender, EventArgs e)
+        {
+            MainMenu.MenuInstance.ChangeMainDisplay(new ServiceHistory(vehicle));
         }
     }
 }

@@ -136,5 +136,17 @@ namespace A2SSDCoursework
             }
             return min;
         }
+
+        public static Employee GetEmployeeFromID(int ID)
+        {
+            foreach(Employee e in employees)
+            {
+                if (e.EmployeeID == ID)
+                {
+                    return e;
+                }
+            }
+            return null;
+        }
     }
 }

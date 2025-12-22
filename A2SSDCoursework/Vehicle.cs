@@ -157,5 +157,17 @@ namespace A2_SSD_Coursework
             }
             return (int)maxPrice;
         }
+
+        public static Vehicle GetVehicleFromID(int ID)
+        {
+            foreach(Vehicle vehicle in vehicles)
+            {
+                if(vehicle.Id == ID)
+                {
+                    return vehicle;
+                }
+            }
+            return null;
+        }
     }
 }

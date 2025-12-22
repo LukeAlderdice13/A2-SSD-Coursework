@@ -48,9 +48,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.ActionsTitle_lbl = new System.Windows.Forms.Label();
             this.Actions_pnl = new System.Windows.Forms.Panel();
-            this.RecordService_btn = new System.Windows.Forms.Button();
-            this.Sell_btn = new System.Windows.Forms.Button();
             this.Delete_btn = new System.Windows.Forms.Button();
+            this.Sell_btn = new System.Windows.Forms.Button();
+            this.RecordService_btn = new System.Windows.Forms.Button();
             this.Vehicle_pnl = new System.Windows.Forms.Panel();
             this.ServiceHistory_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ReturnArrow_pb)).BeginInit();
@@ -240,20 +240,19 @@
             this.Actions_pnl.Size = new System.Drawing.Size(1051, 280);
             this.Actions_pnl.TabIndex = 42;
             // 
-            // RecordService_btn
+            // Delete_btn
             // 
-            this.RecordService_btn.BackColor = System.Drawing.Color.SteelBlue;
-            this.RecordService_btn.FlatAppearance.BorderSize = 0;
-            this.RecordService_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RecordService_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RecordService_btn.ForeColor = System.Drawing.Color.White;
-            this.RecordService_btn.Location = new System.Drawing.Point(330, 70);
-            this.RecordService_btn.Name = "RecordService_btn";
-            this.RecordService_btn.Size = new System.Drawing.Size(363, 44);
-            this.RecordService_btn.TabIndex = 72;
-            this.RecordService_btn.Text = "Record Service";
-            this.RecordService_btn.UseVisualStyleBackColor = false;
-            this.RecordService_btn.Click += new System.EventHandler(this.RecordService_btn_Click);
+            this.Delete_btn.BackColor = System.Drawing.Color.Firebrick;
+            this.Delete_btn.FlatAppearance.BorderSize = 0;
+            this.Delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Delete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Delete_btn.ForeColor = System.Drawing.Color.White;
+            this.Delete_btn.Location = new System.Drawing.Point(330, 170);
+            this.Delete_btn.Name = "Delete_btn";
+            this.Delete_btn.Size = new System.Drawing.Size(363, 44);
+            this.Delete_btn.TabIndex = 74;
+            this.Delete_btn.Text = "Delete";
+            this.Delete_btn.UseVisualStyleBackColor = false;
             // 
             // Sell_btn
             // 
@@ -269,19 +268,20 @@
             this.Sell_btn.Text = "Sell";
             this.Sell_btn.UseVisualStyleBackColor = false;
             // 
-            // Delete_btn
+            // RecordService_btn
             // 
-            this.Delete_btn.BackColor = System.Drawing.Color.Firebrick;
-            this.Delete_btn.FlatAppearance.BorderSize = 0;
-            this.Delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Delete_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Delete_btn.ForeColor = System.Drawing.Color.White;
-            this.Delete_btn.Location = new System.Drawing.Point(330, 170);
-            this.Delete_btn.Name = "Delete_btn";
-            this.Delete_btn.Size = new System.Drawing.Size(363, 44);
-            this.Delete_btn.TabIndex = 74;
-            this.Delete_btn.Text = "Delete";
-            this.Delete_btn.UseVisualStyleBackColor = false;
+            this.RecordService_btn.BackColor = System.Drawing.Color.SteelBlue;
+            this.RecordService_btn.FlatAppearance.BorderSize = 0;
+            this.RecordService_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RecordService_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RecordService_btn.ForeColor = System.Drawing.Color.White;
+            this.RecordService_btn.Location = new System.Drawing.Point(330, 70);
+            this.RecordService_btn.Name = "RecordService_btn";
+            this.RecordService_btn.Size = new System.Drawing.Size(363, 44);
+            this.RecordService_btn.TabIndex = 72;
+            this.RecordService_btn.Text = "Record Service";
+            this.RecordService_btn.UseVisualStyleBackColor = false;
+            this.RecordService_btn.Click += new System.EventHandler(this.RecordService_btn_Click);
             // 
             // Vehicle_pnl
             // 
@@ -308,6 +308,7 @@
             this.ServiceHistory_btn.TabIndex = 75;
             this.ServiceHistory_btn.Text = "View Service History";
             this.ServiceHistory_btn.UseVisualStyleBackColor = false;
+            this.ServiceHistory_btn.Click += new System.EventHandler(this.ServiceHistory_btn_Click);
             // 
             // ViewVehicle
             // 

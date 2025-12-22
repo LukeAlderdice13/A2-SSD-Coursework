@@ -88,5 +88,17 @@ namespace A2_SSD_Coursework
             }
             return location;
         }
+
+        public static Customer GetCustomerFromID(int ID)
+        {
+            foreach(Customer customer in customers)
+            {
+                if (customer.CustomerID == ID)
+                {
+                    return customer;
+                } 
+            }
+            return null;
+        }
     }
 }
