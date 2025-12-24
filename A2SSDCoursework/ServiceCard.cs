@@ -23,9 +23,9 @@ namespace A2SSDCoursework
             InitializeComponent();
 
             this.service = service;
-            BackColor = colour;
 
-            Date_lbl.Text = service.ServiceDate.ToString("dd/ff/yyyy");
+            BackColor = Color.LightGray;
+            Date_lbl.Text = service.ServiceDate.ToString("dd/MM/yyyy");
             Cost_lbl.Text = $"£{service.Cost}";
             Employee_lbl.Text = service.employee.FullName;
             ServiceType_lbl.Text = service.ServiceType;
@@ -87,6 +87,93 @@ namespace A2SSDCoursework
         private void Edit_pb_MouseLeave(object sender, EventArgs e)
         {
             Edit_pb.Image = Edit_il.Images[0];
+        }
+
+        private void Delete_pb_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete this record?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Hide();
+                ServiceHistory.instance.DeleteService(service);
+            }
+        }
+
+        private void Edit_pb_Click(object sender, EventArgs e)
+        {
+            ServiceHistory.instance.ResetAllEdits();
+            Edit_pnl.Visible = true;
+
+            Dictionary<int, string> myDictionary = new Dictionary<int, string>();
+            foreach (Employee employee in Employee.employees)
+            {
+                myDictionary.Add(employee.EmployeeID, $"{employee.FullName} ID: {employee.EmployeeID}");
+            }
+            Employees_cb.DataSource = myDictionary.ToArray();
+
+            Employees_cb.DisplayMember = "Value";
+            Employees_cb.ValueMember = "Key";
+
+            Employees_cb.SelectedValue = service.employee.EmployeeID;
+
+            Type_tbx.Text = service.ServiceType;
+            Cost_nud.Value = service.Cost;
+            
+        }
+
+        private void Tick_pb_MouseEnter(object sender, EventArgs e)
+        {
+            Tick_pb.Image = Tick_il.Images[1];
+        }
+
+        private void Tick_pb_MouseLeave(object sender, EventArgs e)
+        {
+            Tick_pb.Image = Tick_il.Images[0];
+        }
+
+        private void X_pb_MouseEnter(object sender, EventArgs e)
+        {
+            X_pb.Image = X_il.Images[1];
+        }
+
+        private void X_pb_MouseLeave(object sender, EventArgs e)
+        {
+            X_pb.Image = X_il.Images[0];
+        }
+
+        private void X_pb_Click(object sender, EventArgs e)
+        {
+            Edit_pnl.Hide();
+        }
+
+        private void Tick_pb_Click(object sender, EventArgs e)
+        {
+            if(Convert.ToInt32(Employees_cb.SelectedValue) != service.employee.EmployeeID
+                || Cost_nud.Value != service.Cost
+                || Type_tbx.Text != service.ServiceType)
+            {
+                Service outdatedService = service;
+                service.employee = Employee.GetEmployeeFromID(Convert.ToInt32(Employees_cb.SelectedValue));
+                service.ServiceType = Type_tbx.Text.Trim();
+                service.Cost = Cost_nud.Value;
+
+                Employee_lbl.Text = service.employee.FullName;
+                ServiceType_lbl.Text = service.ServiceType;
+                Cost_lbl.Text = $"£{service.Cost}";
+
+                Edit_pnl.Visible = false;
+
+                ProjectDal.UpdateService(service);
+                ServiceHistory.instance.UpdateService(outdatedService, service);
+            } else
+            {
+                Edit_pnl.Visible = false;
+            }
+
+        }
+
+        private void Employees_cb_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            
         }
     }
 }

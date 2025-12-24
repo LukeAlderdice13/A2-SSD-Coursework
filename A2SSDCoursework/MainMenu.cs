@@ -59,9 +59,16 @@ namespace A2SSDCoursework
 
         public void ChangeMainDisplay(UserControl display)
         {
-            if (!History.Contains(display))
+            try
             {
-                History.Add(CurrentDisplay);
+                if (History[History.Count - 1] != display)
+                {
+                    History.Add(display);
+                }
+            }
+            catch
+            {
+                History.Add(display);
             }
                 
             CurrentDisplay = display;
@@ -71,7 +78,7 @@ namespace A2SSDCoursework
 
         public void ReturnToPreviousDisplay()
         {
-            History.Remove(CurrentDisplay);
+            History.RemoveAt(History.Count - 1);
             ChangeMainDisplay(History[History.Count - 1]);
         }
     }

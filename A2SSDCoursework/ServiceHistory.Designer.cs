@@ -42,6 +42,7 @@
             this.Employee_lbl = new System.Windows.Forms.Label();
             this.Date_lbl = new System.Windows.Forms.Label();
             this.NoServices_lbl = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ReturnArrow_pb)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,9 +90,9 @@
             // 
             this.CustomerInfo_pnl.AutoScroll = true;
             this.CustomerInfo_pnl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.CustomerInfo_pnl.Location = new System.Drawing.Point(0, 132);
+            this.CustomerInfo_pnl.Location = new System.Drawing.Point(0, 133);
             this.CustomerInfo_pnl.Name = "CustomerInfo_pnl";
-            this.CustomerInfo_pnl.Size = new System.Drawing.Size(1051, 568);
+            this.CustomerInfo_pnl.Size = new System.Drawing.Size(1051, 567);
             this.CustomerInfo_pnl.TabIndex = 79;
             // 
             // Underline_pnl
@@ -100,14 +101,15 @@
             this.Underline_pnl.Location = new System.Drawing.Point(0, 131);
             this.Underline_pnl.Margin = new System.Windows.Forms.Padding(0);
             this.Underline_pnl.Name = "Underline_pnl";
-            this.Underline_pnl.Size = new System.Drawing.Size(1051, 3);
+            this.Underline_pnl.Size = new System.Drawing.Size(1051, 4);
             this.Underline_pnl.TabIndex = 78;
             // 
             // Sold_lbl
             // 
             this.Sold_lbl.AutoSize = true;
+            this.Sold_lbl.BackColor = System.Drawing.Color.DarkGray;
             this.Sold_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sold_lbl.Location = new System.Drawing.Point(570, 93);
+            this.Sold_lbl.Location = new System.Drawing.Point(570, 87);
             this.Sold_lbl.Name = "Sold_lbl";
             this.Sold_lbl.Size = new System.Drawing.Size(93, 36);
             this.Sold_lbl.TabIndex = 85;
@@ -116,8 +118,9 @@
             // Cost_lbl
             // 
             this.Cost_lbl.AutoSize = true;
+            this.Cost_lbl.BackColor = System.Drawing.Color.DarkGray;
             this.Cost_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cost_lbl.Location = new System.Drawing.Point(720, 93);
+            this.Cost_lbl.Location = new System.Drawing.Point(720, 87);
             this.Cost_lbl.Name = "Cost_lbl";
             this.Cost_lbl.Size = new System.Drawing.Size(76, 36);
             this.Cost_lbl.TabIndex = 84;
@@ -126,8 +129,9 @@
             // Type_lbl
             // 
             this.Type_lbl.AutoSize = true;
+            this.Type_lbl.BackColor = System.Drawing.Color.DarkGray;
             this.Type_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Type_lbl.Location = new System.Drawing.Point(405, 93);
+            this.Type_lbl.Location = new System.Drawing.Point(405, 87);
             this.Type_lbl.Name = "Type_lbl";
             this.Type_lbl.Size = new System.Drawing.Size(81, 36);
             this.Type_lbl.TabIndex = 83;
@@ -136,8 +140,9 @@
             // Employee_lbl
             // 
             this.Employee_lbl.AutoSize = true;
+            this.Employee_lbl.BackColor = System.Drawing.Color.DarkGray;
             this.Employee_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Employee_lbl.Location = new System.Drawing.Point(160, 93);
+            this.Employee_lbl.Location = new System.Drawing.Point(160, 87);
             this.Employee_lbl.Name = "Employee_lbl";
             this.Employee_lbl.Size = new System.Drawing.Size(146, 36);
             this.Employee_lbl.TabIndex = 81;
@@ -146,8 +151,9 @@
             // Date_lbl
             // 
             this.Date_lbl.AutoSize = true;
+            this.Date_lbl.BackColor = System.Drawing.Color.DarkGray;
             this.Date_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Date_lbl.Location = new System.Drawing.Point(3, 93);
+            this.Date_lbl.Location = new System.Drawing.Point(3, 87);
             this.Date_lbl.Name = "Date_lbl";
             this.Date_lbl.Size = new System.Drawing.Size(76, 36);
             this.Date_lbl.TabIndex = 80;
@@ -156,21 +162,30 @@
             // NoServices_lbl
             // 
             this.NoServices_lbl.AutoSize = true;
+            this.NoServices_lbl.BackColor = System.Drawing.Color.DarkGray;
             this.NoServices_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NoServices_lbl.ForeColor = System.Drawing.Color.Red;
-            this.NoServices_lbl.Location = new System.Drawing.Point(403, 85);
+            this.NoServices_lbl.Location = new System.Drawing.Point(403, 83);
             this.NoServices_lbl.Name = "NoServices_lbl";
             this.NoServices_lbl.Size = new System.Drawing.Size(247, 46);
             this.NoServices_lbl.TabIndex = 86;
             this.NoServices_lbl.Text = "No Services";
             this.NoServices_lbl.Visible = false;
             // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.Color.DarkGray;
+            this.panel1.Location = new System.Drawing.Point(0, 79);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1051, 52);
+            this.panel1.TabIndex = 80;
+            // 
             // ServiceHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.Controls.Add(this.NoServices_lbl);
             this.Controls.Add(this.Sold_lbl);
             this.Controls.Add(this.Cost_lbl);
             this.Controls.Add(this.Type_lbl);
@@ -181,6 +196,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.CustomerInfo_pnl);
             this.Controls.Add(this.ServiceHistory_lbl);
+            this.Controls.Add(this.NoServices_lbl);
+            this.Controls.Add(this.panel1);
             this.Name = "ServiceHistory";
             this.Size = new System.Drawing.Size(1051, 700);
             this.Load += new System.EventHandler(this.ServiceHistory_Load);
@@ -206,5 +223,6 @@
         private System.Windows.Forms.Label Employee_lbl;
         private System.Windows.Forms.Label Date_lbl;
         private System.Windows.Forms.Label NoServices_lbl;
+        private System.Windows.Forms.Panel panel1;
     }
 }

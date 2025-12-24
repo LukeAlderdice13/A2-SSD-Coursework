@@ -460,7 +460,73 @@ namespace A2SSDCoursework
                 UpdateCustomerCommand.Parameters.Add(new SqlParameter("@Email", customer.Email));
                 UpdateCustomerCommand.Parameters.Add(new SqlParameter("@TelephoneNo", customer.TelephoneNo));
 
-                int rowsAffected = UpdateCustomerCommand.ExecuteNonQuery();
+                UpdateCustomerCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        public static void DeleteService(int serviceID, int vehicleID)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand DeleteServiceCommand = new SqlCommand();
+                DeleteServiceCommand.Connection = connection;
+                DeleteServiceCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                DeleteServiceCommand.CommandText = "DeleteService";
+
+                DeleteServiceCommand.Parameters.Add(new SqlParameter("@serviceID", serviceID));
+                DeleteServiceCommand.Parameters.Add(new SqlParameter("@VehicleID", vehicleID));
+
+                DeleteServiceCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        public static void UpdateService(Service service)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand UpdateServiceCommand = new SqlCommand();
+                UpdateServiceCommand.Connection = connection;
+                UpdateServiceCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                UpdateServiceCommand.CommandText = "UpdateService";
+
+                UpdateServiceCommand.Parameters.Add(new SqlParameter("@ServiceID", service.ServiceID));
+                UpdateServiceCommand.Parameters.Add(new SqlParameter("@VehicleID", service.vehicle.Id));
+                UpdateServiceCommand.Parameters.Add(new SqlParameter("@EmployeeID", service.employee.EmployeeID));
+                UpdateServiceCommand.Parameters.Add(new SqlParameter("@Type", service.ServiceType));
+                UpdateServiceCommand.Parameters.Add(new SqlParameter("@Cost", service.Cost));
+
+                UpdateServiceCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        public static void AddService(Service service)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand AddServiceCommand = new SqlCommand();
+                AddServiceCommand.Connection = connection;
+                AddServiceCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                AddServiceCommand.CommandText = "AddService";
+
+                AddServiceCommand.Parameters.Add(new SqlParameter("@VehicleID", service.vehicle.Id));
+                AddServiceCommand.Parameters.Add(new SqlParameter("@Date", service.ServiceDate));
+                AddServiceCommand.Parameters.Add(new SqlParameter("@EmployeeID", service.employee.EmployeeID));
+                AddServiceCommand.Parameters.Add(new SqlParameter("@Type", service.ServiceType));
+                AddServiceCommand.Parameters.Add(new SqlParameter("@Cost", service.Cost));
+
+                AddServiceCommand.ExecuteNonQuery();
 
                 connection.Close();
             }

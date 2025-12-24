@@ -25,7 +25,7 @@ namespace A2SSDCoursework
             InitializeComponent();
 
             this.vehicle = vehicle;
-
+ 
             if (vehicle.Sold)
             {
                 Delete_btn.Visible = false;
@@ -52,7 +52,7 @@ namespace A2SSDCoursework
             minSellPrice = Convert.ToInt32(Math.Floor(vehicle.Price * PriceReduction));
             minSellPrice_lbl.Text = $"Min Sell Price: £{minSellPrice}";
 
-            DatePurchased_lbl.Text = $"Date Purchased: {vehicle.DatePurchased.ToString("dd/ff/yyyy")}";
+            DatePurchased_lbl.Text = $"Date Purchased: {vehicle.DatePurchased.ToString("dd/MM/yyyy")}";
         }
 
         private void VehicleInfo_lbl_Click(object sender, EventArgs e)

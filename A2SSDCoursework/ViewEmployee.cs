@@ -70,6 +70,7 @@ namespace A2SSDCoursework
             }
 
             Status_cb.SelectedItem = employee.status.StatusName;
+            ID_lbl.Text = $"ID: {employee.EmployeeID}";
 
             this.employee = employee;
         }
