@@ -77,7 +77,7 @@ namespace A2SSDCoursework
 
         private void RecordService_btn_Click(object sender, EventArgs e)
         {
-            MainMenu.MenuInstance.ChangeMainDisplay(new RecordService());
+            MainMenu.MenuInstance.ChangeMainDisplay(new RecordService(vehicle));
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

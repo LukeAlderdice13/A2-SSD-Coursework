@@ -30,5 +30,14 @@ namespace A2SSDCoursework
             ServiceType = type;
             Cost = cost;
         }
+
+        public Service(Vehicle vehicle, DateTime serviceDate, Employee employee, string type, decimal cost)
+        {
+            this.vehicle = vehicle;
+            ServiceDate = serviceDate;
+            this.employee = employee;
+            ServiceType = type;
+            Cost = cost;
+        }
     }
 }

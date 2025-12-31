@@ -32,7 +32,7 @@ namespace A2SSDCoursework
 
             if (service.vehicle.Sold)
             {
-                Sold_lbl.Text = service.vehicle.DateSold > service.ServiceDate ? "No" : "Yes";
+                Sold_lbl.Text = service.vehicle.DateSold <= service.ServiceDate ? "Yes" : "No";
             }
         }
 
@@ -50,7 +50,7 @@ namespace A2SSDCoursework
 
         private void Employee_lbl_MouseClick(object sender, MouseEventArgs e)
         {
-            MainMenu.MenuInstance.ChangeMainDisplay(new ViewEmployee(service.employee));
+            
         }
 
         public void UpdateEmployeeInfo()
@@ -91,6 +91,7 @@ namespace A2SSDCoursework
 
         private void Delete_pb_Click(object sender, EventArgs e)
         {
+            ServiceHistory.instance.ResetAllEdits();
             if (MessageBox.Show("Are you sure you want to delete this record?", "Confirm Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Hide();
@@ -106,7 +107,7 @@ namespace A2SSDCoursework
             Dictionary<int, string> myDictionary = new Dictionary<int, string>();
             foreach (Employee employee in Employee.employees)
             {
-                myDictionary.Add(employee.EmployeeID, $"{employee.FullName} ID: {employee.EmployeeID}");
+                myDictionary.Add(employee.EmployeeID, $"{employee.FullName}. ID: {employee.EmployeeID}");
             }
             Employees_cb.DataSource = myDictionary.ToArray();
 
@@ -174,6 +175,12 @@ namespace A2SSDCoursework
         private void Employees_cb_SelectionChangeCommitted(object sender, EventArgs e)
         {
             
+        }
+
+        private void Employee_lbl_Click(object sender, EventArgs e)
+        {
+            ServiceHistory.instance.ResetAllEdits();
+            MainMenu.MenuInstance.ChangeMainDisplay(new ViewEmployee(service.employee));
         }
     }
 }
