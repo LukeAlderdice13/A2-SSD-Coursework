@@ -11,6 +11,7 @@ namespace A2SSDCoursework
     {
         public static List<Employee> employees = new List<Employee>();
         public static int currentEmployee;
+        public static Employee nullEmployee = new Employee("Null", "");
 
         public int EmployeeID { get; set; }
         public string FirstName { get; set; }
@@ -27,6 +28,101 @@ namespace A2SSDCoursework
         public Status status = new Status();
         public List<Role> Roles = new List<Role>();
         public List<Vehicle> SoldVehicles = new List<Vehicle>();
+        public decimal Profit
+        {
+            get
+            {
+                return Sales + ServiceProfit;
+            }
+        }
+
+        public int NumServices
+        {
+            get
+            {
+                int services = 0;
+
+                foreach (Vehicle vehicle in Vehicle.vehicles)
+                {
+                    foreach (Service service in vehicle.ServiceHistory)
+                    {
+                        if (service.employee.EmployeeID == EmployeeID)
+                        {
+                            services++;
+                        }
+                    }
+                }
+
+                return services;
+            }
+        }
+
+        public List<Service> Services
+        {
+            get
+            {
+                List<Service> services = new List<Service>(); 
+                foreach (Vehicle vehicle in Vehicle.vehicles)
+                {
+                    foreach (Service service in vehicle.ServiceHistory)
+                    {
+                        if (service.employee.EmployeeID == EmployeeID)
+                        {
+                            services.Add(service);
+                        }
+                    }
+                }
+                return services;
+            }
+        }
+
+        public decimal Sales
+        {
+            get
+            {
+                decimal profit = 0;
+                foreach (Vehicle vehicle in SoldVehicles)
+                {
+                    profit += vehicle.SoldPrice;
+                }
+                return profit;
+            }
+        }
+
+        public decimal ServiceProfit
+        {
+            get
+            {
+                decimal profit = 0;
+                foreach (Vehicle vehicle in Vehicle.vehicles)
+                {
+                    foreach (Service service in vehicle.ServiceHistory)
+                    {
+                        if (service.employee.EmployeeID == EmployeeID)
+                        {
+                            profit += service.Cost;
+                        }
+                    }
+                }
+                return profit;
+            }
+        }
+
+        public int MaxAccessLevel
+        {
+            get
+            {
+                int accessLevel = 1;
+                foreach(Role role in Roles)
+                {
+                    if (accessLevel < role.AccessLevel)
+                    {
+                        accessLevel = role.AccessLevel;
+                    }
+                }
+                return accessLevel;
+            }
+        }
         public string FullName
         {
             get
@@ -45,6 +141,29 @@ namespace A2SSDCoursework
             EmployeeID = employeeID;
             this.Username = Username;
             this.Password = Password;
+        }
+
+        public Employee(string firstName, string surname)
+        {
+            FirstName = firstName;
+            Surname = surname;
+        }
+
+        public Employee(string firstName, string surname, string gender, string address, DateTime dateOfBirth, string email, string telephoneNo, string username, string password, DateTime dateHired, decimal salary, Status status, List<Role> roles)
+        {
+            FirstName = firstName;
+            Surname = surname;
+            Gender = gender;
+            Address = address;
+            DateOfBirth = dateOfBirth;
+            Email = email;
+            TelephoneNo = telephoneNo;
+            Username = username;
+            Password = password;
+            DateHired = dateHired;
+            Salary = salary;
+            this.status = status;
+            Roles = roles;
         }
 
         public Employee(int employeeID, string firstName, string surname, string gender, string address, DateTime dateOfBirth, string email, string telephoneNo, string username, string password, DateTime dateHired, decimal salary, Status status)
@@ -88,19 +207,7 @@ namespace A2SSDCoursework
             }
         }
 
-        public bool IsManagement()
-        {
-            foreach(Role role in Roles)
-            {
-                if(role.RoleID == Role.ManagementID)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public int GetListIndex(int ID)
+        public static int GetListIndex(int ID)
         {
             for(int i = 0; i < employees.Count; i++)
             {
@@ -147,6 +254,58 @@ namespace A2SSDCoursework
                 }
             }
             return null;
+        }
+
+        public static bool IsUsernameTaken(int ID, string username)
+        {
+            foreach(Employee e in employees)
+            {
+                if (e.EmployeeID != ID)
+                {
+                    if (e.Username == username)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        public static bool IsUsernameTaken(string username)
+        {
+            foreach (Employee e in employees)
+            {
+                if (e.Username == username)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static void DeleteEmployee(int ID)
+        {
+            Employee e = new Employee();
+            foreach(Employee employee in employees)
+            {
+                if (employee.EmployeeID == ID)
+                {
+                    e = employee;
+                    break;
+                }
+            }
+
+            employees.Remove(e);
+        }
+
+        public static void AddSoldVehicle(int ID, Vehicle vehicle)
+        {
+            foreach(Employee employee in employees)
+            {
+                if (employee.EmployeeID == ID)
+                {
+                    employee.SoldVehicles.Add(vehicle);
+                }
+            }
         }
     }
 }

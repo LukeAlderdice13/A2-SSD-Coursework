@@ -115,13 +115,13 @@ namespace A2SSDCoursework
                 noEmployees.TextAlign = ContentAlignment.MiddleCenter;
             }
         }
-
+        //ISSUE WITH SEARCH
         private void PopulateComboBoxes()
         {
             Gender_cb.SelectedIndex = 0;
 
             Role_cb.Items.Clear();
-            Role_cb.Items.Add("Any Role");
+            Role_cb.Items.Add("Any");
             Role_cb.Items.Add("No Role");
             foreach(Role role in Role.roles)
             {
@@ -129,7 +129,7 @@ namespace A2SSDCoursework
             }
             Role_cb.SelectedIndex = 0;
 
-            Status_cb.Items.Add("Any Status");
+            Status_cb.Items.Add("Any");
             foreach(Status status in Status.statuses)
             {
                 Status_cb.Items.Add(status.StatusName);
@@ -149,46 +149,50 @@ namespace A2SSDCoursework
 
         private bool CheckSearch(Employee employee)
         {
-            if (!employee.FullName.ToLower().Contains(Name_tbx.Text.ToLower()))
-                return false;
-            if (Gender_cb.SelectedIndex != 0 && employee.Gender != Gender_cb.SelectedItem.ToString())
-                return false;
-            if (Role_cb.SelectedIndex == 1)
+            if (employee.EmployeeID != Employee.employees[Employee.currentEmployee].EmployeeID)
             {
-                if (employee.Roles.Count > 0)
-                {
+                if (!employee.FullName.ToLower().Contains(Name_tbx.Text.ToLower()))
                     return false;
-                }
-            }
-            else if (Role_cb.SelectedIndex != 0)
-            {
-                if (employee.Roles.Count == 0)
-                {
+                if (Gender_cb.SelectedIndex != 0 && employee.Gender != Gender_cb.SelectedItem.ToString())
                     return false;
-                }
-                bool hasRole = false;
-                foreach (Role role in employee.Roles)
+                if (Role_cb.SelectedIndex == 1)
                 {
-                    if (role.RoleName == Role_cb.SelectedItem.ToString())
+                    if (employee.Roles.Count > 0)
                     {
-                        hasRole = true;
+                        return false;
+                    }
+                }
+                else if (Role_cb.SelectedIndex != 0)
+                {
+                    if (employee.Roles.Count == 0)
+                    {
+                        return false;
+                    }
+                    bool hasRole = false;
+                    foreach (Role role in employee.Roles)
+                    {
+                        if (role.RoleName == Role_cb.SelectedItem.ToString())
+                        {
+                            hasRole = true;
+                        }
                     }
                     if (!hasRole)
                     {
                         return false;
                     }
-                }               
-            }          
-            if (Status_cb.SelectedIndex != 0)
-            {
-                if (employee.status.StatusName != Status_cb.SelectedItem.ToString())
-                {
-                    return false;
                 }
+                if (Status_cb.SelectedIndex != 0)
+                {
+                    if (employee.status.StatusName != Status_cb.SelectedItem.ToString())
+                    {
+                        return false;
+                    }
+                }
+                if (employee.Salary > MaxSalary_nud.Value || employee.Salary < MinSalary_nud.Value)
+                    return false;
+                return true;
             }
-            if (employee.Salary > MaxSalary_nud.Value || employee.Salary < MinSalary_nud.Value)
-                return false;
-            return true;
+            return false;
         }
 
         private void SearchIcon_pb_MouseEnter(object sender, EventArgs e)
@@ -256,6 +260,14 @@ namespace A2SSDCoursework
             MinSalary_nud.Value = MinSalary_nud.Minimum;
 
             PopulateEmployees();
+        }
+
+        private void Name_tbx_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                PopulateEmployees();
+            }
         }
     }
 }

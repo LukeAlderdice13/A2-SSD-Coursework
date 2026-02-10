@@ -84,10 +84,7 @@ namespace A2SSDCoursework
         {
             if (MakeName_tbx.Text != "" && Make.CheckNameAvailability(MakeName_tbx.Text))
             {
-                ProjectDal.AddMake(MakeName_tbx.Text);
-                Make make = new Make(Make.NewID(), MakeName_tbx.Text);
-                Make.makes.Add(make);
-                MainMenu.MenuInstance.ChangeMainDisplay(new ViewMakes());
+
             }
         }
     }

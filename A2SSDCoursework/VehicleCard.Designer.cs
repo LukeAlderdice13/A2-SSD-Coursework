@@ -37,6 +37,7 @@
             this.ViewVehicle_btn = new System.Windows.Forms.Button();
             this.EngineSize_lbl = new System.Windows.Forms.Label();
             this.Model_lbl = new System.Windows.Forms.Label();
+            this.Backing_lbl = new System.Windows.Forms.Label();
             this.Info_pnl.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,6 +135,8 @@
             this.ViewVehicle_btn.Text = "View Vehicle";
             this.ViewVehicle_btn.UseVisualStyleBackColor = false;
             this.ViewVehicle_btn.Click += new System.EventHandler(this.ViewVehicle_btn_Click);
+            this.ViewVehicle_btn.MouseEnter += new System.EventHandler(this.ViewVehicle_btn_MouseEnter);
+            this.ViewVehicle_btn.MouseLeave += new System.EventHandler(this.ViewVehicle_btn_MouseLeave);
             // 
             // EngineSize_lbl
             // 
@@ -162,6 +165,19 @@
             this.Model_lbl.Text = "Test\r\n";
             this.Model_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // Backing_lbl
+            // 
+            this.Backing_lbl.AutoEllipsis = true;
+            this.Backing_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Backing_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Backing_lbl.ForeColor = System.Drawing.Color.Black;
+            this.Backing_lbl.Location = new System.Drawing.Point(3, 3);
+            this.Backing_lbl.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.Backing_lbl.Name = "Backing_lbl";
+            this.Backing_lbl.Size = new System.Drawing.Size(224, 91);
+            this.Backing_lbl.TabIndex = 7;
+            this.Backing_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // VehicleCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -170,8 +186,11 @@
             this.Controls.Add(this.Model_lbl);
             this.Controls.Add(this.Make_lbl);
             this.Controls.Add(this.Info_pnl);
+            this.Controls.Add(this.Backing_lbl);
             this.Name = "VehicleCard";
             this.Size = new System.Drawing.Size(230, 314);
+            this.MouseEnter += new System.EventHandler(this.VehicleCard_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.VehicleCard_MouseLeave);
             this.Info_pnl.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -188,5 +207,6 @@
         private System.Windows.Forms.Label FuelType_lbl;
         private System.Windows.Forms.Label Price_lbl;
         private System.Windows.Forms.Label Model_lbl;
+        private System.Windows.Forms.Label Backing_lbl;
     }
 }

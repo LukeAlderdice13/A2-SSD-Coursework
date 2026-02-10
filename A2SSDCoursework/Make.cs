@@ -40,7 +40,10 @@ namespace A2SSDCoursework
             int ID = 0;
             foreach (Make make in makes)
             {
-                ID++;
+                if (ID < make.MakeID)
+                {
+                    ID = make.MakeID;
+                }
             }
             return ID + 1;
         }
@@ -70,6 +73,18 @@ namespace A2SSDCoursework
             }
 
             makes.Remove(deletedMake);
+        }
+
+        public static void UpdateName(Make make)
+        {
+            foreach(Make m in makes)
+            {
+                if (m.MakeID == make.MakeID)
+                {
+                    m.Name = make.Name;
+                    break;
+                }
+            }
         }
     }
 }

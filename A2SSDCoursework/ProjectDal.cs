@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
@@ -10,6 +11,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace A2SSDCoursework
 {
@@ -45,11 +47,12 @@ namespace A2SSDCoursework
                     {
                         object roleIdValue = sqlDataReader["RoleID"];
                         object roleNameValue = sqlDataReader["RoleName"];
+                        object roleAccessLevel = sqlDataReader["AccessLevel"];
 
                         Role role = null;
                         if (roleIdValue != DBNull.Value)
                         {
-                            role = new Role(Convert.ToInt32(roleIdValue), Convert.ToString(roleNameValue));
+                            role = new Role(Convert.ToInt32(roleIdValue), Convert.ToString(roleNameValue), Convert.ToInt32(roleAccessLevel));
                         }
 
                         if (Employee.CheckIfExists(employeeID))
@@ -80,10 +83,11 @@ namespace A2SSDCoursework
             Debug.WriteLine("GetEmployee");
         }
 
-        public static int AddEmployee(Employee employee)
+        public static void AddEmployee(Employee employee)
         {
             Debug.WriteLine("AddEmployee");
             int ID = GetNewEmployeeID();
+            employee.EmployeeID = ID;
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
@@ -115,8 +119,15 @@ namespace A2SSDCoursework
                 }
 
                 connection.Close();
-
-                return rowsAffected;
+            }
+            if (employee.Roles.Count > 0)
+            {
+                List<int> RoleIDs = new List<int>();
+                foreach (Role role in employee.Roles)
+                {
+                    RoleIDs.Add(role.RoleID);
+                }
+                AddNewEmployeeRoles(employee.EmployeeID, RoleIDs, new List<int>());
             }
         }
 
@@ -163,7 +174,7 @@ namespace A2SSDCoursework
 
                 while (sqlDataReader.Read())
                 {
-                    Role role = new Role((int)sqlDataReader["RoleID"], (string)sqlDataReader["RoleName"]);
+                    Role role = new Role((int)sqlDataReader["RoleID"], (string)sqlDataReader["RoleName"], (int)sqlDataReader["AccessLevel"]);
                     Role.roles.Add(role);
                 }
 
@@ -281,6 +292,7 @@ namespace A2SSDCoursework
 
         public static void GetMakes()
         {
+            Debug.WriteLine("GetMakes");
             Make.makes.Clear();
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
@@ -305,6 +317,7 @@ namespace A2SSDCoursework
 
         public static void GetVehicles()
         {
+            Debug.WriteLine("GetVehicles");
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
@@ -340,7 +353,7 @@ namespace A2SSDCoursework
                     {
                         Make make = Make.MakeFromID(Convert.ToInt32(vehicleDataReader["MakeID"]));
 
-                        Vehicle vehicle = new Vehicle(Convert.ToInt32(vehicleDataReader["VehicleID"]), Convert.ToString(vehicleDataReader["Model"]), make, Convert.ToString(vehicleDataReader["YearMade"]), Convert.ToString(vehicleDataReader["Colour"]), Convert.ToDecimal(vehicleDataReader["EngineSize"]), Convert.ToString(vehicleDataReader["RegistrationPlate"]), Convert.ToString(vehicleDataReader["VIN"]), Convert.ToString(vehicleDataReader["FuelType"]), Convert.ToInt32(vehicleDataReader["Price"]), Convert.ToDateTime(vehicleDataReader["DatePurchased"]));
+                        Vehicle vehicle = new Vehicle(Convert.ToInt32(vehicleDataReader["VehicleID"]), Convert.ToString(vehicleDataReader["Model"]), make, Convert.ToString(vehicleDataReader["YearMade"]), Convert.ToString(vehicleDataReader["Colour"]), Convert.ToDecimal(vehicleDataReader["EngineSize"]), Convert.ToString(vehicleDataReader["RegistrationPlate"]), Convert.ToString(vehicleDataReader["VIN"]), Convert.ToString(vehicleDataReader["FuelType"]), Convert.ToDecimal(vehicleDataReader["Price"]), Convert.ToDateTime(vehicleDataReader["DatePurchased"]));
 
                         if (BuyerID != DBNull.Value)
                         {
@@ -349,15 +362,20 @@ namespace A2SSDCoursework
                             vehicle.DateSold = Convert.ToDateTime(DateSold);
                             vehicle.CustomerID = Convert.ToInt32(BuyerID);
                             vehicle.EmployeeID = Convert.ToInt32(SellerID);
+                            Employee.AddSoldVehicle(vehicle.EmployeeID, vehicle);
                         }
 
 
                         Vehicle.vehicles.Add(vehicle);
                     }
 
-                    if (serviceID != DBNull.Value)
+                    if (serviceID != DBNull.Value && serviceEmployeeID != DBNull.Value)
                     {
                         service = new Service(Convert.ToInt32(serviceID), Vehicle.GetVehicleFromID(VehicleID), Convert.ToDateTime(serviceDate), Employee.GetEmployeeFromID(Convert.ToInt32(serviceEmployeeID)), serviceType.ToString().Trim(), Convert.ToDecimal(serviceCost));
+                    }
+                    else if (serviceID != DBNull.Value)
+                    {
+                        service = new Service(Convert.ToInt32(serviceID), Vehicle.GetVehicleFromID(VehicleID), Convert.ToDateTime(serviceDate), serviceType.ToString().Trim(), Convert.ToDecimal(serviceCost));
                     }
 
                     if (service != null)
@@ -406,7 +424,7 @@ namespace A2SSDCoursework
             }
         }
 
-        public static void UpdateMakeName(Make make, string NewName)
+        public static void UpdateMakeName(Make make)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
@@ -416,8 +434,8 @@ namespace A2SSDCoursework
                 updateMakeCommand.CommandType = System.Data.CommandType.StoredProcedure;
                 updateMakeCommand.CommandText = "UpdateMakeName";
 
-                updateMakeCommand.Parameters.Add(new SqlParameter("@oldName", make.Name));
-                updateMakeCommand.Parameters.Add(new SqlParameter("@newName", NewName));
+                updateMakeCommand.Parameters.Add(new SqlParameter("@MakeID", make.MakeID));
+                updateMakeCommand.Parameters.Add(new SqlParameter("@MakeName", make.Name));
 
                 updateMakeCommand.ExecuteNonQuery();
 
@@ -425,7 +443,7 @@ namespace A2SSDCoursework
             }
         }
 
-        public static void AddMake(String MakeName)
+        public static void AddMake(Make make)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
@@ -435,7 +453,8 @@ namespace A2SSDCoursework
                 insertMakeCommand.CommandType = System.Data.CommandType.StoredProcedure;
                 insertMakeCommand.CommandText = "AddMake";
 
-                insertMakeCommand.Parameters.Add(new SqlParameter("@MakeName", MakeName));
+                insertMakeCommand.Parameters.Add(new SqlParameter("@MakeID", make.MakeID));
+                insertMakeCommand.Parameters.Add(new SqlParameter("@MakeName", make.Name));
 
                 insertMakeCommand.ExecuteNonQuery();
 
@@ -520,6 +539,7 @@ namespace A2SSDCoursework
                 AddServiceCommand.CommandType = System.Data.CommandType.StoredProcedure;
                 AddServiceCommand.CommandText = "AddService";
 
+                AddServiceCommand.Parameters.Add(new SqlParameter("@ServiceID", service.ServiceID.ToString()));
                 AddServiceCommand.Parameters.Add(new SqlParameter("@VehicleID", service.vehicle.Id));
                 AddServiceCommand.Parameters.Add(new SqlParameter("@Date", service.ServiceDate));
                 AddServiceCommand.Parameters.Add(new SqlParameter("@EmployeeID", service.employee.EmployeeID));
@@ -527,6 +547,279 @@ namespace A2SSDCoursework
                 AddServiceCommand.Parameters.Add(new SqlParameter("@Cost", service.Cost));
 
                 AddServiceCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        public static void SellVehicle(Vehicle vehicle)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand SellVehicleCommand = new SqlCommand();
+                SellVehicleCommand.Connection = connection;
+                SellVehicleCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                SellVehicleCommand.CommandText = "SellVehicle";
+
+                SellVehicleCommand.Parameters.Add(new SqlParameter("@VehicleID", vehicle.Id));
+                SellVehicleCommand.Parameters.Add(new SqlParameter("@DateSold", vehicle.DateSold));
+                SellVehicleCommand.Parameters.Add(new SqlParameter("@SellPrice", vehicle.SoldPrice));
+                SellVehicleCommand.Parameters.Add(new SqlParameter("@EmployeeID", vehicle.EmployeeID));
+                SellVehicleCommand.Parameters.Add(new SqlParameter("@CustomerID", vehicle.CustomerID));
+
+                SellVehicleCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        public static void AddCustomer(Customer customer)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand AddCustomerCommand = new SqlCommand();
+                AddCustomerCommand.Connection = connection;
+                AddCustomerCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                AddCustomerCommand.CommandText = "AddCustomer";
+                AddCustomerCommand.Parameters.Add(new SqlParameter("@FirstName", customer.FirstName));
+                AddCustomerCommand.Parameters.Add(new SqlParameter("@Surname", customer.Surname));
+                AddCustomerCommand.Parameters.Add(new SqlParameter("@Address", customer.Address));
+                AddCustomerCommand.Parameters.Add(new SqlParameter("@Email", customer.Email));
+                AddCustomerCommand.Parameters.Add(new SqlParameter("@TelephoneNo", customer.TelephoneNo));
+
+                AddCustomerCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+            customer.CustomerID = Customer.NewID();
+            Customer.customers.Add(customer);
+        }
+
+        public static void AddRole(Role role)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand AddRoleCommand = new SqlCommand();
+                AddRoleCommand.Connection = connection;
+                AddRoleCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                AddRoleCommand.CommandText = "AddRole";
+                AddRoleCommand.Parameters.Add(new SqlParameter("@RoleID", role.RoleID));
+                AddRoleCommand.Parameters.Add(new SqlParameter("@RoleName", role.RoleName));
+                AddRoleCommand.Parameters.Add(new SqlParameter("@AccessLevel", role.AccessLevel));
+
+                AddRoleCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        public static void EditRole(Role role)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand EditRoleCommand = new SqlCommand();
+                EditRoleCommand.Connection = connection;
+                EditRoleCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                EditRoleCommand.CommandText = "EditRole";
+                EditRoleCommand.Parameters.Add(new SqlParameter("@RoleID", role.RoleID));
+                EditRoleCommand.Parameters.Add(new SqlParameter("@RoleName", role.RoleName));
+                EditRoleCommand.Parameters.Add(new SqlParameter("@AccessLevel", role.AccessLevel));
+
+                EditRoleCommand.ExecuteNonQuery();
+
+                connection.Close();
+
+            }
+        }
+
+        public static void DeleteRole(int ID)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand DeleteRoleCommand = new SqlCommand();
+                DeleteRoleCommand.Connection = connection;
+                DeleteRoleCommand.CommandType = System.Data.CommandType.StoredProcedure;
+                DeleteRoleCommand.CommandText = "DeleteRole";
+                DeleteRoleCommand.Parameters.Add(new SqlParameter("@RoleID", ID));
+
+                DeleteRoleCommand.ExecuteNonQuery();
+
+                connection.Close();
+
+            }
+        }
+
+        public static void AddVehicle(Vehicle vehicle)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand AddVehicleCommand = new SqlCommand();
+                AddVehicleCommand.Connection = connection;
+                AddVehicleCommand.CommandType = CommandType.StoredProcedure;
+                AddVehicleCommand.CommandText = "AddVehicle";
+                AddVehicleCommand.Parameters.Add(new SqlParameter("@VehicleID", vehicle.Id));
+                AddVehicleCommand.Parameters.Add(new SqlParameter("@Model", vehicle.Model));
+                AddVehicleCommand.Parameters.Add(new SqlParameter("@MakeID", vehicle.make.MakeID));
+                AddVehicleCommand.Parameters.Add(new SqlParameter("@YearMade", Convert.ToInt32(vehicle.YearMade)));
+                AddVehicleCommand.Parameters.Add(new SqlParameter("@Colour", vehicle.Colour));
+                AddVehicleCommand.Parameters.Add(new SqlParameter("@EngineSize", vehicle.EngineSize));
+                AddVehicleCommand.Parameters.Add(new SqlParameter("@RegistrationPlate", vehicle.RegistrationPlate));
+                AddVehicleCommand.Parameters.Add(new SqlParameter("@Vin", vehicle.VIN));
+                AddVehicleCommand.Parameters.Add(new SqlParameter("@FuelType", vehicle.FuelType));
+                AddVehicleCommand.Parameters.Add(new SqlParameter("@Price", vehicle.Price));
+                AddVehicleCommand.Parameters.Add(new SqlParameter("@DatePurchased", vehicle.DatePurchased));
+
+                AddVehicleCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        public static void DeleteVehicle(int ID)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand DeleteVehicleCommand = new SqlCommand();
+                DeleteVehicleCommand.Connection = connection;
+                DeleteVehicleCommand.CommandType = CommandType.StoredProcedure;
+                DeleteVehicleCommand.CommandText = "DeleteVehicle";
+                DeleteVehicleCommand.Parameters.Add(new SqlParameter("@VehicleID", ID));
+
+                DeleteVehicleCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        public static void DeleteEmployee(int ID)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand DeleteEmployeeCommand = new SqlCommand();
+                DeleteEmployeeCommand.Connection = connection;
+                DeleteEmployeeCommand.CommandType = CommandType.StoredProcedure;
+                DeleteEmployeeCommand.CommandText = "DeleteEmployee";
+                DeleteEmployeeCommand.Parameters.Add(new SqlParameter("@EmployeeID", ID));
+
+                DeleteEmployeeCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        public static void DeleteCustomer(int ID)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand DeleteCustomerCommand = new SqlCommand();
+                DeleteCustomerCommand.Connection = connection;
+                DeleteCustomerCommand.CommandType = CommandType.StoredProcedure;
+                DeleteCustomerCommand.CommandText = "DeleteCustomer";
+                DeleteCustomerCommand.Parameters.Add(new SqlParameter("@CustomerID", ID));
+
+                DeleteCustomerCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        public static void AddStatus(Status status)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand AddStatusCommand = new SqlCommand();
+                AddStatusCommand.Connection = connection;
+                AddStatusCommand.CommandType = CommandType.StoredProcedure;
+                AddStatusCommand.CommandText = "AddStatus";
+                AddStatusCommand.Parameters.Add(new SqlParameter("@StatusID", status.StatusId));
+                AddStatusCommand.Parameters.Add(new SqlParameter("@StatusName", status.StatusName));
+
+                AddStatusCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        public static void DeleteStatus(int ID)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand DeleteStatusCommand = new SqlCommand();
+                DeleteStatusCommand.Connection = connection;
+                DeleteStatusCommand.CommandType = CommandType.StoredProcedure;
+                DeleteStatusCommand.CommandText = "DeleteStatus";
+                DeleteStatusCommand.Parameters.Add(new SqlParameter("@StatusID", ID));
+
+                DeleteStatusCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        public static void EditStatus(Status status)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand EditStatusCommand = new SqlCommand();
+                EditStatusCommand.Connection = connection;
+                EditStatusCommand.CommandType = CommandType.StoredProcedure;
+                EditStatusCommand.CommandText = "EditStatus";
+                EditStatusCommand.Parameters.Add(new SqlParameter("@StatusID", status.StatusId));
+                EditStatusCommand.Parameters.Add(new SqlParameter("@StatusName", status.StatusName));
+
+                EditStatusCommand.ExecuteNonQuery();
+
+                connection.Close();
+            }
+        }
+
+        public static void EditVehicle(Vehicle vehicle)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                SqlCommand EditVehicleCommand = new SqlCommand();
+                EditVehicleCommand.Connection = connection;
+                EditVehicleCommand.CommandType = CommandType.StoredProcedure;
+                EditVehicleCommand.CommandText = "EditVehicle";
+                EditVehicleCommand.Parameters.Add(new SqlParameter("@VehicleID", vehicle.Id));
+                EditVehicleCommand.Parameters.Add(new SqlParameter("@Model", vehicle.Model));
+                EditVehicleCommand.Parameters.Add(new SqlParameter("@MakeID", vehicle.make.MakeID));
+                EditVehicleCommand.Parameters.Add(new SqlParameter("@YearMade", Convert.ToInt32(vehicle.YearMade)));
+                EditVehicleCommand.Parameters.Add(new SqlParameter("@Colour", vehicle.Colour));
+                EditVehicleCommand.Parameters.Add(new SqlParameter("@EngineSize", vehicle.EngineSize));
+                EditVehicleCommand.Parameters.Add(new SqlParameter("@RegistrationPlate", vehicle.RegistrationPlate));
+                EditVehicleCommand.Parameters.Add(new SqlParameter("@Vin", vehicle.VIN));
+                EditVehicleCommand.Parameters.Add(new SqlParameter("@FuelType", vehicle.FuelType));
+                EditVehicleCommand.Parameters.Add(new SqlParameter("@Price", vehicle.Price));
+                EditVehicleCommand.Parameters.Add(new SqlParameter("@DatePurchased", vehicle.DatePurchased));
+
+                EditVehicleCommand.ExecuteNonQuery();
 
                 connection.Close();
             }

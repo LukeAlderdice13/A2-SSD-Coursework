@@ -147,7 +147,7 @@ namespace A2SSDCoursework
             }
             FuelType_cb.SelectedIndex = 0;
 
-            MaxPrice_nud.Maximum = Vehicle.GetMaxPrice();
+            MaxPrice_nud.Maximum = Vehicle.GetMaxSellPrice();
             MaxPrice_nud.Value = MaxPrice_nud.Maximum;
         }
 
@@ -161,7 +161,7 @@ namespace A2SSDCoursework
                 return false;
             if (FuelType_cb.SelectedItem.ToString() != "Any Fuel Type" && vehicle.FuelType != FuelType_cb.SelectedItem.ToString())
                 return false;
-            if (vehicle.Price > MaxPrice_nud.Value)
+            if (vehicle.SoldPrice > MaxPrice_nud.Value)
                 return false;
             return true;
         }
@@ -190,6 +190,14 @@ namespace A2SSDCoursework
             MaxPrice_nud.Value = MaxPrice_nud.Maximum;
 
             PopulateVehicles();
+        }
+
+        private void Makes_cb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                PopulateVehicles();
+            }
         }
     }
 }

@@ -104,6 +104,8 @@
             this.ViewEmployee_btn.Text = "View Employee";
             this.ViewEmployee_btn.UseVisualStyleBackColor = false;
             this.ViewEmployee_btn.Click += new System.EventHandler(this.ViewEmployee_btn_Click);
+            this.ViewEmployee_btn.MouseEnter += new System.EventHandler(this.ViewEmployee_btn_MouseEnter);
+            this.ViewEmployee_btn.MouseLeave += new System.EventHandler(this.ViewEmployee_btn_MouseLeave);
             // 
             // EmploymentStatus_lbl
             // 

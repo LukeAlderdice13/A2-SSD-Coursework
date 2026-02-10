@@ -27,9 +27,18 @@ namespace A2SSDCoursework
             this.color = color;
             this.employee = employee;
             EmployeeName_lbl.Text = employee.FullName;
+
             EmploymentStatus_lbl.Text = $"Status: {employee.status.StatusName}";
-            JoinDate_lbl.Text = $"Joined {employee.DateHired.ToShortDateString()}";
-            Salary_lbl.Text = $"Salary: £{employee.Salary}";
+            if (Employee.employees[Employee.currentEmployee].MaxAccessLevel >= 2)
+            {             
+                JoinDate_lbl.Text = $"Joined {employee.DateHired.ToShortDateString()}";
+                Salary_lbl.Text = $"Salary: £{employee.Salary}";
+            }
+            else
+            {
+                JoinDate_lbl.Text = $"Gender: {employee.Gender}";
+                Salary_lbl.Visible = false;
+            }
 
             AddMouseEvents(this);
         }
@@ -67,8 +76,29 @@ namespace A2SSDCoursework
 
         private void ViewEmployee_btn_Click(object sender, EventArgs e)
         {
-            ViewEmployee viewEmployee = new ViewEmployee(employee);
-            MainMenu.MenuInstance.ChangeMainDisplay(viewEmployee);
+            if (Employee.employees[Employee.currentEmployee].MaxAccessLevel == 3)
+            {
+                ViewEmployee viewEmployee = new ViewEmployee(employee);
+                MainMenu.MenuInstance.ChangeMainDisplay(viewEmployee);
+            }
+            else if (Employee.employees[Employee.currentEmployee].MaxAccessLevel == 2)
+            {
+                MainMenu.MenuInstance.ChangeMainDisplay(new ViewEmployeeMiddle(employee));
+            }
+            else
+            {
+                MainMenu.MenuInstance.ChangeMainDisplay(new ViewEmployeePublicInfo(employee));
+            }
+        }
+
+        private void ViewEmployee_btn_MouseEnter(object sender, EventArgs e)
+        {
+            ViewEmployee_btn.ForeColor = Color.White;
+        }
+
+        private void ViewEmployee_btn_MouseLeave(object sender, EventArgs e)
+        {
+            ViewEmployee_btn.ForeColor = Color.Black;
         }
     }
 }

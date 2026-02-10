@@ -1,4 +1,5 @@
-﻿using System;
+﻿using A2SSDCoursework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,6 +46,15 @@ namespace A2_SSD_Coursework
         public Customer(int customerID, string firstName, string surname, string address, string email, string telephoneNo)
         {
             CustomerID = customerID;
+            FirstName = firstName;
+            Surname = surname;
+            Address = address;
+            Email = email;
+            TelephoneNo = telephoneNo;
+        }
+
+        public Customer(string firstName, string surname, string address, string email, string telephoneNo)
+        {
             FirstName = firstName;
             Surname = surname;
             Address = address;
@@ -99,6 +109,42 @@ namespace A2_SSD_Coursework
                 } 
             }
             return null;
+        }
+
+        public static int NewID()
+        {
+            int ID = 0;
+            foreach (Customer customer in customers)
+            {
+                ID++;
+            }
+            return ID + 1;
+        }
+
+        public static void DeleteCustomer(int ID)
+        {
+            Customer c = new Customer();
+            foreach(Customer customer in customers)
+            {
+                if (customer.CustomerID == ID)
+                {
+                    c = customer;
+                    break;
+                }
+            }
+            customers.Remove(c);
+        }
+
+        public static void AddBoughtVehicle(int CustomerID, int VehicleID)
+        {
+            foreach(Customer c in customers)
+            {
+                if (c.CustomerID == CustomerID)
+                {
+                    c.BoughtVehicles.Add(VehicleID);
+                    break;
+                }
+            }
         }
     }
 }

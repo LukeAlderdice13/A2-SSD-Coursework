@@ -21,6 +21,16 @@ namespace A2SSDCoursework
 
         }
 
+        public Service(int serviceID, Vehicle vehicle, DateTime serviceDate, string type, decimal cost)
+        {
+            ServiceID = serviceID;
+            this.vehicle = vehicle;
+            ServiceDate = serviceDate;
+            employee = Employee.nullEmployee;
+            ServiceType = type;
+            Cost = cost;
+        }
+
         public Service(int serviceID, Vehicle vehicle, DateTime serviceDate, Employee employee, string type, decimal cost)
         {
             ServiceID = serviceID;

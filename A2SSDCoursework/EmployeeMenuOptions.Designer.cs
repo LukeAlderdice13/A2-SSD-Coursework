@@ -31,16 +31,15 @@
             this.PersonalInfo_lbl = new System.Windows.Forms.Label();
             this.ViewVehicles_lbl = new System.Windows.Forms.Label();
             this.Vehicles_pnl = new System.Windows.Forms.Panel();
-            this.VehicleServicing_pnl = new System.Windows.Forms.Panel();
-            this.ViewServices_lbl = new System.Windows.Forms.Label();
-            this.RecordService_lbl = new System.Windows.Forms.Label();
-            this.VehicleServicing_lbl = new System.Windows.Forms.Label();
+            this.AddVehicle_lbl = new System.Windows.Forms.Label();
             this.VehicleMakes_lbl = new System.Windows.Forms.Label();
             this.SoldVehicles_lbl = new System.Windows.Forms.Label();
             this.AvailableVehicles_lbl = new System.Windows.Forms.Label();
             this.SalesInfo_lbl = new System.Windows.Forms.Label();
             this.Employees_lbl = new System.Windows.Forms.Label();
             this.Employees_pnl = new System.Windows.Forms.Panel();
+            this.ManageStatuses_lbl = new System.Windows.Forms.Label();
+            this.ManageRoles_lbl = new System.Windows.Forms.Label();
             this.AddEmployee_lbl = new System.Windows.Forms.Label();
             this.ViewEmployees_lbl = new System.Windows.Forms.Label();
             this.Customers_lbl = new System.Windows.Forms.Label();
@@ -49,7 +48,6 @@
             this.ViewCustomers_lbl = new System.Windows.Forms.Label();
             this.LogOut_btn = new System.Windows.Forms.Label();
             this.Vehicles_pnl.SuspendLayout();
-            this.VehicleServicing_pnl.SuspendLayout();
             this.Employees_pnl.SuspendLayout();
             this.Customers_pnl.SuspendLayout();
             this.SuspendLayout();
@@ -83,70 +81,30 @@
             // 
             // Vehicles_pnl
             // 
-            this.Vehicles_pnl.AutoSize = true;
             this.Vehicles_pnl.BackColor = System.Drawing.Color.Gray;
-            this.Vehicles_pnl.Controls.Add(this.VehicleServicing_pnl);
-            this.Vehicles_pnl.Controls.Add(this.VehicleServicing_lbl);
+            this.Vehicles_pnl.Controls.Add(this.AddVehicle_lbl);
             this.Vehicles_pnl.Controls.Add(this.VehicleMakes_lbl);
             this.Vehicles_pnl.Controls.Add(this.SoldVehicles_lbl);
             this.Vehicles_pnl.Controls.Add(this.AvailableVehicles_lbl);
             this.Vehicles_pnl.Dock = System.Windows.Forms.DockStyle.Top;
             this.Vehicles_pnl.Location = new System.Drawing.Point(0, 80);
             this.Vehicles_pnl.Name = "Vehicles_pnl";
-            this.Vehicles_pnl.Size = new System.Drawing.Size(250, 240);
+            this.Vehicles_pnl.Size = new System.Drawing.Size(250, 160);
             this.Vehicles_pnl.TabIndex = 2;
             this.Vehicles_pnl.Visible = false;
             // 
-            // VehicleServicing_pnl
+            // AddVehicle_lbl
             // 
-            this.VehicleServicing_pnl.BackColor = System.Drawing.Color.DimGray;
-            this.VehicleServicing_pnl.Controls.Add(this.ViewServices_lbl);
-            this.VehicleServicing_pnl.Controls.Add(this.RecordService_lbl);
-            this.VehicleServicing_pnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VehicleServicing_pnl.Location = new System.Drawing.Point(0, 160);
-            this.VehicleServicing_pnl.Name = "VehicleServicing_pnl";
-            this.VehicleServicing_pnl.Size = new System.Drawing.Size(250, 80);
-            this.VehicleServicing_pnl.TabIndex = 7;
-            this.VehicleServicing_pnl.Visible = false;
-            // 
-            // ViewServices_lbl
-            // 
-            this.ViewServices_lbl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ViewServices_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewServices_lbl.Location = new System.Drawing.Point(0, 40);
-            this.ViewServices_lbl.Name = "ViewServices_lbl";
-            this.ViewServices_lbl.Size = new System.Drawing.Size(250, 40);
-            this.ViewServices_lbl.TabIndex = 8;
-            this.ViewServices_lbl.Text = "  - View Services";
-            this.ViewServices_lbl.Click += new System.EventHandler(this.ViewServices_lbl_Click);
-            this.ViewServices_lbl.MouseEnter += new System.EventHandler(this.ViewServices_lbl_MouseEnter);
-            this.ViewServices_lbl.MouseLeave += new System.EventHandler(this.ViewServices_lbl_MouseLeave);
-            // 
-            // RecordService_lbl
-            // 
-            this.RecordService_lbl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RecordService_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RecordService_lbl.Location = new System.Drawing.Point(0, 0);
-            this.RecordService_lbl.Name = "RecordService_lbl";
-            this.RecordService_lbl.Size = new System.Drawing.Size(250, 40);
-            this.RecordService_lbl.TabIndex = 7;
-            this.RecordService_lbl.Text = "  - Record Service";
-            this.RecordService_lbl.Click += new System.EventHandler(this.RecordService_lbl_Click);
-            this.RecordService_lbl.MouseEnter += new System.EventHandler(this.RecordService_lbl_MouseEnter);
-            this.RecordService_lbl.MouseLeave += new System.EventHandler(this.RecordService_lbl_MouseLeave);
-            // 
-            // VehicleServicing_lbl
-            // 
-            this.VehicleServicing_lbl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.VehicleServicing_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VehicleServicing_lbl.Location = new System.Drawing.Point(0, 120);
-            this.VehicleServicing_lbl.Name = "VehicleServicing_lbl";
-            this.VehicleServicing_lbl.Size = new System.Drawing.Size(250, 40);
-            this.VehicleServicing_lbl.TabIndex = 6;
-            this.VehicleServicing_lbl.Text = "- Servicing";
-            this.VehicleServicing_lbl.Click += new System.EventHandler(this.VehicleServicing_lbl_Click);
-            this.VehicleServicing_lbl.MouseEnter += new System.EventHandler(this.VehicleServicing_lbl_MouseEnter);
-            this.VehicleServicing_lbl.MouseLeave += new System.EventHandler(this.VehicleServicing_lbl_MouseLeave);
+            this.AddVehicle_lbl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.AddVehicle_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddVehicle_lbl.Location = new System.Drawing.Point(0, 120);
+            this.AddVehicle_lbl.Name = "AddVehicle_lbl";
+            this.AddVehicle_lbl.Size = new System.Drawing.Size(250, 40);
+            this.AddVehicle_lbl.TabIndex = 5;
+            this.AddVehicle_lbl.Text = "  - Add Vehicle";
+            this.AddVehicle_lbl.Click += new System.EventHandler(this.AddVehicle_lbl_Click);
+            this.AddVehicle_lbl.MouseEnter += new System.EventHandler(this.AddVehicle_lbl_MouseEnter);
+            this.AddVehicle_lbl.MouseLeave += new System.EventHandler(this.AddVehicle_lbl_MouseLeave);
             // 
             // VehicleMakes_lbl
             // 
@@ -191,7 +149,7 @@
             // 
             this.SalesInfo_lbl.Dock = System.Windows.Forms.DockStyle.Top;
             this.SalesInfo_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SalesInfo_lbl.Location = new System.Drawing.Point(0, 320);
+            this.SalesInfo_lbl.Location = new System.Drawing.Point(0, 240);
             this.SalesInfo_lbl.Name = "SalesInfo_lbl";
             this.SalesInfo_lbl.Size = new System.Drawing.Size(250, 40);
             this.SalesInfo_lbl.TabIndex = 3;
@@ -205,10 +163,10 @@
             this.Employees_lbl.Dock = System.Windows.Forms.DockStyle.Top;
             this.Employees_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Employees_lbl.ForeColor = System.Drawing.Color.Black;
-            this.Employees_lbl.Location = new System.Drawing.Point(0, 360);
+            this.Employees_lbl.Location = new System.Drawing.Point(0, 280);
             this.Employees_lbl.Name = "Employees_lbl";
-            this.Employees_lbl.Size = new System.Drawing.Size(250, 43);
-            this.Employees_lbl.TabIndex = 4;
+            this.Employees_lbl.Size = new System.Drawing.Size(250, 46);
+            this.Employees_lbl.TabIndex = 10;
             this.Employees_lbl.Text = "Employees";
             this.Employees_lbl.Click += new System.EventHandler(this.Employees_lbl_Click);
             this.Employees_lbl.MouseEnter += new System.EventHandler(this.Employees_lbl_MouseEnter);
@@ -216,15 +174,44 @@
             // 
             // Employees_pnl
             // 
+            this.Employees_pnl.AutoSize = true;
             this.Employees_pnl.BackColor = System.Drawing.Color.Gray;
+            this.Employees_pnl.Controls.Add(this.ManageStatuses_lbl);
+            this.Employees_pnl.Controls.Add(this.ManageRoles_lbl);
             this.Employees_pnl.Controls.Add(this.AddEmployee_lbl);
             this.Employees_pnl.Controls.Add(this.ViewEmployees_lbl);
             this.Employees_pnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Employees_pnl.Location = new System.Drawing.Point(0, 403);
+            this.Employees_pnl.Location = new System.Drawing.Point(0, 326);
             this.Employees_pnl.Name = "Employees_pnl";
-            this.Employees_pnl.Size = new System.Drawing.Size(250, 80);
+            this.Employees_pnl.Size = new System.Drawing.Size(250, 160);
             this.Employees_pnl.TabIndex = 5;
             this.Employees_pnl.Visible = false;
+            // 
+            // ManageStatuses_lbl
+            // 
+            this.ManageStatuses_lbl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ManageStatuses_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManageStatuses_lbl.Location = new System.Drawing.Point(0, 120);
+            this.ManageStatuses_lbl.Name = "ManageStatuses_lbl";
+            this.ManageStatuses_lbl.Size = new System.Drawing.Size(250, 40);
+            this.ManageStatuses_lbl.TabIndex = 6;
+            this.ManageStatuses_lbl.Text = "  - View Statuses";
+            this.ManageStatuses_lbl.Click += new System.EventHandler(this.ManageStatuses_lbl_Click);
+            this.ManageStatuses_lbl.MouseEnter += new System.EventHandler(this.ManageStatuses_lbl_MouseEnter);
+            this.ManageStatuses_lbl.MouseLeave += new System.EventHandler(this.ManageStatuses_lbl_MouseLeave);
+            // 
+            // ManageRoles_lbl
+            // 
+            this.ManageRoles_lbl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ManageRoles_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManageRoles_lbl.Location = new System.Drawing.Point(0, 80);
+            this.ManageRoles_lbl.Name = "ManageRoles_lbl";
+            this.ManageRoles_lbl.Size = new System.Drawing.Size(250, 40);
+            this.ManageRoles_lbl.TabIndex = 5;
+            this.ManageRoles_lbl.Text = "  - View Roles";
+            this.ManageRoles_lbl.Click += new System.EventHandler(this.AddRole_lbl_Click);
+            this.ManageRoles_lbl.MouseEnter += new System.EventHandler(this.AddRole_lbl_MouseEnter);
+            this.ManageRoles_lbl.MouseLeave += new System.EventHandler(this.AddRole_lbl_MouseLeave);
             // 
             // AddEmployee_lbl
             // 
@@ -247,7 +234,7 @@
             this.ViewEmployees_lbl.Name = "ViewEmployees_lbl";
             this.ViewEmployees_lbl.Size = new System.Drawing.Size(250, 40);
             this.ViewEmployees_lbl.TabIndex = 3;
-            this.ViewEmployees_lbl.Text = "  - View Employees";
+            this.ViewEmployees_lbl.Text = "  - View All";
             this.ViewEmployees_lbl.Click += new System.EventHandler(this.ViewEmployees_lbl_Click);
             this.ViewEmployees_lbl.MouseEnter += new System.EventHandler(this.ViewEmployees_lbl_MouseEnter);
             this.ViewEmployees_lbl.MouseLeave += new System.EventHandler(this.ViewEmployees_lbl_MouseLeave);
@@ -257,7 +244,7 @@
             this.Customers_lbl.Dock = System.Windows.Forms.DockStyle.Top;
             this.Customers_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Customers_lbl.ForeColor = System.Drawing.Color.Black;
-            this.Customers_lbl.Location = new System.Drawing.Point(0, 483);
+            this.Customers_lbl.Location = new System.Drawing.Point(0, 486);
             this.Customers_lbl.Name = "Customers_lbl";
             this.Customers_lbl.Size = new System.Drawing.Size(250, 40);
             this.Customers_lbl.TabIndex = 6;
@@ -272,7 +259,7 @@
             this.Customers_pnl.Controls.Add(this.AddCustomer_lbl);
             this.Customers_pnl.Controls.Add(this.ViewCustomers_lbl);
             this.Customers_pnl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Customers_pnl.Location = new System.Drawing.Point(0, 523);
+            this.Customers_pnl.Location = new System.Drawing.Point(0, 526);
             this.Customers_pnl.Name = "Customers_pnl";
             this.Customers_pnl.Size = new System.Drawing.Size(250, 80);
             this.Customers_pnl.TabIndex = 7;
@@ -311,11 +298,12 @@
             this.LogOut_btn.Dock = System.Windows.Forms.DockStyle.Top;
             this.LogOut_btn.Font = new System.Drawing.Font("Adobe Hebrew", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogOut_btn.ForeColor = System.Drawing.Color.Black;
-            this.LogOut_btn.Location = new System.Drawing.Point(0, 603);
+            this.LogOut_btn.Location = new System.Drawing.Point(0, 606);
             this.LogOut_btn.Name = "LogOut_btn";
             this.LogOut_btn.Size = new System.Drawing.Size(250, 45);
             this.LogOut_btn.TabIndex = 8;
             this.LogOut_btn.Text = "Log out";
+            this.LogOut_btn.Click += new System.EventHandler(this.LogOut_btn_Click);
             this.LogOut_btn.MouseEnter += new System.EventHandler(this.LogOut_btn_MouseEnter);
             this.LogOut_btn.MouseLeave += new System.EventHandler(this.LogOut_btn_MouseLeave);
             // 
@@ -336,7 +324,6 @@
             this.Name = "MenuOptions";
             this.Size = new System.Drawing.Size(250, 760);
             this.Vehicles_pnl.ResumeLayout(false);
-            this.VehicleServicing_pnl.ResumeLayout(false);
             this.Employees_pnl.ResumeLayout(false);
             this.Customers_pnl.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -353,10 +340,6 @@
         private System.Windows.Forms.Label AvailableVehicles_lbl;
         private System.Windows.Forms.Label SalesInfo_lbl;
         private System.Windows.Forms.Label VehicleMakes_lbl;
-        private System.Windows.Forms.Label ViewServices_lbl;
-        private System.Windows.Forms.Label RecordService_lbl;
-        private System.Windows.Forms.Label VehicleServicing_lbl;
-        private System.Windows.Forms.Panel VehicleServicing_pnl;
         private System.Windows.Forms.Label Employees_lbl;
         private System.Windows.Forms.Panel Employees_pnl;
         private System.Windows.Forms.Label AddEmployee_lbl;
@@ -366,5 +349,8 @@
         private System.Windows.Forms.Label AddCustomer_lbl;
         private System.Windows.Forms.Label ViewCustomers_lbl;
         private System.Windows.Forms.Label LogOut_btn;
+        private System.Windows.Forms.Label AddVehicle_lbl;
+        private System.Windows.Forms.Label ManageRoles_lbl;
+        private System.Windows.Forms.Label ManageStatuses_lbl;
     }
 }

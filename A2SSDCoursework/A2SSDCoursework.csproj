@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SqlServer.Types.170.1000.7\build\net472\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.170.1000.7\build\net472\Microsoft.SqlServer.Types.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -27,6 +28,8 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,6 +51,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Server.1.0.0\lib\net46\Microsoft.SqlServer.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.170.1000.7\lib\net472\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
@@ -64,6 +88,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddCustomer.Designer.cs">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddEmployee.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -75,6 +105,18 @@
     </Compile>
     <Compile Include="AddMake.Designer.cs">
       <DependentUpon>AddMake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRole.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddRole.Designer.cs">
+      <DependentUpon>AddRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddVehicle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddVehicle.Designer.cs">
+      <DependentUpon>AddVehicle.cs</DependentUpon>
     </Compile>
     <Compile Include="AvailableVehicles.cs">
       <SubType>UserControl</SubType>
@@ -102,11 +144,30 @@
     <Compile Include="EmployeeMenuOptions.Designer.cs">
       <DependentUpon>EmployeeMenuOptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeSales.cs" />
+    <Compile Include="EmployeeSalesReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EmployeeSalesReport.Designer.cs">
+      <DependentUpon>EmployeeSalesReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomePage.Designer.cs">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IndividualSalesReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IndividualSalesReport.Designer.cs">
+      <DependentUpon>IndividualSalesReport.cs</DependentUpon>
     </Compile>
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -127,8 +188,25 @@
     <Compile Include="ManagementMenuOptions.Designer.cs">
       <DependentUpon>ManagementMenuOptions.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageStatuses.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ManageStatuses.Designer.cs">
+      <DependentUpon>ManageStatuses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PersonalInfo.Designer.cs">
+      <DependentUpon>PersonalInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProjectDal.cs" />
+    <Compile Include="ProjectManagementDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectManagementDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecordService.cs">
       <SubType>UserControl</SubType>
@@ -136,7 +214,16 @@
     <Compile Include="RecordService.Designer.cs">
       <DependentUpon>RecordService.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportData.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Role.cs" />
+    <Compile Include="SalesInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SalesInfo.Designer.cs">
+      <DependentUpon>SalesInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="SellVehicle.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -156,6 +243,13 @@
     <Compile Include="ServiceHistory.Designer.cs">
       <DependentUpon>ServiceHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="ServiceSales.cs" />
+    <Compile Include="ServiceSalesReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ServiceSalesReport.Designer.cs">
+      <DependentUpon>ServiceSalesReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="SoldVehicles.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -163,12 +257,20 @@
       <DependentUpon>SoldVehicles.cs</DependentUpon>
     </Compile>
     <Compile Include="Status.cs" />
+    <Compile Include="Validation.cs" />
     <Compile Include="Vehicle.cs" />
     <Compile Include="VehicleCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="VehicleCard.Designer.cs">
       <DependentUpon>VehicleCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleSale.cs" />
+    <Compile Include="VehicleSalesReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VehicleSalesReport.Designer.cs">
+      <DependentUpon>VehicleSalesReport.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewCustomer.cs">
       <SubType>UserControl</SubType>
@@ -188,6 +290,18 @@
     <Compile Include="ViewEmployee.Designer.cs">
       <DependentUpon>ViewEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewEmployeeMiddle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewEmployeeMiddle.Designer.cs">
+      <DependentUpon>ViewEmployeeMiddle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewEmployeePublicInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewEmployeePublicInfo.Designer.cs">
+      <DependentUpon>ViewEmployeePublicInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewEmployees.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -206,11 +320,20 @@
     <Compile Include="ViewVehicle.Designer.cs">
       <DependentUpon>ViewVehicle.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddCustomer.resx">
+      <DependentUpon>AddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEmployee.resx">
       <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddMake.resx">
       <DependentUpon>AddMake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRole.resx">
+      <DependentUpon>AddRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddVehicle.resx">
+      <DependentUpon>AddVehicle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AvailableVehicles.resx">
       <DependentUpon>AvailableVehicles.cs</DependentUpon>
@@ -224,8 +347,19 @@
     <EmbeddedResource Include="EmployeeMenuOptions.resx">
       <DependentUpon>EmployeeMenuOptions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeSalesReport.rdlc" />
+    <EmbeddedResource Include="EmployeeSalesReport.resx">
+      <DependentUpon>EmployeeSalesReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomePage.resx">
+      <DependentUpon>HomePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IndividualEmployeeReport.rdlc" />
+    <EmbeddedResource Include="IndividualSalesReport.resx">
+      <DependentUpon>IndividualSalesReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
@@ -235,6 +369,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManagementMenuOptions.resx">
       <DependentUpon>ManagementMenuOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageStatuses.resx">
+      <DependentUpon>ManageStatuses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonalInfo.resx">
+      <DependentUpon>PersonalInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -248,6 +388,9 @@
     <EmbeddedResource Include="RecordService.resx">
       <DependentUpon>RecordService.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SalesInfo.resx">
+      <DependentUpon>SalesInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SellVehicle.resx">
       <DependentUpon>SellVehicle.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,11 +400,19 @@
     <EmbeddedResource Include="ServiceHistory.resx">
       <DependentUpon>ServiceHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ServiceSalesReport.rdlc" />
+    <EmbeddedResource Include="ServiceSalesReport.resx">
+      <DependentUpon>ServiceSalesReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SoldVehicles.resx">
       <DependentUpon>SoldVehicles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VehicleCard.resx">
       <DependentUpon>VehicleCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleSalesInfo.rdlc" />
+    <EmbeddedResource Include="VehicleSalesReport.resx">
+      <DependentUpon>VehicleSalesReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewCustomer.resx">
       <DependentUpon>ViewCustomer.cs</DependentUpon>
@@ -272,6 +423,12 @@
     <EmbeddedResource Include="ViewEmployee.resx">
       <DependentUpon>ViewEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewEmployeeMiddle.resx">
+      <DependentUpon>ViewEmployeeMiddle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewEmployeePublicInfo.resx">
+      <DependentUpon>ViewEmployeePublicInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewEmployees.resx">
       <DependentUpon>ViewEmployees.cs</DependentUpon>
     </EmbeddedResource>
@@ -281,6 +438,23 @@
     <EmbeddedResource Include="ViewVehicle.resx">
       <DependentUpon>ViewVehicle.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="ProjectManagementDataSet.xsc">
+      <DependentUpon>ProjectManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectManagementDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProjectManagementDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectManagementDataSet.xss">
+      <DependentUpon>ProjectManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\A2_SSD_Coursework.Vehicle.datasource" />
+    <None Include="Properties\DataSources\EmployeeSales.datasource" />
+    <None Include="Properties\DataSources\IndividualEmployeeSales.datasource" />
+    <None Include="Properties\DataSources\ServiceSales.datasource" />
+    <None Include="Properties\DataSources\VehicleSale.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -315,5 +489,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.170.1000.7\build\net472\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.170.1000.7\build\net472\Microsoft.SqlServer.Types.props'))" />
+  </Target>
 </Project>

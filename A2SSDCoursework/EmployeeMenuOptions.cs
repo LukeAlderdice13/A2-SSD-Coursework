@@ -19,10 +19,11 @@ namespace A2SSDCoursework
         {
             InitializeComponent();
 
-            if (!Employee.employees[Employee.currentEmployee].IsManagement())
+            if (Employee.employees[Employee.currentEmployee].MaxAccessLevel != 3)
             {
-                Employees_lbl.Hide();
-                Employees_pnl.Hide();
+                AddEmployee_lbl.Visible = false;
+                ManageRoles_lbl.Visible = false;
+                ManageStatuses_lbl.Visible = false;
             }
         }
 
@@ -31,29 +32,12 @@ namespace A2SSDCoursework
             if(Vehicles_pnl.Visible)
             {
                 Vehicles_pnl.Visible = false;
-                VehicleServicing_lbl.BackColor = Color.Gray;
-                VehicleServicing_pnl.Visible = false;
             }
             else
             {
                 Customers_pnl.Visible = false;
                 Employees_pnl.Visible = false;
                 Vehicles_pnl.Visible = true;
-            }
-        }
-
-        private void VehicleServicing_lbl_Click(object sender, EventArgs e)
-        {
-            if(VehicleServicing_pnl.Visible)
-            {
-                VehicleServicing_lbl.BackColor = Color.Gray;
-                VehicleServicing_pnl.Visible = false;
-            }
-            else
-            {
-                VehicleServicing_lbl.ForeColor = Color.Cyan;
-                VehicleServicing_lbl.BackColor = Color.DimGray;
-                VehicleServicing_pnl.Visible = true;
             }
         }
 
@@ -107,36 +91,6 @@ namespace A2SSDCoursework
             VehicleMakes_lbl.ForeColor = BaseColour;
         }
 
-        private void VehicleServicing_lbl_MouseEnter(object sender, EventArgs e)
-        {
-            VehicleServicing_lbl.ForeColor = HoverColour;    
-        }
-
-        private void VehicleServicing_lbl_MouseLeave(object sender, EventArgs e)
-        {
-            VehicleServicing_lbl.ForeColor = BaseColour;
-        }
-
-        private void RecordService_lbl_MouseEnter(object sender, EventArgs e)
-        {
-            RecordService_lbl.ForeColor = HoverColour;
-        }
-
-        private void RecordService_lbl_MouseLeave(object sender, EventArgs e)
-        {
-            RecordService_lbl.ForeColor = BaseColour;
-        }
-
-        private void ViewServices_lbl_MouseEnter(object sender, EventArgs e)
-        {
-            ViewServices_lbl.ForeColor = HoverColour;
-        }
-
-        private void ViewServices_lbl_MouseLeave(object sender, EventArgs e)
-        {
-            ViewServices_lbl.ForeColor = BaseColour;
-        }
-
         private void SalesInfo_lbl_MouseEnter(object sender, EventArgs e)
         {
             SalesInfo_lbl.ForeColor = HoverColour;
@@ -145,13 +99,6 @@ namespace A2SSDCoursework
         private void SalesInfo_lbl_MouseLeave(object sender, EventArgs e)
         {
             SalesInfo_lbl.ForeColor = BaseColour;
-        }
-
-        private void OptionSelected()
-        {
-            Vehicles_pnl.Visible = false;
-            VehicleServicing_lbl.BackColor = Color.Gray;
-            VehicleServicing_pnl.Visible = false;
         }
 
         private void Employees_lbl_Click(object sender, EventArgs e)
@@ -165,8 +112,6 @@ namespace A2SSDCoursework
                 Customers_pnl.Visible = false;
                 Vehicles_pnl.Visible = false;
                 Employees_pnl.Visible = true;
-                VehicleServicing_lbl.BackColor = Color.Gray;
-                VehicleServicing_pnl.Visible = false;
             }
         }
 
@@ -203,7 +148,8 @@ namespace A2SSDCoursework
         private void PersonalInfo_lbl_Click(object sender, EventArgs e)
         {
             HideSubMenus();
-            MainMenu.MenuInstance.MainDisplay_pnl.BackColor = Color.Brown;
+            MainMenu.MenuInstance.ClearHistory();
+            MainMenu.MenuInstance.ChangeMainDisplay(new PersonalInfo(Employee.employees[Employee.currentEmployee]));
         }
 
         private void AvailableVehicles_lbl_Click(object sender, EventArgs e)
@@ -234,19 +180,11 @@ namespace A2SSDCoursework
             HideSubMenus();
         }
 
-        private void RecordService_lbl_Click(object sender, EventArgs e)
-        {
-            HideSubMenus();
-        }
-
-        private void ViewServices_lbl_Click(object sender, EventArgs e)
-        {
-            HideSubMenus();
-        }
-
         private void SalesInfo_lbl_Click(object sender, EventArgs e)
         {
             HideSubMenus();
+            MainMenu.MenuInstance.ClearHistory();
+            MainMenu.MenuInstance.ChangeMainDisplay(new SalesInfo());
         }
 
         private void ViewEmployees_lbl_Click(object sender, EventArgs e)
@@ -269,8 +207,6 @@ namespace A2SSDCoursework
             Customers_pnl.Visible = false;
             Employees_pnl.Visible = false;
             Vehicles_pnl.Visible = false;
-            VehicleServicing_lbl.BackColor = Color.Gray;
-            VehicleServicing_pnl.Visible = false;
         }
 
         private void Customers_lbl_MouseEnter(object sender, EventArgs e)
@@ -314,8 +250,6 @@ namespace A2SSDCoursework
                 Vehicles_pnl.Visible = false;
                 Employees_pnl.Visible = false;
                 Customers_pnl.Visible = true;
-                VehicleServicing_lbl.BackColor = Color.Gray;
-                VehicleServicing_pnl.Visible = false;
             }
         }
 
@@ -329,6 +263,8 @@ namespace A2SSDCoursework
         private void AddCustomer_lbl_Click(object sender, EventArgs e)
         {
             HideSubMenus();
+            MainMenu.MenuInstance.ClearHistory();
+            MainMenu.MenuInstance.ChangeMainDisplay(new AddCustomer());
         }
 
         private void LogOut_btn_MouseEnter(object sender, EventArgs e)
@@ -339,6 +275,63 @@ namespace A2SSDCoursework
         private void LogOut_btn_MouseLeave(object sender, EventArgs e)
         {
             LogOut_btn.ForeColor = BaseColour;
+        }
+
+        private void LogOut_btn_Click(object sender, EventArgs e)
+        {
+            Login.instance.Show();
+            MainMenu.MenuInstance.Close();         
+        }
+
+        private void AddVehicle_lbl_Click(object sender, EventArgs e)
+        {
+            HideSubMenus();
+            MainMenu.MenuInstance.ClearHistory();
+            MainMenu.MenuInstance.ChangeMainDisplay(new AddVehicle());
+        }
+
+        private void AddVehicle_lbl_MouseEnter(object sender, EventArgs e)
+        {
+            AddVehicle_lbl.ForeColor = HoverColour;
+        }
+
+        private void AddVehicle_lbl_MouseLeave(object sender, EventArgs e)
+        {
+            AddVehicle_lbl.ForeColor = BaseColour;
+        }
+
+        private void AddRole_lbl_MouseEnter(object sender, EventArgs e)
+        {
+            ManageRoles_lbl.ForeColor = HoverColour;
+        }
+
+        private void AddRole_lbl_MouseLeave(object sender, EventArgs e)
+        {
+            ManageRoles_lbl.ForeColor = BaseColour;
+        }
+
+        private void AddRole_lbl_Click(object sender, EventArgs e)
+        {
+            HideSubMenus();
+            MainMenu.MenuInstance.ClearHistory();
+            MainMenu.MenuInstance.ChangeMainDisplay(new ManageRoles());
+        }
+
+        private void ManageStatuses_lbl_MouseEnter(object sender, EventArgs e)
+        {
+            ManageStatuses_lbl.ForeColor = HoverColour;
+        }
+
+        private void ManageStatuses_lbl_MouseLeave(object sender, EventArgs e)
+        {
+            ManageStatuses_lbl.ForeColor = BaseColour;
+        }
+
+        private void ManageStatuses_lbl_Click(object sender, EventArgs e)
+        {
+            HideSubMenus();
+            MainMenu.MenuInstance.ClearHistory();
+            MainMenu.MenuInstance.ChangeMainDisplay(new ManageStatuses());
         }
     }
 }

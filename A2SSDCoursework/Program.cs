@@ -19,7 +19,14 @@ namespace A2SSDCoursework
 
             SetupDataDirectoryPath();
 
-            Application.Run(new Form1());
+            ProjectDal.GetEmployees();
+            ProjectDal.GetRoles();
+            ProjectDal.GetEmploymentStatuses();
+            ProjectDal.GetMakes();
+            ProjectDal.GetVehicles();
+            ProjectDal.GetCustomers();
+
+            Application.Run(new Login());
         }
 
         private static void SetupDataDirectoryPath()

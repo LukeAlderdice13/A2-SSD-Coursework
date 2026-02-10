@@ -101,6 +101,8 @@
             this.ViewCustomer_lbl.Text = "View Customer";
             this.ViewCustomer_lbl.UseVisualStyleBackColor = false;
             this.ViewCustomer_lbl.Click += new System.EventHandler(this.ViewCustomer_lbl_Click);
+            this.ViewCustomer_lbl.MouseEnter += new System.EventHandler(this.ViewCustomer_lbl_MouseEnter);
+            this.ViewCustomer_lbl.MouseLeave += new System.EventHandler(this.ViewCustomer_lbl_MouseLeave);
             // 
             // CustomerCard
             // 
@@ -110,6 +112,8 @@
             this.Controls.Add(this.Info_pnl);
             this.Name = "CustomerCard";
             this.Size = new System.Drawing.Size(230, 176);
+            this.MouseEnter += new System.EventHandler(this.CustomerCard_MouseEnter);
+            this.MouseLeave += new System.EventHandler(this.CustomerCard_MouseLeave);
             this.Info_pnl.ResumeLayout(false);
             this.ResumeLayout(false);
 

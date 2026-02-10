@@ -1,4 +1,5 @@
-﻿using System;
+﻿using A2_SSD_Coursework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace A2SSDCoursework
     {
         Color colour = new Color();
         Make make = new Make();
+        bool DeleteVisibility;
         public MakeCard()
         {
             InitializeComponent();
@@ -29,6 +31,8 @@ namespace A2SSDCoursework
 
             MakeName_lbl.Text = make.Name;
             Info_pnl.BackColor = this.colour;
+            DeleteVisibility = !Vehicle.IsMakeUsed(make.MakeID);
+            DeleteMake_btn.Visible = DeleteVisibility;
         }
 
         private void MakeCard_MouseEnter(object sender, EventArgs e)
@@ -48,36 +52,12 @@ namespace A2SSDCoursework
 
         private void EditName_btn_Click(object sender, EventArgs e)
         {
-            ViewMakes.Instance.ResetMakeCards();
 
-            MakeName_tbx.Text = make.Name;
-            MakeName_tbx.Visible = true;
-            MakeName_lbl.Visible = false;
-
-            ConfirmEdit_btn.Visible = true;
-            Reset_btn.Visible = true;
-
-            EditName_btn.Visible = false;
-            DeleteMake_btn.Visible = false;
         }
 
         public void EditName()
         {
-            if (Make.CheckNameAvailability(MakeName_tbx.Text))
-            {
-                ProjectDal.UpdateMakeName(make, MakeName_tbx.Text);
-                make.Name = MakeName_tbx.Text;
 
-                ResetButtons();
-            }
-            else if (make.Name != MakeName_tbx.Text)
-            {
-                MessageBox.Show("The make entered already exists.", "Error Updating Make Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                ResetButtons();
-            }
         }
 
         public void ResetButtons()
@@ -88,7 +68,7 @@ namespace A2SSDCoursework
             MakeName_tbx.Text = make.Name;
 
             EditName_btn .Visible = true;
-            DeleteMake_btn .Visible = true;
+            DeleteMake_btn.Visible = DeleteVisibility;
 
             ConfirmEdit_btn .Visible = false;
             Reset_btn .Visible = false;
@@ -96,13 +76,7 @@ namespace A2SSDCoursework
 
         private void DeleteMake_btn_Click(object sender, EventArgs e)
         {
-            ViewMakes.Instance.ResetMakeCards();
 
-            if (MessageBox.Show($"Are you sure you want to delete the '{make.Name}' make?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question)  == DialogResult.Yes)
-            {
-                ProjectDal.DeleteMake(make.MakeID);
-                MainMenu.MenuInstance.ChangeMainDisplay(new ViewMakes());
-            }
         }
 
         private void Reset_btn_Click(object sender, EventArgs e)

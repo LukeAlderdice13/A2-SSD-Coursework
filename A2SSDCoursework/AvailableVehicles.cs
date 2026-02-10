@@ -210,5 +210,21 @@ namespace A2SSDCoursework
 
             PopulateVehicles();
         }
+
+        private void MaxPrice_nud_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                PopulateVehicles();
+            }
+        }
+
+        private void AvailableVehicles_VisibleChanged(object sender, EventArgs e)
+        {
+            if(this.Visible)
+            {
+                PopulateVehicles();
+            }
+        }
     }
 }

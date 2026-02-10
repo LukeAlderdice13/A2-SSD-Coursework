@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewCustomers));
             this.Customers_pnl = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.Customers_lbl = new System.Windows.Forms.Label();
             this.Search_pnl = new System.Windows.Forms.Panel();
             this.CarsBought_nud = new System.Windows.Forms.NumericUpDown();
             this.MinCarsBought_lbl = new System.Windows.Forms.Label();
@@ -54,29 +52,10 @@
             // 
             this.Customers_pnl.AutoScroll = true;
             this.Customers_pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.Customers_pnl.Location = new System.Drawing.Point(0, 79);
+            this.Customers_pnl.Location = new System.Drawing.Point(0, 0);
             this.Customers_pnl.Name = "Customers_pnl";
-            this.Customers_pnl.Size = new System.Drawing.Size(725, 621);
+            this.Customers_pnl.Size = new System.Drawing.Size(725, 700);
             this.Customers_pnl.TabIndex = 10;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Location = new System.Drawing.Point(0, 76);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1051, 5);
-            this.panel1.TabIndex = 9;
-            // 
-            // Customers_lbl
-            // 
-            this.Customers_lbl.Font = new System.Drawing.Font("Adobe Hebrew", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Customers_lbl.Location = new System.Drawing.Point(0, 0);
-            this.Customers_lbl.Name = "Customers_lbl";
-            this.Customers_lbl.Size = new System.Drawing.Size(1051, 76);
-            this.Customers_lbl.TabIndex = 8;
-            this.Customers_lbl.Text = "Customers";
-            this.Customers_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Search_pnl
             // 
@@ -92,10 +71,10 @@
             this.Search_pnl.Controls.Add(this.Name_lbl);
             this.Search_pnl.Controls.Add(this.Search_lbl);
             this.Search_pnl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Search_pnl.Location = new System.Drawing.Point(714, 79);
+            this.Search_pnl.Location = new System.Drawing.Point(714, 0);
             this.Search_pnl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Search_pnl.Name = "Search_pnl";
-            this.Search_pnl.Size = new System.Drawing.Size(337, 622);
+            this.Search_pnl.Size = new System.Drawing.Size(337, 700);
             this.Search_pnl.TabIndex = 13;
             // 
             // CarsBought_nud
@@ -111,6 +90,7 @@
             this.CarsBought_nud.Name = "CarsBought_nud";
             this.CarsBought_nud.Size = new System.Drawing.Size(303, 30);
             this.CarsBought_nud.TabIndex = 16;
+            this.CarsBought_nud.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Name_tbx_KeyDown);
             // 
             // MinCarsBought_lbl
             // 
@@ -130,6 +110,7 @@
             this.Name_tbx.Name = "Name_tbx";
             this.Name_tbx.Size = new System.Drawing.Size(303, 30);
             this.Name_tbx.TabIndex = 15;
+            this.Name_tbx.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Name_tbx_KeyDown);
             // 
             // ResetSearch_lbl
             // 
@@ -159,6 +140,7 @@
             this.MoneySpent_nud.Name = "MoneySpent_nud";
             this.MoneySpent_nud.Size = new System.Drawing.Size(303, 30);
             this.MoneySpent_nud.TabIndex = 0;
+            this.MoneySpent_nud.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Name_tbx_KeyDown);
             // 
             // SearchIcon_pb
             // 
@@ -198,11 +180,11 @@
             // 
             this.Search_lbl.AutoSize = true;
             this.Search_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Search_lbl.Location = new System.Drawing.Point(44, 2);
+            this.Search_lbl.Location = new System.Drawing.Point(114, 3);
             this.Search_lbl.Name = "Search_lbl";
-            this.Search_lbl.Size = new System.Drawing.Size(263, 32);
+            this.Search_lbl.Size = new System.Drawing.Size(110, 32);
             this.Search_lbl.TabIndex = 0;
-            this.Search_lbl.Text = "Search Customers";
+            this.Search_lbl.Text = "Search";
             // 
             // SearchIcon_il
             // 
@@ -217,10 +199,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.Customers_pnl);
             this.Controls.Add(this.Search_pnl);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.Customers_lbl);
             this.Name = "ViewCustomers";
             this.Size = new System.Drawing.Size(1051, 700);
+            this.Tag = "Customers";
             this.Search_pnl.ResumeLayout(false);
             this.Search_pnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CarsBought_nud)).EndInit();
@@ -233,8 +214,6 @@
         #endregion
 
         private System.Windows.Forms.Panel Customers_pnl;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label Customers_lbl;
         private System.Windows.Forms.Panel Search_pnl;
         private System.Windows.Forms.NumericUpDown CarsBought_nud;
         private System.Windows.Forms.Label MinCarsBought_lbl;

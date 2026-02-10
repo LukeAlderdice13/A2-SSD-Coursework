@@ -52,21 +52,6 @@ namespace A2SSDCoursework
             }
         }
 
-        private void ReturnArrow_pb_MouseEnter(object sender, EventArgs e)
-        {
-            ReturnArrow_pb.Image = ReturnArrow_il.Images[1];
-        }
-
-        private void ReturnArrow_pb_MouseLeave(object sender, EventArgs e)
-        {
-            ReturnArrow_pb.Image = ReturnArrow_il.Images[0];
-        }
-
-        private void ReturnArrow_pb_Click(object sender, EventArgs e)
-        {
-            MainMenu.MenuInstance.ReturnToPreviousDisplay();
-        }
-
         private void ServiceHistory_Load(object sender, EventArgs e)
         {
             

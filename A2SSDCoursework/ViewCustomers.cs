@@ -15,6 +15,7 @@ namespace A2SSDCoursework
     public partial class ViewCustomers : UserControl
     {
         public static ViewCustomers instance = new ViewCustomers();
+        public int visibleCustomers = 0;
         public ViewCustomers()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace A2SSDCoursework
         public void PopulateCustomers()
         {
             Customers_pnl.Controls.Clear();
+            visibleCustomers = 0;
 
             int i = 0;
             int j = 0;
@@ -41,6 +43,7 @@ namespace A2SSDCoursework
             {
                 if(CheckSearch(customer))
                 {
+                    visibleCustomers++;
                     if (i == 0)
                     {
                         panel = new Panel();
@@ -93,10 +96,25 @@ namespace A2SSDCoursework
                 }
             }
 
-            panel = new Panel();
-            Customers_pnl.Controls.Add(panel);
-            panel.Size = new Size(panelWidth, 5);
-            panel.Location = new Point(5, currentY);
+            if(visibleCustomers > 0)
+            {
+                panel = new Panel();
+                Customers_pnl.Controls.Add(panel);
+                panel.Size = new Size(panelWidth, 5);
+                panel.Location = new Point(5, currentY);
+            }
+            else
+            {
+                Label noCustomers = new Label();
+                noCustomers.Text = "No Customers Found";
+                noCustomers.Size = new Size(Customers_pnl.Width, 60);
+                noCustomers.Font = new Font("Adobe Hebrew", 40);
+                Customers_pnl.Controls.Add(noCustomers);
+                noCustomers.Location = new Point(0, 10);
+                noCustomers.ForeColor = Color.Red;
+                noCustomers.TextAlign = ContentAlignment.MiddleCenter;
+            }
+            
         }
 
         private void SearchIcon_pb_MouseEnter(object sender, EventArgs e)
@@ -111,7 +129,7 @@ namespace A2SSDCoursework
 
         private bool CheckSearch(Customer customer)
         {
-            if (!customer.FirstName.ToLower().Contains(Name_tbx.Text.ToLower()))
+            if (!customer.FullName.ToLower().Contains(Name_tbx.Text.ToLower()))
             {
                 return false;
             }
@@ -155,6 +173,14 @@ namespace A2SSDCoursework
             MoneySpent_nud.Value = 0;
 
             PopulateCustomers();
+        }
+
+        private void Name_tbx_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                PopulateCustomers();
+            }
         }
     }
 }

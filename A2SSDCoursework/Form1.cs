@@ -10,18 +10,14 @@ using System.Windows.Forms;
 
 namespace A2SSDCoursework
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public static Login instance = new Login();
+        public Login()
         {
             InitializeComponent();
 
-            ProjectDal.GetEmployees();
-            ProjectDal.GetRoles();
-            ProjectDal.GetEmploymentStatuses();
-            ProjectDal.GetMakes();
-            ProjectDal.GetVehicles();
-            ProjectDal.GetCustomers();
+            instance = this;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -38,6 +34,7 @@ namespace A2SSDCoursework
 
         private void LoginEnter()
         {
+            username_tbx.Focus();
             string username = username_tbx.Text;
             string password = password_tbx.Text;
             bool isLoginValid = false;
@@ -46,7 +43,6 @@ namespace A2SSDCoursework
             {
                 if (username == employee.Username && password == employee.Password)
                 {
-                    MessageBox.Show($"Logged in to employee {employee.EmployeeID}");
                     isLoginValid = true;
                     for(int i = 0; i < Employee.employees.Count; i++)
                     {
@@ -66,7 +62,10 @@ namespace A2SSDCoursework
             else {
                 MainMenu menu = new MainMenu();
                 Hide();
+                password_tbx.Clear();
+                username_tbx.Clear();
                 menu.Show();
+                menu.ChangeMainDisplay(MainMenu.homePage);
             }
         }
 

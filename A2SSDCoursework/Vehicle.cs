@@ -81,15 +81,18 @@ namespace A2_SSD_Coursework
             return true;
         }
 
-        public static void AddService(int VehicleID, Service service)
+        public static int AddService(int VehicleID, Service service)
         {
             foreach(Vehicle vehicle in vehicles)
             {
                 if (vehicle.Id == VehicleID)
                 {
+                    service.ServiceID = vehicle.ServiceHistory.Count + 1;
                     vehicle.ServiceHistory.Add(service);
+                    return service.ServiceID;
                 }
             }
+            return -1;
         }
 
         public static int GetSoldPrice(int VehicleID)
@@ -147,7 +150,7 @@ namespace A2_SSD_Coursework
             return FuelTypes;
         }
 
-        public static int GetMaxPrice()
+        public static decimal GetMaxPrice()
         {
             decimal maxPrice = 0;
             foreach(Vehicle v in vehicles)
@@ -155,7 +158,20 @@ namespace A2_SSD_Coursework
                 if (v.Price > maxPrice)
                     maxPrice = v.Price;
             }
-            return (int)maxPrice;
+            return maxPrice;
+        }
+
+        public static decimal GetMaxSellPrice()
+        {
+            decimal maxSellPrice = 0;
+            foreach(Vehicle v in vehicles)
+            {
+                if (v.Sold && v.SoldPrice > maxSellPrice)
+                {
+                    maxSellPrice = v.SoldPrice;
+                }
+            }
+            return maxSellPrice;
         }
 
         public static Vehicle GetVehicleFromID(int ID)
@@ -168,6 +184,56 @@ namespace A2_SSD_Coursework
                 }
             }
             return null;
+        }
+
+        public static int GetListIndex(int ID)
+        {
+            for (int i = 0; i < vehicles.Count; i++)
+            {
+                if (vehicles[i].Id == ID)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        public static bool IsMakeUsed(int ID)
+        {
+            foreach(Vehicle v in vehicles)
+            {
+                if (v.make.MakeID == ID)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static int NextID()
+        {
+            int i = 0;
+            foreach (Vehicle v in vehicles)
+            {
+                if (i < v.Id)
+                {
+                    i = v.Id;
+                }
+            }
+            return i + 1;
+        }
+
+        public static void RemoveVehicle(int ID)
+        {
+            Vehicle vehicle = new Vehicle();
+            foreach(Vehicle v in vehicles)
+            {
+                if (v.Id == ID)
+                {
+                    vehicle = v;
+                }
+            }
+            vehicles.Remove(vehicle);
         }
     }
 }

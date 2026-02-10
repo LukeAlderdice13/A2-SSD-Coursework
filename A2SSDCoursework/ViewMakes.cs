@@ -1,4 +1,5 @@
-﻿using System;
+﻿using A2_SSD_Coursework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +14,7 @@ namespace A2SSDCoursework
     public partial class ViewMakes : UserControl
     {
         public static ViewMakes Instance = new ViewMakes();
-
-        public List<MakeCard> MakeCards = new List<MakeCard>();
-
-        public int finalY = 0;
-        public int finalXIndex = 0;
-        public int finalYIndex = 0;
+        public Make CurrentMake = new Make();
 
         public ViewMakes()
         {
@@ -31,99 +27,152 @@ namespace A2SSDCoursework
 
         private void PopulateMakes()
         {
-            int i = 0;
-            int j = 0;
-            int panelWidth = this.ClientSize.Width - 100;
-            int panelHeight = 133;
-            int panelSpacing = 5;
-            int currentY = 5;
-
-            int currentX = 0;
-
-            Panel panel = new Panel();
-
+            Dictionary<int, string> makes = new Dictionary<int, string>();
             foreach (Make make in Make.makes)
             {
-                if (i == 0)
-                {
-                    panel = new Panel();
-                    Makes_pnl.Controls.Add(panel);
-
-                    panel.Size = new Size(panelWidth, panelHeight);
-                    panel.Location = new Point(44, currentY);
-
-                    currentY += panelHeight + panelSpacing;
-                }
-                Color color = new Color();
-
-                if (j % 2 == 0)
-                {
-                    if (i % 2 == 0)
-                    {
-                        color = Color.DimGray;
-                    }
-                    else
-                    {
-                        color = Color.Gray;
-                    }
-                }
-                else
-                {
-                    if (i % 2 == 0)
-                    {
-                        color = Color.DimGray;
-                    }
-                    else
-                    {
-                        color = Color.Gray;
-                    }
-                }
-
-                MakeCard makeCard = new MakeCard(make, color);
-                MakeCards.Add(makeCard);
-                panel.Controls.Add(makeCard);
-                makeCard.Location = new Point(currentX, 0);
-                currentX += makeCard.Width;
-
-                if (i == 3)
-                {
-                    i = 0;
-                    j++;
-                    currentX = 0;
-                    finalXIndex = i;
-                    finalYIndex = j;
-                }
-                else
-                {
-                    i++;
-                    finalXIndex = i;
-                }
+                makes.Add(make.MakeID, make.Name);
             }
 
-            if (i == 0)
+            Makes_lb.DataSource = makes.ToArray();
+
+            Makes_lb.DisplayMember = "Value";
+            Makes_lb.ValueMember = "Key";
+
+            if (Makes_lb.Items.Count > 0)
             {
-                panel = new Panel();
-                Makes_pnl.Controls.Add(panel);
-
-                panel.Size = new Size(panelWidth, panelHeight);
-                panel.Location = new Point(5, currentY);
+                Makes_lb.SelectedIndex = 0;
+                UpdateInfo();
             }
-
-            AddMake addMake = new AddMake();
-            panel.Controls.Add(addMake);
-            addMake.Location = new Point(currentX, 0);
-
-            panel = new Panel();
-            Makes_pnl.Controls.Add(panel);
-            panel.Size = new Size(panelWidth, 5);
-            panel.Location = new Point(5, currentY);
+            else
+            {
+                Info_pnl.Visible = false;
+            }
         }
 
-        public void ResetMakeCards()
+        private void UpdateInfo()
         {
-            foreach (MakeCard card in MakeCards)
+            int ID = 0;
+            if (int.TryParse(Makes_lb.SelectedValue.ToString(), out ID))
             {
-                card.ResetButtons();
+                List<int> employeeIDs = new List<int>();
+                CurrentMake = Make.MakeFromID(ID);
+                EditName_tbx.Text = "";
+                decimal Profit = 0;
+                int InStock = 0;
+                int Sold = 0;
+                int Services = 0;
+
+                foreach (Vehicle vehicle in Vehicle.vehicles)
+                {
+                    if (vehicle.make.MakeID == ID)
+                    {
+                        if (vehicle.Sold)
+                        {
+                            Sold++;
+                            Profit += vehicle.SoldPrice;
+                        }
+                        else
+                        {
+                            InStock++;
+                        }
+                        foreach(Service service in vehicle.ServiceHistory)
+                        {
+                            Services++;
+                            Profit += service.Cost;
+                        }
+                    }
+                }
+
+                SelectedMake_lbl.Text = CurrentMake.Name;
+                InStock_lbl.Text = InStock.ToString();
+                Sold_lbl.Text = Sold.ToString();
+                Services_lbl.Text = Services.ToString();
+                Profit_lbl.Text = $"£{Profit}";
+
+                if (InStock > 0 || Sold > 0)
+                {
+                    DeleteMake_btn.Visible = false;
+                    DeleteUnderline_pnl.Visible = false;
+                    DeleteRole_lbl.Visible = false;
+                }
+                else
+                {
+                    DeleteMake_btn.Visible = true;
+                    DeleteUnderline_pnl.Visible = true;
+                    DeleteRole_lbl.Visible = true;
+                }
+            }
+        }
+
+        private void Makes_lb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateInfo();
+        }
+
+        private void EditName_tbx_TextChanged(object sender, EventArgs e)
+        {
+            if (EditName_tbx.Text.Trim() != CurrentMake.Name && EditName_tbx.Text.Trim() != "")
+            {
+                if (Make.CheckNameAvailability(EditName_tbx.Text.Trim()))
+                {
+                    EditMake_btn.BackColor = Color.SteelBlue;
+                }
+                else
+                {
+                    EditMake_btn.BackColor = Color.Firebrick;
+                }
+            }
+            else
+            {
+                EditMake_btn.BackColor = Color.Firebrick;
+            }
+        }
+
+        private void AddMake_btn_Click(object sender, EventArgs e)
+        {
+            if (Make.CheckNameAvailability(NewName_tbx.Text.Trim()) && NewName_tbx.Text.Trim() != "")
+            {
+               
+                Make make = new Make(Make.NewID(), NewName_tbx.Text.Trim());
+                ProjectDal.AddMake(make);
+                Make.makes.Add(make);
+                MessageBox.Show("Make added", "Addition Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MainMenu.MenuInstance.ReloadDisplay(new ViewMakes());
+            }
+        }
+
+        private void NewName_tbx_TextChanged(object sender, EventArgs e)
+        {
+            if (Make.CheckNameAvailability(NewName_tbx.Text.Trim()) && NewName_tbx.Text.Trim() != "")
+            {
+                AddMake_btn.BackColor = Color.SteelBlue;
+            }
+            else
+            {
+                AddMake_btn.BackColor = Color.Firebrick;
+            }
+        }
+
+        private void EditMake_btn_Click(object sender, EventArgs e)
+        {
+            if (EditMake_btn.BackColor == Color.SteelBlue)
+            {
+                Make make = new Make(CurrentMake.MakeID, EditName_tbx.Text.Trim());
+                Make.UpdateName(make);
+                ProjectDal.UpdateMakeName(make);
+                MessageBox.Show("Make edited", "Edit Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MainMenu.MenuInstance.ReloadDisplay(new ViewMakes());
+            }
+        }
+
+        private void DeleteMake_btn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show($"Confirm Deletion of '{CurrentMake.Name}' make.", "Confirm Deletion", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Make.RemoveMake(CurrentMake.MakeID);
+                ProjectDal.DeleteMake(CurrentMake.MakeID);
+                MessageBox.Show("Make deleted", "Deletion Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MainMenu.MenuInstance.ReloadDisplay(new ViewMakes());
             }
         }
     }

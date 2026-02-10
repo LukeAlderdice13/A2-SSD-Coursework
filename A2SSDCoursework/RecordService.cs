@@ -37,7 +37,7 @@ namespace A2SSDCoursework
             {
                 Service service = new Service(vehicle, Date_dtp.Value, Employee.GetEmployeeFromID(Convert.ToInt32(Employees_cb.SelectedValue)), Type_tbx.Text.Trim(), Cost_nud.Value);
 
-                Vehicle.AddService(vehicle.Id, service);
+                service.ServiceID = Vehicle.AddService(vehicle.Id, service);
 
                 ProjectDal.AddService(service);
 
@@ -106,17 +106,19 @@ namespace A2SSDCoursework
         {
             storedIndex = employeeIndex;
             Employee employee = Employee.GetEmployeeFromID(Convert.ToInt32(Employees_cb.SelectedValue));
-            MainMenu.MenuInstance.ChangeMainDisplay(new ViewEmployee(employee));
-        }
-
-        private void ReturnArrow_pb_MouseEnter(object sender, EventArgs e)
-        {
-            ReturnArrow_pb.Image = ReturnArrow_il.Images[1];
-        }
-
-        private void ReturnArrow_pb_MouseLeave(object sender, EventArgs e)
-        {
-            ReturnArrow_pb.Image = ReturnArrow_il.Images[0];
+            if (Employee.employees[Employee.currentEmployee].MaxAccessLevel == 3)
+            {
+                ViewEmployee viewEmployee = new ViewEmployee(employee);
+                MainMenu.MenuInstance.ChangeMainDisplay(viewEmployee);
+            }
+            else if (Employee.employees[Employee.currentEmployee].MaxAccessLevel == 2)
+            {
+                MainMenu.MenuInstance.ChangeMainDisplay(new ViewEmployeeMiddle(employee));
+            }
+            else
+            {
+                MainMenu.MenuInstance.ChangeMainDisplay(new ViewEmployeePublicInfo(employee));
+            }
         }
 
         private void ReturnArrow_pb_Click(object sender, EventArgs e)

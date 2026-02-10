@@ -38,14 +38,20 @@ namespace A2SSDCoursework
 
         private void Employee_lbl_MouseEnter(object sender, EventArgs e)
         {
-            Employee_lbl.ForeColor = Color.Teal;
-            Employee_lbl.Font = new Font("Microsoft Sans Serif", Employee_lbl.Font.Size, FontStyle.Underline);
+            if (service.employee != Employee.nullEmployee)
+            {
+                Employee_lbl.ForeColor = Color.Teal;
+                Employee_lbl.Font = new Font("Microsoft Sans Serif", Employee_lbl.Font.Size, FontStyle.Underline);
+            }
         }
 
         private void Employee_lbl_MouseLeave(object sender, EventArgs e)
         {
-            Employee_lbl.ForeColor = Color.Black;
-            Employee_lbl.Font = new Font("Microsoft Sans Serif", Employee_lbl.Font.Size);
+            if (service.employee != Employee.nullEmployee)
+            {
+                Employee_lbl.ForeColor = Color.Black;
+                Employee_lbl.Font = new Font("Microsoft Sans Serif", Employee_lbl.Font.Size);
+            }
         }
 
         private void Employee_lbl_MouseClick(object sender, MouseEventArgs e)
@@ -55,8 +61,15 @@ namespace A2SSDCoursework
 
         public void UpdateEmployeeInfo()
         {
-            service.employee = Employee.GetEmployeeFromID(service.employee.EmployeeID);
-            Employee_lbl.Text = service.employee.FullName;
+            if(service.employee != Employee.nullEmployee)
+            {
+                service.employee = Employee.GetEmployeeFromID(service.employee.EmployeeID);
+                if (service.employee != null)
+                {
+                    Employee_lbl.Text = service.employee.FullName.Trim();
+                }
+            }
+
         }
 
         private void Delete_pb_MouseEnter(object sender, EventArgs e)
@@ -152,19 +165,22 @@ namespace A2SSDCoursework
                 || Cost_nud.Value != service.Cost
                 || Type_tbx.Text != service.ServiceType)
             {
-                Service outdatedService = service;
-                service.employee = Employee.GetEmployeeFromID(Convert.ToInt32(Employees_cb.SelectedValue));
-                service.ServiceType = Type_tbx.Text.Trim();
-                service.Cost = Cost_nud.Value;
+                if (Type_tbx.Text.Trim() != "")
+                {
+                    Service outdatedService = service;
+                    service.employee = Employee.GetEmployeeFromID(Convert.ToInt32(Employees_cb.SelectedValue));
+                    service.ServiceType = Type_tbx.Text.Trim();
+                    service.Cost = Cost_nud.Value;
 
-                Employee_lbl.Text = service.employee.FullName;
-                ServiceType_lbl.Text = service.ServiceType;
-                Cost_lbl.Text = $"£{service.Cost}";
+                    Employee_lbl.Text = service.employee.FullName;
+                    ServiceType_lbl.Text = service.ServiceType;
+                    Cost_lbl.Text = $"£{service.Cost}";
 
-                Edit_pnl.Visible = false;
+                    Edit_pnl.Visible = false;
 
-                ProjectDal.UpdateService(service);
-                ServiceHistory.instance.UpdateService(outdatedService, service);
+                    ProjectDal.UpdateService(service);
+                    ServiceHistory.instance.UpdateService(outdatedService, service);
+                }
             } else
             {
                 Edit_pnl.Visible = false;
@@ -179,8 +195,23 @@ namespace A2SSDCoursework
 
         private void Employee_lbl_Click(object sender, EventArgs e)
         {
-            ServiceHistory.instance.ResetAllEdits();
-            MainMenu.MenuInstance.ChangeMainDisplay(new ViewEmployee(service.employee));
+            if (service.employee != Employee.nullEmployee)
+            {
+                ServiceHistory.instance.ResetAllEdits();
+                if (Employee.employees[Employee.currentEmployee].MaxAccessLevel == 3)
+                {
+                    ViewEmployee viewEmployee = new ViewEmployee(service.employee);
+                    MainMenu.MenuInstance.ChangeMainDisplay(viewEmployee);
+                }
+                else if (Employee.employees[Employee.currentEmployee].MaxAccessLevel == 2)
+                {
+                    MainMenu.MenuInstance.ChangeMainDisplay(new ViewEmployeeMiddle(service.employee));
+                }
+                else
+                {
+                    MainMenu.MenuInstance.ChangeMainDisplay(new ViewEmployeePublicInfo(service.employee));
+                }
+            }
         }
     }
 }
